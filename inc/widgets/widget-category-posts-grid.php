@@ -113,13 +113,13 @@ class Leeway_Category_Posts_Grid_Widget extends WP_Widget {
 		$i = 0;
 		
 		// Select Layout of Grid Posts
-		$layout = ( $thumbnails == true ? 'small-post-row' : 'big-post-row' );
+		$layout = ( $thumbnails == true ? 'medium-post-row' : 'large-post-row' );
 		
 		// Check if there are posts
 		if( $posts_query->have_posts() ) :
 		
 			// Limit the number of words for the excerpt
-			add_filter('excerpt_length', 'leeway_frontpage_category_excerpt_length');
+			add_filter('excerpt_length', 'leeway_category_posts_excerpt_length');
 			
 			// Display Posts
 			while( $posts_query->have_posts() ) :
@@ -127,7 +127,7 @@ class Leeway_Category_Posts_Grid_Widget extends WP_Widget {
 				$posts_query->the_post(); 
 				
 				 // Open new Row on the Grid
-				 if ( $i % 2 == 0) : ?>
+				 if ( $i % 3 == 0 ) : ?>
 			
 					<div class="category-posts-grid-row <?php echo $layout; ?> clearfix">
 		
@@ -138,28 +138,24 @@ class Leeway_Category_Posts_Grid_Widget extends WP_Widget {
 				<?php // Display small posts or big posts grid layout based on options
 				if( $thumbnails == true ) : ?>
 
-					<div class="small-post-wrap">
-						
-						<article id="post-<?php the_ID(); ?>" <?php post_class('small-post clearfix'); ?>>
+					<article id="post-<?php the_ID(); ?>" <?php post_class('medium-post clearfix'); ?>>
 
-						<?php if ( '' != get_the_post_thumbnail() ) : ?>
-							<a href="<?php the_permalink() ?>" rel="bookmark"><?php the_post_thumbnail('category-posts-widget-small'); ?></a>
-						<?php endif; ?>
+					<?php if ( '' != get_the_post_thumbnail() ) : ?>
+						<a href="<?php the_permalink() ?>" rel="bookmark"><?php the_post_thumbnail('category-posts-widget-medium'); ?></a>
+					<?php endif; ?>
 
-							<div class="small-post-content">
-								<h2 class="post-title"><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h2>
-								<div class="postmeta"><?php $this->display_postmeta($instance); ?></div>
-							</div>
+						<div class="medium-post-content">
+							<h2 class="post-title"><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h2>
+							<div class="postmeta"><?php $this->display_postmeta($instance); ?></div>
+						</div>
 
-						</article>
-						
-					</div>
+					</article>
 					
 				<?php else: ?>
 				
-					<article id="post-<?php the_ID(); ?>" <?php post_class('big-post'); ?>>
+					<article id="post-<?php the_ID(); ?>" <?php post_class('large-post'); ?>>
 
-						<a href="<?php the_permalink() ?>" rel="bookmark"><?php the_post_thumbnail('category-posts-widget-big'); ?></a>
+						<a href="<?php the_permalink() ?>" rel="bookmark"><?php the_post_thumbnail('category-posts-widget-large'); ?></a>
 
 						<h3 class="post-title"><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h3>
 
@@ -174,7 +170,7 @@ class Leeway_Category_Posts_Grid_Widget extends WP_Widget {
 				<?php endif; ?>
 		
 				<?php // Close Row on the Grid
-				if ( $i % 2 == 1) : ?>
+				if ( $i % 3 == 2) : ?>
 				
 					</div>
 				
@@ -186,7 +182,7 @@ class Leeway_Category_Posts_Grid_Widget extends WP_Widget {
 			endwhile;
 			
 			// Remove excerpt filter
-			remove_filter('excerpt_length', 'leeway_frontpage_category_excerpt_length');
+			remove_filter('excerpt_length', 'leeway_category_posts_excerpt_length');
 			
 		endif;
 		
@@ -240,7 +236,7 @@ class Leeway_Category_Posts_Grid_Widget extends WP_Widget {
 				$link_url = esc_url( get_category_link( $category ) );
 				
 				echo '<a href="'. $link_url .'" title="'. $link_title . '">'. $widget_title . '</a>';
-				echo '<a class="category-archive-link" href="'. $link_url .'" title="'. $link_title . '"><span class="genericon-expand"></span></a>';
+				echo '<a class="category-archive-link" href="'. $link_url .'" title="'. $link_title . '"><span class="genericon-next"></span></a>';
 			
 			else:
 			

@@ -21,11 +21,7 @@
 	$theme_options = leeway_theme_options();
 ?>
 	<div id="topheader-wrap">
-	
-		<div id="topheader" class="container clearfix">
-			<?php locate_template('/inc/top-navigation.php', true); ?>
-		</div>
-		
+		<?php locate_template('/inc/top-header.php', true); ?>
 	</div>
 	
 	<div id="wrapper" class="hfeed">

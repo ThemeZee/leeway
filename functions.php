@@ -53,7 +53,7 @@ function leeway_enqueue_comment_reply() {
 // Retrieve Font URL to register default Google Fonts
 function leeway_google_fonts_url() {
     
-	$font_families = array('Muli', 'Fjalla One');
+	$font_families = array('Muli', 'Oswald');
 
 	$query_args = array(
 		'family' => urlencode( implode( '|', $font_families ) ),
@@ -107,6 +107,7 @@ function leeway_setup() {
 
 	// Register Navigation Menus
 	register_nav_menu( 'primary', __('Main Navigation', 'leeway') );
+	register_nav_menu( 'secondary', __('Top Navigation', 'leeway') );
 	register_nav_menu( 'footer', __('Footer Navigation', 'leeway') );
 	
 	// Register Social Icons Menu
@@ -123,7 +124,7 @@ if ( ! function_exists( 'leeway_add_image_sizes' ) ):
 function leeway_add_image_sizes() {
 	
 	// Add Post Thumbnail Size
-	add_image_size( 'post-thumbnail', 350, 275, true);
+	add_image_size( 'post-thumbnail', 400, 280, true);
 	
 	// Add Custom Header Image Size
 	add_image_size( 'custom-header-image', 1320, 250, true);
@@ -132,9 +133,10 @@ function leeway_add_image_sizes() {
 	add_image_size( 'slider-image', 1320, 380, true);
 	
 	// Add Category Post Widget image sizes
-	add_image_size( 'category-posts-widget-small', 80, 80, true);
-	add_image_size( 'category-posts-widget-big', 540, 180, true);
-
+	add_image_size( 'category-posts-widget-small', 150, 90, true);
+	add_image_size( 'category-posts-widget-medium', 300, 175, true);
+	add_image_size( 'category-posts-widget-large', 600, 280, true);
+	add_image_size( 'category-posts-widget-extra-large', 600, 350, true);
 }
 endif;
 
@@ -161,8 +163,8 @@ function leeway_register_sidebars() {
 		'description' => __( 'Appears on Magazine Homepage template only. You can use the Category Posts widgets here.', 'leeway' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
-		'before_title' => '<h3 class="widgettitle">',
-		'after_title' => '</h3>',
+		'before_title' => '<h3 class="widgettitle"><span>',
+		'after_title' => '</span></h3>',
 	));
 
 }
@@ -220,11 +222,20 @@ function leeway_slideshow_excerpt_length($length) {
     return 32;
 }
 
-// Frontpage Category Excerpt Length
-function leeway_frontpage_category_excerpt_length($length) {
+// Category Posts Large Excerpt Length
+function leeway_category_posts_large_excerpt($length) {
+    return 32;
+}
+
+// Category Posts Medium Excerpt Length
+function leeway_category_posts_medium_excerpt($length) {
     return 20;
 }
 
+// Category Posts Small Excerpt Length
+function leeway_category_posts_small_excerpt($length) {
+    return 8;
+}
 
 // Change Excerpt More
 add_filter('excerpt_more', 'leeway_excerpt_more');

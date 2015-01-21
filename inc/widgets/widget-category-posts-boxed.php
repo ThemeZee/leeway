@@ -114,7 +114,7 @@ class Leeway_Category_Posts_Boxed_Widget extends WP_Widget {
 		if( $posts_query->have_posts() ) :
 		
 			// Limit the number of words for the excerpt
-			add_filter('excerpt_length', 'leeway_frontpage_category_excerpt_length');
+			add_filter('excerpt_length', 'leeway_category_posts_large_excerpt');
 			
 			// Display Posts
 			while( $posts_query->have_posts() ) :
@@ -123,31 +123,36 @@ class Leeway_Category_Posts_Boxed_Widget extends WP_Widget {
 				
 				if(isset($i) and $i == 0) : ?>
 
-					<article id="post-<?php the_ID(); ?>" <?php post_class('big-post'); ?>>
+					<article id="post-<?php the_ID(); ?>" <?php post_class('large-post clearfix'); ?>>
 
-						<a href="<?php the_permalink() ?>" rel="bookmark"><?php the_post_thumbnail('category-posts-widget-big'); ?></a>
+						<a href="<?php the_permalink() ?>" rel="bookmark"><?php the_post_thumbnail('category-posts-widget-extra-large'); ?></a>
+						
+						<div class="post-content">
 
-						<h3 class="post-title"><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h3>
+							<h3 class="post-title"><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h3>
 
-						<div class="postmeta"><?php $this->display_postmeta($instance); ?></div>
+							<div class="postmeta"><?php $this->display_postmeta($instance); ?></div>
 
-						<div class="entry">
-							<?php the_excerpt(); ?>
+							<div class="entry">
+								<?php the_excerpt(); ?>
+								<a href="<?php esc_url(the_permalink()) ?>" class="more-link"><?php _e('Read more', 'leeway'); ?></a>
+							</div>
+							
 						</div>
 
 					</article>
 
-				<div class="small-posts clearfix">
+				<div class="medium-posts clearfix">
 
 				<?php else: ?>
 
-					<article id="post-<?php the_ID(); ?>" <?php post_class('small-post clearfix'); ?>>
+					<article id="post-<?php the_ID(); ?>" <?php post_class('medium-post clearfix'); ?>>
 
 					<?php if ( '' != get_the_post_thumbnail() ) : ?>
-						<a href="<?php the_permalink() ?>" rel="bookmark"><?php the_post_thumbnail('category-posts-widget-small'); ?></a>
+						<a href="<?php the_permalink() ?>" rel="bookmark"><?php the_post_thumbnail('category-posts-widget-medium'); ?></a>
 					<?php endif; ?>
 
-						<div class="small-post-content">
+						<div class="medium-post-content">
 							<h2 class="post-title"><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h2>
 							<div class="postmeta"><?php $this->display_postmeta($instance); ?></div>
 						</div>
@@ -159,11 +164,11 @@ class Leeway_Category_Posts_Boxed_Widget extends WP_Widget {
 				
 			endwhile; ?>
 			
-				</div><!-- end .small-posts -->
+				</div><!-- end .medium-posts -->
 				
 			<?php
 			// Remove excerpt filter
-			remove_filter('excerpt_length', 'leeway_frontpage_category_excerpt_length');
+			remove_filter('excerpt_length', 'leeway_category_posts_large_excerpt');
 			
 		endif;
 		
@@ -217,7 +222,7 @@ class Leeway_Category_Posts_Boxed_Widget extends WP_Widget {
 				$link_url = esc_url( get_category_link( $category ) );
 				
 				echo '<a href="'. $link_url .'" title="'. $link_title . '">'. $widget_title . '</a>';
-				echo '<a class="category-archive-link" href="'. $link_url .'" title="'. $link_title . '"><span class="genericon-expand"></span></a>';
+				echo '<a class="category-archive-link" href="'. $link_url .'" title="'. $link_title . '"><span class="genericon-next"></span></a>';
 			
 			else:
 			

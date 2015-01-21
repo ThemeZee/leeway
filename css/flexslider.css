@@ -40,7 +40,7 @@ html[xmlns] .zeeslides {display: block;}
 /*  ThemeZee Slider Layout
 *****************************************/
 #post-slider-container {
-	
+	margin-top: 0.5em;
 }
 #post-slider-wrap {
 	position: relative;
@@ -61,41 +61,36 @@ html[xmlns] .zeeslides {display: block;}
 }
 #post-slider .zeeslide .slide-content {
 	position: absolute;
-	bottom: 2em;
-	left: 2em;
+	overflow: hidden;
+	bottom: 0;
+	left: 1.5em;
+	height: 100%;
 	line-height: 1.5em;
 	-ms-word-wrap: break-word;
 	word-wrap: break-word;
-	width: 55%;
-}
-#post-slider .zeeslide .slide-content .slide-title {
-	display: inline-block;
-	font-family: 'Fjalla One', Tahoma, Verdana, Arial;
-	font-size: 1.7em;
-	color: #fff;
-	line-height: 1.5em;
-	-ms-word-wrap: break-word;
-	word-wrap: break-word;
-	padding: 0.4em 0.6em;
-	margin-bottom: 0.2em;
+	padding: 1em 1.5em;
 	color: #fff;
 	background: #333;
-	background: rgba(0,0,0,0.8);
-	-webkit-border-radius: 0.3em;
-	-moz-border-radius: 0.3em;
-	border-radius: 0.3em;
+	background: rgba(0,0,0,0.6);
+	width: 25%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+#post-slider .zeeslide .slide-content .slide-title {
+	font-family: 'Oswald', Tahoma, Verdana, Arial;
+	font-size: 1.8em;
+	color: #fff;
+	line-height: 1.4em;
+	margin: 1em 0 0.5em;
+	-ms-word-wrap: break-word;
+	word-wrap: break-word;
 }
 #post-slider .zeeslide .slide-content .slide-entry span {
 	display: inline-block;
-	padding: 0.8em 1em;
-	font-size: 1.1em;
+	font-size: 1.05em;
 	line-height: 1.5em;
 	color: #fff;
-	background: #444;
-	background: rgba(0,0,0,0.6);
-	-webkit-border-radius: 0.3em;
-	-moz-border-radius: 0.3em;
-	border-radius: 0.3em;
 }
 #post-slider .zeeslide .slide-content .slide-title a:link, #post-slider .zeeslide .slide-content .slide-title a:visited {
 	color: #fff;
@@ -129,18 +124,15 @@ html[xmlns] .zeeslides {display: block;}
 .post-slider-controls .zeeflex-direction-nav a {
 	display: block;
 	position: absolute;
-	margin: -40px 1em 0 0;
-	width: 40px;
-	height: 40px;
+	margin: -80px 1em 0 0;
+	width: 80px;
+	height: 80px;
 	background: rgba(0,0,0,0.6);
 	text-align: left;
 	color #fff;
 	font-size: 0;
 	cursor: pointer;
 	z-index: 10;
-	-webkit-border-radius: 40px;
-	-moz-border-radius: 40px;
-	border-radius: 40px;
 }
 .post-slider-controls .zeeflex-direction-nav a:hover {
 	text-decoration: none;
@@ -149,7 +141,7 @@ html[xmlns] .zeeslides {display: block;}
 	margin: 0.05em;
 	-webkit-font-smoothing: antialiased;
 	display: inline-block;
-	font: normal 36px/1 Genericons;
+	font: normal 72px/1 Genericons;
 	text-decoration: inherit;
 	vertical-align: text-bottom;
 	color: #fff;
@@ -173,7 +165,7 @@ html[xmlns] .zeeslides {display: block;}
 	right: 0;
 }
 .post-slider-controls .zeeflex-direction-nav .zeeflex-prev {
-	right: 45px;
+	right: 90px;
 }
 .post-slider-controls .zeeflex-direction-nav .zeeflex-prev:hover,
 .post-slider-controls .zeeflex-direction-nav .zeeflex-next:hover  {
@@ -193,16 +185,13 @@ html[xmlns] .zeeslides {display: block;}
 	*display: inline;
 }
 .post-slider-controls .zeeflex-control-nav li a {
-	width: 15px; 
-	height: 15px; 
+	width: 18px; 
+	height: 18px; 
 	display: block; 
 	background: #777;
 	background: rgba(0,0,0,0.3);
 	cursor: pointer; 
 	text-indent: -9999px; 
-	-webkit-border-radius: 0.4em;
-	-moz-border-radius: 0.4em;
-	border-radius: 0.4em;
 }
 .post-slider-controls .zeeflex-control-nav li a:hover { 
 	background: #888;

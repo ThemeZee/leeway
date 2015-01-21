@@ -100,10 +100,7 @@ class Leeway_Category_Posts_Columns_Widget extends WP_Widget {
 		
 		// Get Widget Settings
 		$defaults = $this->default_settings();
-		extract( wp_parse_args( $instance, $defaults ) );
-		
-		// Limit the number of words for the excerpt
-		add_filter('excerpt_length', 'leeway_frontpage_category_excerpt_length'); ?>
+		extract( wp_parse_args( $instance, $defaults ) ); ?>
 		
 		<div class="category-posts-column-left category-posts-columns clearfix">
 				
@@ -135,10 +132,7 @@ class Leeway_Category_Posts_Columns_Widget extends WP_Widget {
 			
 		</div>
 		
-		<?php
-		// Remove excerpt filter
-		remove_filter('excerpt_length', 'leeway_frontpage_category_excerpt_length');
-		
+	<?php
 	}
 	
 	// Display Category Posts
@@ -156,6 +150,9 @@ class Leeway_Category_Posts_Columns_Widget extends WP_Widget {
 		);
 		$posts_query = new WP_Query($query_arguments);
 		$i = 0;
+		
+		// Limit the number of words for the excerpt
+		add_filter('excerpt_length', 'leeway_category_posts_small_excerpt');
 
 		// Check if there are posts
 		if( $posts_query->have_posts() ) :
@@ -165,11 +162,15 @@ class Leeway_Category_Posts_Columns_Widget extends WP_Widget {
 				
 				$posts_query->the_post(); 
 				
-				if( $highlight_post == true and (isset($i) and $i == 0) ) : ?>
+				if( $highlight_post == true and (isset($i) and $i == 0) ) : 
+				
+					// Limit the number of words for the excerpt
+					add_filter('excerpt_length', 'leeway_category_posts_medium_excerpt');
+				?>
 
-					<article id="post-<?php the_ID(); ?>" <?php post_class('big-post clearfix'); ?>>
+					<article id="post-<?php the_ID(); ?>" <?php post_class('large-post clearfix'); ?>>
 
-						<a href="<?php the_permalink() ?>" rel="bookmark"><?php the_post_thumbnail('category-posts-widget-big'); ?></a>
+						<a href="<?php the_permalink() ?>" rel="bookmark"><?php the_post_thumbnail('category-posts-widget-large'); ?></a>
 
 						<h3 class="post-title"><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h3>
 
@@ -177,21 +178,31 @@ class Leeway_Category_Posts_Columns_Widget extends WP_Widget {
 
 						<div class="entry">
 							<?php the_excerpt(); ?>
+							<a href="<?php esc_url(the_permalink()) ?>" class="more-link"><?php _e('Read more', 'leeway'); ?></a>
 						</div>
 
 					</article>
 
-				<?php else: ?>
+				<?php 	
+					// Remove excerpt filter
+					remove_filter('excerpt_length', 'leeway_category_posts_medium_excerpt');
+					
+				else: ?>
 
 					<article id="post-<?php the_ID(); ?>" <?php post_class('small-post clearfix'); ?>>
 
-					<?php if ( '' != get_the_post_thumbnail() ) : ?>
-						<a href="<?php the_permalink() ?>" rel="bookmark"><?php the_post_thumbnail('category-posts-widget-small'); ?></a>
-					<?php endif; ?>
-
+						<?php if ( '' != get_the_post_thumbnail() ) : ?>
+							<a href="<?php the_permalink() ?>" rel="bookmark"><?php the_post_thumbnail('category-posts-widget-small'); ?></a>
+						<?php endif; ?>
+						
 						<div class="small-post-content">
+							
 							<h2 class="post-title"><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h2>
-							<div class="postmeta"><?php $this->display_postmeta($instance); ?></div>
+														
+							<div class="entry">
+								<?php the_excerpt(); ?>
+							</div>
+							
 						</div>
 
 					</article>
@@ -204,6 +215,9 @@ class Leeway_Category_Posts_Columns_Widget extends WP_Widget {
 			<?php
 
 		endif;
+		
+		// Remove excerpt filter
+		remove_filter('excerpt_length', 'leeway_category_posts_small_excerpt');
 		
 		// Reset Postdata
 		wp_reset_postdata();
@@ -255,7 +269,7 @@ class Leeway_Category_Posts_Columns_Widget extends WP_Widget {
 				$link_url = esc_url( get_category_link( $category_id ) );
 				
 				echo '<a href="'. esc_url( get_category_link( $category_id ) ) .'" title="'. $widget_title . '">'. $widget_title . '</a>';
-				echo '<a class="category-archive-link" href="'. $link_url .'" title="'. $link_title . '"><span class="genericon-expand"></span></a>';
+				echo '<a class="category-archive-link" href="'. $link_url .'" title="'. $link_title . '"><span class="genericon-next"></span></a>';
 				
 			else:
 			
