@@ -204,46 +204,98 @@ html[xmlns] .zeeslides {display: block;}
 }
 
 /* Media Queries */
-@media only screen and (max-width: 70em) {
+@media only screen and (max-width: 90em) {
 	#post-slider .zeeslide .slide-content {
-		bottom: 1.5em;
-		left: 1.5em;
-		width: 65%;
+		width: 30%;
 	}
 	#post-slider .zeeslide .slide-content .slide-title {
-		font-size: 1.5em;
+		margin-top: 0.5em;
 	}
-	#post-slider .zeeslide .slide-content .slide-entry span {
-		font-size: 1.05em;
+}
+@media only screen and (max-width: 80em) {
+	#post-slider .zeeslide .slide-content {
+		width: 35%;
+	}
+}
+@media only screen and (max-width: 75em) {
+	#post-slider .zeeslide .slide-content {
+		width: 40%;
+	}
+	#post-slider .zeeslide .slide-content .slide-title {
+		font-size: 1.7em;
+	}
+}
+@media only screen and (max-width: 70em) {
+	#post-slider .zeeslide .slide-content {
+		width: 45%;
+	}
+	.post-slider-controls .zeeflex-direction-nav a {
+		margin: -60px 1em 0 0;
+		width: 60px;
+		height: 60px;
+	}
+	.post-slider-controls .zeeflex-direction-nav a:before {
+		font: normal 52px/1 Genericons;
+	}
+	.post-slider-controls .zeeflex-direction-nav .zeeflex-prev {
+		right: 70px;
+	}
+}
+@media only screen and (max-width: 65em) {
+	#post-slider .zeeslide .slide-content {
+		width: 50%;
+	}
+	#post-slider .zeeslide .slide-content .slide-title {
+		font-size: 1.6em;
 	}
 }
 /* Tablets (landscape) | <960px */
 @media only screen and (max-width: 60em) {
 	#post-slider .zeeslide .slide-content {
-		bottom: 1em;
-		left: 1em;
-		width: 75%;
+		width: 55%;
+		padding: 1em 1.2em;
 	}
 	#post-slider .zeeslide .slide-content .slide-title {
-		font-size: 1.4em;
+		font-size: 1.5em;
+		margin: 0.3em 0;
 	}
 	#post-slider .zeeslide .slide-content .slide-entry span {
-		font-size: 1.0em;
-		padding: 0.6em 0.8em;
+		font-size: 0.95em;
 	}
 }
 /* Tablets (landscape) | <800px */
 @media only screen and (max-width: 50em) {
+	#post-slider .zeeslide .slide-content {
+		padding: 0.8em 1em;
+	}
 	#post-slider .zeeslide .slide-content .slide-title {
-		font-size: 1.3em;
+		font-size: 1.25em;
+		margin-top: 0;
 	}
 	#post-slider .zeeslide .slide-content .slide-entry span {
 		font-size: 0.9em;
 	}
+	.post-slider-controls .zeeflex-direction-nav a {
+		margin: -40px 1em 0 0;
+		width: 40px;
+		height: 40px;
+	}
+	.post-slider-controls .zeeflex-direction-nav a:before {
+		font: normal 36px/1 Genericons;
+	}
+	.post-slider-controls .zeeflex-direction-nav .zeeflex-prev {
+		right: 50px;
+	}
 }
 @media only screen and (max-width: 45em) {
+	#post-slider .zeeslide .slide-content {
+		height: auto;
+		width: auto;
+		padding: 0.5em 0.8em;
+	}
 	#post-slider .zeeslide .slide-content .slide-title {
-		font-size: 1.5em;
+		font-size: 1.4em;
+		margin:0;
 	}
 	#post-slider .zeeslide .slide-content .slide-entry {
 		display: none;
@@ -251,14 +303,16 @@ html[xmlns] .zeeslides {display: block;}
 }
 /* Phablets (portrait) | <640px */
 @media only screen and (max-width: 40em) {
+	#post-slider .zeeslide .slide-content {
+		left: 1em;
+	}
 	#post-slider .zeeslide .slide-content .slide-title {
-		font-size: 1.25em;
+		font-size: 1.2em;
 	}
 }
-@media only screen and (max-width: 30em) {
+@media only screen and (max-width: 35em) {
 	#post-slider .zeeslide .slide-content {
-		bottom: 0.4em;
-		left: 0.6em;
+		left: 0.5em;
 	}
 	#post-slider .zeeslide .slide-content .slide-title {
 		font-size: 1.05em;
@@ -272,27 +326,25 @@ html[xmlns] .zeeslides {display: block;}
 		right: 0.5em;
 	}
 	.post-slider-controls .zeeflex-direction-nav a {
-		margin: 0 1em 0 0;
-		width: 23px;
-		height: 23px;
-		-webkit-border-radius: 23px;
-		-moz-border-radius: 23px;
-		border-radius: 23px;
-	}
-	.post-slider-controls .zeeflex-direction-nav a:before {
-		font: normal 21px/1 Genericons;
-	}
-	.post-slider-controls .zeeflex-direction-nav .zeeflex-prev {
-		right: 28px;
+		margin: 0 0.5em 0 0;
 	}
 }
 /* Phablets (portrait) | <400px */
 @media only screen and (max-width: 25em) {
 	#post-slider .zeeslide .slide-content {
-		bottom: 0.2em;
-		left: 0.3em;
+		left: 0;
 	}
 	#post-slider .zeeslide .slide-content .slide-title {
 		font-size: 0.95em;
+	}
+	.post-slider-controls .zeeflex-direction-nav a {
+		width: 25px;
+		height: 25px;
+	}
+	.post-slider-controls .zeeflex-direction-nav a:before {
+		font: normal 23px/1 Genericons;
+	}
+	.post-slider-controls .zeeflex-direction-nav .zeeflex-prev {
+		right: 30px;
 	}
 }

@@ -42,7 +42,7 @@
 				</div>
 				
 				<nav id="mainnav" class="clearfix" role="navigation">
-					<h4 id="mainnav-icon"><?php _e('Menu', 'leeway'); ?></h4>
+					<h4 id="mainnav-icon"></h4>
 					<?php 
 						// Get Navigation out of Theme Options
 						wp_nav_menu(array('theme_location' => 'primary', 'container' => false, 'menu_id' => 'mainnav-menu', 'echo' => true, 'fallback_cb' => 'leeway_default_menu', 'before' => '', 'after' => '', 'link_before' => '', 'link_after' => '', 'depth' => 0));
