@@ -29,9 +29,9 @@ class Leeway_Category_Posts_Grid_Widget extends WP_Widget {
 	
 		$defaults = array(
 			'title'				=> '',
-			'number'			=> 6,
 			'category'			=> 0,
-			'thumbnails'		=> false,
+			'layout'			=> 'three-columns',
+			'number'			=> 6,
 			'category_link'		=> false
 		);
 		
@@ -98,6 +98,25 @@ class Leeway_Category_Posts_Grid_Widget extends WP_Widget {
 	
 	// Render Widget Content
 	function render($instance) {
+		
+		// Get Widget Settings
+		$defaults = $this->default_settings();
+		extract( wp_parse_args( $instance, $defaults ) ); 
+		
+		if( $layout == 'three-columns' ) :
+		
+			$this->display_category_posts_three_column_grid($instance);
+		
+		else: 
+			
+			$this->display_category_posts_two_column_grid($instance);
+		
+		endif;
+
+	}
+	
+	// Display Category Posts Grid Two Column
+	function display_category_posts_two_column_grid($instance) {
 
 		// Get Widget Settings
 		$defaults = $this->default_settings();
@@ -112,14 +131,80 @@ class Leeway_Category_Posts_Grid_Widget extends WP_Widget {
 		$posts_query = new WP_Query($query_arguments);
 		$i = 0;
 		
-		// Select Layout of Grid Posts
-		$layout = ( $thumbnails == true ? 'medium-post-row' : 'large-post-row' );
+		// Check if there are posts
+		if( $posts_query->have_posts() ) :
+		
+			// Limit the number of words for the excerpt
+			add_filter('excerpt_length', 'leeway_category_posts_medium_excerpt');
+			
+			// Display Posts
+			while( $posts_query->have_posts() ) :
+				
+				$posts_query->the_post(); 
+				
+				// Open new Row on the Grid
+				if ( $i % 2 == 0) : $row_open = true; ?>
+					<div class="category-posts-grid-row large-post-row clearfix">
+				<?php endif; ?>
+				
+						<article id="post-<?php the_ID(); ?>" <?php post_class('large-post'); ?>>
+
+							<a href="<?php the_permalink() ?>" rel="bookmark"><?php the_post_thumbnail('category-posts-widget-large'); ?></a>
+
+							<h3 class="post-title"><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h3>
+
+							<div class="postmeta"><?php $this->display_postmeta($instance); ?></div>
+
+							<div class="entry">
+								<?php the_excerpt(); ?>
+							</div>
+
+						</article>
+		
+				<?php // Close Row on the Grid
+				if ( $i % 2 == 1) : $row_open = false; ?>
+					</div>
+				<?php endif; 
+				
+				$i++;
+			endwhile;
+			
+			// Close Row if still open
+			if ( $row_open == true ) : ?>
+				</div>
+			<?php endif;
+			
+			// Remove excerpt filter
+			remove_filter('excerpt_length', 'leeway_category_posts_medium_excerpt');
+			
+		endif;
+		
+		// Reset Postdata
+		wp_reset_postdata();
+		
+	}
+	
+	// Display Category Posts Grid Three Column
+	function display_category_posts_three_column_grid($instance) {
+
+		// Get Widget Settings
+		$defaults = $this->default_settings();
+		extract( wp_parse_args( $instance, $defaults ) );
+	
+		// Get latest posts from database
+		$query_arguments = array(
+			'posts_per_page' => (int)$number,
+			'ignore_sticky_posts' => true,
+			'cat' => (int)$category
+		);
+		$posts_query = new WP_Query($query_arguments);
+		$i = 0;
 		
 		// Check if there are posts
 		if( $posts_query->have_posts() ) :
 		
 			// Limit the number of words for the excerpt
-			add_filter('excerpt_length', 'leeway_category_posts_excerpt_length');
+			add_filter('excerpt_length', 'leeway_category_posts_medium_excerpt');
 			
 			// Display Posts
 			while( $posts_query->have_posts() ) :
@@ -127,62 +212,36 @@ class Leeway_Category_Posts_Grid_Widget extends WP_Widget {
 				$posts_query->the_post(); 
 				
 				 // Open new Row on the Grid
-				 if ( $i % 3 == 0 ) : ?>
-			
-					<div class="category-posts-grid-row <?php echo $layout; ?> clearfix">
-		
-				<?php // Set Variable row_open to true
-					$row_open = true;
-				endif; ?>
-
-				<?php // Display small posts or big posts grid layout based on options
-				if( $thumbnails == true ) : ?>
-
-					<article id="post-<?php the_ID(); ?>" <?php post_class('medium-post clearfix'); ?>>
-
-					<?php if ( '' != get_the_post_thumbnail() ) : ?>
-						<a href="<?php the_permalink() ?>" rel="bookmark"><?php the_post_thumbnail('category-posts-widget-medium'); ?></a>
-					<?php endif; ?>
-
-						<div class="medium-post-content">
-							<h2 class="post-title"><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h2>
-							<div class="postmeta"><?php $this->display_postmeta($instance); ?></div>
-						</div>
-
-					</article>
-					
-				<?php else: ?>
-				
-					<article id="post-<?php the_ID(); ?>" <?php post_class('large-post'); ?>>
-
-						<a href="<?php the_permalink() ?>" rel="bookmark"><?php the_post_thumbnail('category-posts-widget-large'); ?></a>
-
-						<h3 class="post-title"><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h3>
-
-						<div class="postmeta"><?php $this->display_postmeta($instance); ?></div>
-
-						<div class="entry">
-							<?php the_excerpt(); ?>
-						</div>
-
-					</article>
-				
+				 if ( $i % 3 == 0 ) : $row_open = true; ?>
+					<div class="category-posts-grid-row medium-post-row clearfix">
 				<?php endif; ?>
+
+						<article id="post-<?php the_ID(); ?>" <?php post_class('medium-post clearfix'); ?>>
+
+							<a href="<?php the_permalink() ?>" rel="bookmark"><?php the_post_thumbnail('category-posts-widget-medium'); ?></a>
+
+							<div class="medium-post-content">
+								<h2 class="post-title"><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h2>
+								<div class="postmeta-small"><?php $this->display_postmeta($instance); ?></div>
+							</div>
+
+						</article>
 		
 				<?php // Close Row on the Grid
-				if ( $i % 3 == 2) : ?>
-				
+				if ( $i % 3 == 2) : $row_open = false; ?>
 					</div>
+				<?php endif; 
 				
-				<?php // Set Variable row_open to false
-					$row_open = false;
-				
-				endif; $i++;
-				
+				$i++;
 			endwhile;
 			
+			// Close Row if still open
+			if ( $row_open == true ) : ?>
+				</div>
+			<?php endif;
+			
 			// Remove excerpt filter
-			remove_filter('excerpt_length', 'leeway_category_posts_excerpt_length');
+			remove_filter('excerpt_length', 'leeway_category_posts_medium_excerpt');
 			
 		endif;
 		
@@ -255,8 +314,8 @@ class Leeway_Category_Posts_Grid_Widget extends WP_Widget {
 		$instance = $old_instance;
 		$instance['title'] = sanitize_text_field($new_instance['title']);
 		$instance['category'] = (int)$new_instance['category'];
+		$instance['layout'] = esc_attr($new_instance['layout']);
 		$instance['number'] = (int)$new_instance['number'];
-		$instance['thumbnails'] = !empty($new_instance['thumbnails']);
 		$instance['category_link'] = !empty($new_instance['category_link']);
 		
 		$this->delete_widget_cache();
@@ -292,16 +351,16 @@ class Leeway_Category_Posts_Grid_Widget extends WP_Widget {
 		</p>
 		
 		<p>
-			<label for="<?php echo $this->get_field_id('number'); ?>"><?php _e('Number of posts:', 'leeway'); ?>
-				<input id="<?php echo $this->get_field_id('number'); ?>" name="<?php echo $this->get_field_name('number'); ?>" type="text" value="<?php echo $number; ?>" size="3" />
-				<br/><span class="description"><?php _e('Please chose an even number (2, 4, 6, 8).', 'leeway'); ?></span>
-			</label>
+			<label for="<?php echo $this->get_field_id('layout'); ?>"><?php _e('Grid Layout:', 'leeway'); ?></label><br/>
+			<select id="<?php echo $this->get_field_id('layout'); ?>" name="<?php echo $this->get_field_name('layout'); ?>">
+				<option <?php selected( $layout, 'two-columns' ); ?> value="two-columns" ><?php _e('Two Columns Grid', 'leeway'); ?></option>
+				<option <?php selected( $layout, 'three-columns' ); ?> value="three-columns" ><?php _e('Three Columns Grid', 'leeway'); ?></option>
+			</select>
 		</p>
 		
 		<p>
-			<label for="<?php echo $this->get_field_id('thumbnails'); ?>">
-				<input class="checkbox" type="checkbox" <?php checked( $thumbnails ) ; ?> id="<?php echo $this->get_field_id('thumbnails'); ?>" name="<?php echo $this->get_field_name('thumbnails'); ?>" />
-				<?php _e('Display as small posts grid with thumbnails', 'leeway'); ?>
+			<label for="<?php echo $this->get_field_id('number'); ?>"><?php _e('Number of posts:', 'leeway'); ?>
+				<input id="<?php echo $this->get_field_id('number'); ?>" name="<?php echo $this->get_field_name('number'); ?>" type="text" value="<?php echo $number; ?>" size="3" />
 			</label>
 		</p>
 		

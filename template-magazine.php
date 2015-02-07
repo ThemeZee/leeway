@@ -16,7 +16,7 @@ Template Name: Magazine Homepage
 	endif; 
 ?>
 	
-	<div id="wrap" class="container clearfix template-magazine">
+	<div id="wrap" class="clearfix template-magazine">
 	
 		<section id="content" class="primary" role="main">
 		

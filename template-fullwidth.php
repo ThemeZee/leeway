@@ -5,7 +5,7 @@ Template Name: Fullwidth
 ?>
 <?php get_header(); ?>
 
-	<div id="wrap" class="container clearfix template-fullwidth">
+	<div id="wrap" class="clearfix template-fullwidth">
 		
 		<section id="content-full" class="clearfix" role="main">
 		

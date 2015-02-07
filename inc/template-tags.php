@@ -81,10 +81,8 @@ if ( ! function_exists( 'leeway_display_postmeta' ) ):
 			<?php comments_popup_link( __('Leave a comment', 'leeway'),__('One comment','leeway'),__('% comments','leeway') ); ?>
 		</span>
 		
-	<?php endif; ?>
+	<?php endif;
 	
-	<?php
-		edit_post_link(__( 'Edit Post', 'leeway' ));
 	}
 	
 endif;
@@ -163,7 +161,8 @@ if ( ! function_exists( 'leeway_display_pagination' ) ):
 				'current' => max( 1, get_query_var( 'paged' ) ),
 				'total' => $wp_query->max_num_pages,
 				'next_text' => '&raquo;',
-				'prev_text' => '&laquo'
+				'prev_text' => '&laquo',
+				'add_args' => false
 			) );
 
 		// Display the pagination if more than one page is found

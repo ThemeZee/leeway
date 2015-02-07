@@ -19,7 +19,7 @@ function leeway_customize_register_post_settings( $wp_customize ) {
 
 	// Add Settings and Controls for Posts
 	$wp_customize->add_setting( 'leeway_theme_options[posts_length]', array(
-        'default'           => 'index',
+        'default'           => 'excerpt',
 		'type'           	=> 'option',
         'transport'         => 'refresh',
         'sanitize_callback' => 'leeway_sanitize_post_length'

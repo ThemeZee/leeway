@@ -30,6 +30,7 @@ class Leeway_Category_Posts_Boxed_Widget extends WP_Widget {
 		$defaults = array(
 			'title'				=> '',
 			'category'			=> 0,
+			'layout'			=> 'horizontal',
 			'category_link'		=> false
 		);
 		
@@ -99,6 +100,34 @@ class Leeway_Category_Posts_Boxed_Widget extends WP_Widget {
 		
 		// Get Widget Settings
 		$defaults = $this->default_settings();
+		extract( wp_parse_args( $instance, $defaults ) ); 
+		
+		if( $layout == 'horizontal' ) : ?>
+		
+			<div class="category-posts-boxed-horizontal clearfix">
+			
+				<?php $this->display_category_posts_horizontal($instance); ?>
+
+			</div>
+		
+		<?php else: ?>
+			
+			<div class="category-posts-boxed-vertical clearfix">
+			
+				<?php $this->display_category_posts_vertical($instance); ?>
+
+			</div>
+		
+		<?php 
+		endif;
+
+	}
+	
+	// Display Category Posts in Horizontal Layout
+	function display_category_posts_horizontal($instance) {
+		
+		// Get Widget Settings
+		$defaults = $this->default_settings();
 		extract( wp_parse_args( $instance, $defaults ) );
 		
 		// Get latest posts from database
@@ -114,7 +143,7 @@ class Leeway_Category_Posts_Boxed_Widget extends WP_Widget {
 		if( $posts_query->have_posts() ) :
 		
 			// Limit the number of words for the excerpt
-			add_filter('excerpt_length', 'leeway_category_posts_large_excerpt');
+			add_filter('excerpt_length', 'leeway_category_posts_medium_excerpt');
 			
 			// Display Posts
 			while( $posts_query->have_posts() ) :
@@ -153,8 +182,10 @@ class Leeway_Category_Posts_Boxed_Widget extends WP_Widget {
 					<?php endif; ?>
 
 						<div class="medium-post-content">
+							
 							<h2 class="post-title"><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h2>
-							<div class="postmeta"><?php $this->display_postmeta($instance); ?></div>
+							<div class="postmeta-small"><?php $this->display_postmeta($instance); ?></div>
+						
 						</div>
 
 					</article>
@@ -168,7 +199,92 @@ class Leeway_Category_Posts_Boxed_Widget extends WP_Widget {
 				
 			<?php
 			// Remove excerpt filter
-			remove_filter('excerpt_length', 'leeway_category_posts_large_excerpt');
+			remove_filter('excerpt_length', 'leeway_category_posts_medium_excerpt');
+			
+		endif;
+		
+		// Reset Postdata
+		wp_reset_postdata();
+
+	}
+	
+	// Display Category Posts in Vertical Layout
+	function display_category_posts_vertical($instance) {
+		
+		// Get Widget Settings
+		$defaults = $this->default_settings();
+		extract( wp_parse_args( $instance, $defaults ) );
+		
+		// Get latest posts from database
+		$query_arguments = array(
+			'posts_per_page' => 5,
+			'ignore_sticky_posts' => true,
+			'cat' => (int)$category
+		);
+		$posts_query = new WP_Query($query_arguments);
+		$i = 0;
+
+		// Check if there are posts
+		if( $posts_query->have_posts() ) :
+		
+			// Limit the number of words for the excerpt
+			add_filter('excerpt_length', 'leeway_category_posts_medium_excerpt');
+			
+			// Display Posts
+			while( $posts_query->have_posts() ) :
+				
+				$posts_query->the_post(); 
+				
+				if(isset($i) and $i == 0) : ?>
+
+					<article id="post-<?php the_ID(); ?>" <?php post_class('large-post clearfix'); ?>>
+
+						<a href="<?php the_permalink() ?>" rel="bookmark"><?php the_post_thumbnail('category-posts-widget-large'); ?></a>
+						
+						<div class="post-content">
+
+							<h3 class="post-title"><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h3>
+
+							<div class="postmeta"><?php $this->display_postmeta($instance); ?></div>
+
+							<div class="entry">
+								<?php the_excerpt(); ?>
+								<a href="<?php esc_url(the_permalink()) ?>" class="more-link"><?php _e('Read more', 'leeway'); ?></a>
+							</div>
+							
+						</div>
+
+					</article>
+
+				<div class="small-posts clearfix">
+
+				<?php else: ?>
+
+					<article id="post-<?php the_ID(); ?>" <?php post_class('small-post clearfix'); ?>>
+
+					<?php if ( '' != get_the_post_thumbnail() ) : ?>
+						<a href="<?php the_permalink() ?>" rel="bookmark"><?php the_post_thumbnail('category-posts-widget-small'); ?></a>
+					<?php endif; ?>
+
+						<div class="small-post-content">
+							
+							<h2 class="post-title"><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h2>
+							<div class="postmeta-small"><?php $this->display_postmeta($instance); ?></div>
+						
+						</div>
+
+					</article>
+
+				<?php
+				endif; $i++;
+				
+			endwhile; ?>
+			
+				</div><!-- end .medium-posts -->
+				
+			<?php
+			// Remove excerpt filter
+			remove_filter('excerpt_length', 'leeway_category_posts_medium_excerpt');
 			
 		endif;
 		
@@ -241,6 +357,7 @@ class Leeway_Category_Posts_Boxed_Widget extends WP_Widget {
 		$instance = $old_instance;
 		$instance['title'] = sanitize_text_field($new_instance['title']);
 		$instance['category'] = (int)$new_instance['category'];
+		$instance['layout'] = esc_attr($new_instance['layout']);
 		$instance['category_link'] = !empty($new_instance['category_link']);
 		
 		$this->delete_widget_cache();
@@ -273,6 +390,14 @@ class Leeway_Category_Posts_Boxed_Widget extends WP_Widget {
 				);
 				wp_dropdown_categories( $args ); 
 			?>
+		</p>
+		
+		<p>
+			<label for="<?php echo $this->get_field_id('layout'); ?>"><?php _e('Post Layout:', 'leeway'); ?></label><br/>
+			<select id="<?php echo $this->get_field_id('layout'); ?>" name="<?php echo $this->get_field_name('layout'); ?>">
+				<option <?php selected( $layout, 'horizontal' ); ?> value="horizontal" ><?php _e('Horizontal Arrangement', 'leeway'); ?></option>
+				<option <?php selected( $layout, 'vertical' ); ?> value="vertical" ><?php _e('Vertical Arrangement', 'leeway'); ?></option>
+			</select>
 		</p>
 		
 		<p>

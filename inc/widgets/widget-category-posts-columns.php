@@ -197,11 +197,8 @@ class Leeway_Category_Posts_Columns_Widget extends WP_Widget {
 						
 						<div class="small-post-content">
 							
-							<h2 class="post-title"><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h2>
-														
-							<div class="entry">
-								<?php the_excerpt(); ?>
-							</div>
+							<h2 class="post-title"><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h2>						
+							<div class="postmeta-small"><?php $this->display_postmeta($instance); ?></div>
 							
 						</div>
 

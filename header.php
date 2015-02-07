@@ -24,7 +24,7 @@
 		<?php locate_template('/inc/top-header.php', true); ?>
 	</div>
 	
-	<div id="wrapper" class="hfeed">
+	<div id="wrapper" class="container hfeed">
 	
 		<div id="header-wrap">
 		

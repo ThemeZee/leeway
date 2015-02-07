@@ -32,7 +32,7 @@ function leeway_sanitize_layout( $value ) {
 function leeway_sanitize_post_length( $value ) {
 
 	if ( ! in_array( $value, array( 'index', 'excerpt' ), true ) ) :
-        $value = 'index';
+        $value = 'excerpt';
 	endif;
 
     return $value;

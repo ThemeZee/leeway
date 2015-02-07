@@ -133,7 +133,7 @@ function leeway_add_image_sizes() {
 	add_image_size( 'slider-image', 1320, 380, true);
 	
 	// Add Category Post Widget image sizes
-	add_image_size( 'category-posts-widget-small', 150, 90, true);
+	add_image_size( 'category-posts-widget-small', 140, 90, true);
 	add_image_size( 'category-posts-widget-medium', 300, 175, true);
 	add_image_size( 'category-posts-widget-large', 600, 280, true);
 	add_image_size( 'category-posts-widget-extra-large', 600, 350, true);

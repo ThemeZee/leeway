@@ -34,40 +34,8 @@ function leeway_customize_register_header_settings( $wp_customize ) {
             )
         )
     );
-	$wp_customize->add_setting( 'leeway_theme_options[header_content_description]', array(
-        'default'           => '',
-		'type'           	=> 'option',
-        'transport'         => 'refresh',
-        'sanitize_callback' => 'esc_attr'
-        )
-    );
-    $wp_customize->add_control( new Leeway_Customize_Description_Control(
-        $wp_customize, 'leeway_control_header_content_description', array(
-            'label' =>  __( 'The Header Content configured below will be displayed on the right hand side of the header area.', 'leeway' ),
-            'section' => 'leeway_section_header',
-            'settings' => 'leeway_theme_options[header_content_description]',
-            'priority' => 3
-            )
-        )
-    );
 
 	// Add Settings and Controls for Header
-	$wp_customize->add_setting( 'leeway_theme_options[header_search]', array(
-        'default'           => false,
-		'type'           	=> 'option',
-        'transport'         => 'refresh',
-        'sanitize_callback' => 'leeway_sanitize_checkbox'
-		)
-	);
-    $wp_customize->add_control( 'leeway_control_header_search', array(
-        'label'    => __( 'Display search field on header area', 'leeway' ),
-        'section'  => 'leeway_section_header',
-        'settings' => 'leeway_theme_options[header_search]',
-        'type'     => 'checkbox',
-		'priority' => 4
-		)
-	);
-
 	$wp_customize->add_setting( 'leeway_theme_options[header_icons]', array(
         'default'           => false,
 		'type'           	=> 'option',
@@ -76,11 +44,11 @@ function leeway_customize_register_header_settings( $wp_customize ) {
 		)
 	);
     $wp_customize->add_control( 'leeway_control_header_icons', array(
-        'label'    => __( 'Display Social Icons on header area', 'leeway' ),
+        'label'    => __( 'Display Social Icons on top navigation.', 'leeway' ),
         'section'  => 'leeway_section_header',
         'settings' => 'leeway_theme_options[header_icons]',
         'type'     => 'checkbox',
-		'priority' => 5
+		'priority' => 3
 		)
 	);
 	

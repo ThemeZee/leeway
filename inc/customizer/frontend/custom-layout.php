@@ -13,7 +13,7 @@ function leeway_css_layout() {
 				#content {
 					float: right;
 					padding-right: 0;
-					padding-left: 1.5em;
+					padding-left: 0.5em;
 				}
 				#sidebar {
 					float: left;
