@@ -39,7 +39,7 @@ add_filter('excerpt_length', 'leeway_slideshow_excerpt_length');
 					if ( has_post_thumbnail() ) : ?>
 					
 						<div class="slide-image">
-							<?php the_post_thumbnail('slider-image'); ?>
+							<?php the_post_thumbnail('leeway-slider-image'); ?>
 						</div>
 
 					<?php else: ?>
