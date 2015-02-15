@@ -238,21 +238,6 @@ function leeway_category_posts_small_excerpt($length) {
     return 8;
 }
 
-// Change Excerpt More
-add_filter('excerpt_more', 'leeway_excerpt_more');
-function leeway_excerpt_more($more) {
-    
-	// Get Theme Options from Database
-	$theme_options = leeway_theme_options();
-
-	// Return Excerpt Text
-	if ( isset($theme_options['excerpt_text']) and $theme_options['excerpt_text'] == true ) :
-		return ' [...]';
-	else :
-		return '';
-	endif;
-}
-
 
 // Custom Template for comments and pingbacks.
 if ( ! function_exists( 'leeway_list_comments' ) ):

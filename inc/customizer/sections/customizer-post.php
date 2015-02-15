@@ -86,39 +86,6 @@ function leeway_customize_register_post_settings( $wp_customize ) {
 		'priority' => 4
 		)
 	);
-	
-	// Add Excerpt Text setting
-	$wp_customize->add_setting( 'leeway_theme_options[excerpt_text_headline]', array(
-        'default'           => '',
-		'type'           	=> 'option',
-        'transport'         => 'refresh',
-        'sanitize_callback' => 'esc_attr'
-        )
-    );
-    $wp_customize->add_control( new Leeway_Customize_Header_Control(
-        $wp_customize, 'leeway_control_excerpt_text_headline', array(
-            'label' => __( 'Excerpt More Text', 'leeway' ),
-            'section' => 'leeway_section_post',
-            'settings' => 'leeway_theme_options[excerpt_text_headline]',
-            'priority' => 5
-            )
-        )
-    );
-	$wp_customize->add_setting( 'leeway_theme_options[excerpt_text]', array(
-        'default'           => false,
-		'type'           	=> 'option',
-        'transport'         => 'refresh',
-        'sanitize_callback' => 'leeway_sanitize_checkbox'
-		)
-	);
-    $wp_customize->add_control( 'leeway_control_excerpt_text', array(
-        'label'    => __( 'Display [...] after text excerpts.', 'leeway' ),
-        'section'  => 'leeway_section_post',
-        'settings' => 'leeway_theme_options[excerpt_text]',
-        'type'     => 'checkbox',
-		'priority' => 6
-		)
-	);
 
 }
 

@@ -36,7 +36,6 @@ function leeway_default_options() {
 		'posts_length' 						=> 'excerpt',
 		'post_thumbnails_index'				=> true,
 		'post_thumbnails_single' 			=> true,
-		'excerpt_text' 						=> true,
 		'slider_active_magazine' 			=> false,
 		'slider_active_blog' 				=> false,
 		'slider_animation' 					=> 'horizontal'
