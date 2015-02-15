@@ -1243,19 +1243,19 @@ embed, iframe, object, video {
 .widget-category-posts .widgettitle .category-archive-link {
 	float: right;
 }
-.widget-category-posts .widgettitle .category-archive-link .genericon-next {
+.widget-category-posts .widgettitle .category-archive-link .category-archive-icon:after {
 	display: inline-block;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	line-height: 1;
-	font-size: 21px;
+	font-size: 24px;
 	font-family: 'Genericons';
 	text-decoration: inherit;
 	vertical-align: top;
-	content: '\f429';
-	margin: 0 -2px 0 0;
+	content: '\f436';
+	margin: 0;
 }
-.widget-category-posts .widgettitle .category-archive-link .genericon-next:hover {
+.widget-category-posts .widgettitle .category-archive-link .category-archive-icon:hover {
 	text-decoration: none;
 }
 .widget-category-posts .type-post {

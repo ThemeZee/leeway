@@ -33,8 +33,7 @@ class Leeway_Category_Posts_Columns_Widget extends WP_Widget {
 			'category_one_title'	=> '',
 			'category_two_title'	=> '',
 			'number'				=> 4,
-			'highlight_post'		=> true,
-			'category_link'		=> false
+			'highlight_post'		=> true
 		);
 		
 		return $defaults;
@@ -259,18 +258,18 @@ class Leeway_Category_Posts_Columns_Widget extends WP_Widget {
 		
 			echo $before_title;
 			
-			// Link Category Title
-			if( $category_link == true ) : 
-				
+			// Check if "All Categories" is selected
+			if( $category_id == 0 ) :
+			
+				echo $widget_title;
+
+			else:
+			
 				$link_title = sprintf( __('View all posts from category %s', 'leeway'), get_cat_name( $category_id ) );
 				$link_url = esc_url( get_category_link( $category_id ) );
 				
-				echo '<a href="'. esc_url( get_category_link( $category_id ) ) .'" title="'. $widget_title . '">'. $widget_title . '</a>';
-				echo '<a class="category-archive-link" href="'. $link_url .'" title="'. $link_title . '"><span class="genericon-next"></span></a>';
-				
-			else:
-			
-				echo $widget_title;
+				echo '<a href="'. $link_url .'" title="'. $link_title . '">'. $widget_title . '</a>';
+				echo '<a class="category-archive-link" href="'. $link_url .'" title="'. $link_title . '"><span class="category-archive-icon"></span></a>';
 			
 			endif;
 			
@@ -289,7 +288,6 @@ class Leeway_Category_Posts_Columns_Widget extends WP_Widget {
 		$instance['category_two'] = (int)$new_instance['category_two'];
 		$instance['number'] = (int)$new_instance['number'];
 		$instance['highlight_post'] = !empty($new_instance['highlight_post']);
-		$instance['category_link'] = !empty($new_instance['category_link']);
 		
 		$this->delete_widget_cache();
 		
@@ -353,13 +351,6 @@ class Leeway_Category_Posts_Columns_Widget extends WP_Widget {
 			<label for="<?php echo $this->get_field_id('highlight_post'); ?>">
 				<input class="checkbox" type="checkbox" <?php checked( $highlight_post ) ; ?> id="<?php echo $this->get_field_id('highlight_post'); ?>" name="<?php echo $this->get_field_name('highlight_post'); ?>" />
 				<?php _e('Highlight First Post (Big Image + Excerpt)', 'leeway'); ?>
-			</label>
-		</p>
-		
-		<p>
-			<label for="<?php echo $this->get_field_id('category_link'); ?>">
-				<input class="checkbox" type="checkbox" <?php checked( $category_link ) ; ?> id="<?php echo $this->get_field_id('category_link'); ?>" name="<?php echo $this->get_field_name('category_link'); ?>" />
-				<?php _e('Link Category Titles to Category Archive pages', 'leeway'); ?>
 			</label>
 		</p>
 		

@@ -31,8 +31,7 @@ class Leeway_Category_Posts_Grid_Widget extends WP_Widget {
 			'title'				=> '',
 			'category'			=> 0,
 			'layout'			=> 'three-columns',
-			'number'			=> 6,
-			'category_link'		=> false
+			'number'			=> 6
 		);
 		
 		return $defaults;
@@ -287,19 +286,19 @@ class Leeway_Category_Posts_Grid_Widget extends WP_Widget {
 		if( !empty( $widget_title ) ) :
 		
 			echo $before_title;
+					
+			// Check if "All Categories" is selected
+			if( $category == 0 ) :
 			
-			// Link Category Title
-			if( $category_link == true ) : 
+				echo $widget_title;
+
+			else:
 			
 				$link_title = sprintf( __('View all posts from category %s', 'leeway'), get_cat_name( $category ) );
 				$link_url = esc_url( get_category_link( $category ) );
 				
 				echo '<a href="'. $link_url .'" title="'. $link_title . '">'. $widget_title . '</a>';
-				echo '<a class="category-archive-link" href="'. $link_url .'" title="'. $link_title . '"><span class="genericon-next"></span></a>';
-			
-			else:
-			
-				echo $widget_title;
+				echo '<a class="category-archive-link" href="'. $link_url .'" title="'. $link_title . '"><span class="category-archive-icon"></span></a>';
 			
 			endif;
 			
@@ -316,7 +315,6 @@ class Leeway_Category_Posts_Grid_Widget extends WP_Widget {
 		$instance['category'] = (int)$new_instance['category'];
 		$instance['layout'] = esc_attr($new_instance['layout']);
 		$instance['number'] = (int)$new_instance['number'];
-		$instance['category_link'] = !empty($new_instance['category_link']);
 		
 		$this->delete_widget_cache();
 		
@@ -361,13 +359,6 @@ class Leeway_Category_Posts_Grid_Widget extends WP_Widget {
 		<p>
 			<label for="<?php echo $this->get_field_id('number'); ?>"><?php _e('Number of posts:', 'leeway'); ?>
 				<input id="<?php echo $this->get_field_id('number'); ?>" name="<?php echo $this->get_field_name('number'); ?>" type="text" value="<?php echo $number; ?>" size="3" />
-			</label>
-		</p>
-		
-		<p>
-			<label for="<?php echo $this->get_field_id('category_link'); ?>">
-				<input class="checkbox" type="checkbox" <?php checked( $category_link ) ; ?> id="<?php echo $this->get_field_id('category_link'); ?>" name="<?php echo $this->get_field_name('category_link'); ?>" />
-				<?php _e('Link Widget Title to Category Archive page', 'leeway'); ?>
 			</label>
 		</p>
 <?php
