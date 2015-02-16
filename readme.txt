@@ -1,4 +1,4 @@
-Leeway WordPress Theme, Copyright 2014 ThemeZee.com
+Leeway WordPress Theme, Copyright 2015 ThemeZee.com
 Leeway is distributed under the terms of the GNU GPL
 
 ===================================
@@ -40,13 +40,13 @@ B) Installation
 ===================================
 
    1. Automatic Installation
-      Go to WP-Admin > Appearance > Themes > Install Themes > Upload and choose the theme zip folder.
+      Go to WP-Admin > Appearance > Themes > Add New > Upload Theme and choose the theme zip folder.
 
    2. Manual Installation
       Upload the theme files to your wordpress theme folder wp-content/themes and activate the theme in
       your wordpress admin panel. That's it!
 
-To find out more about installing WordPress themes please also see the WordPress documentation.
+To find out more about installing WordPress themes please also see http://themezee.com/docs/install-wordpress-themes/
 
 ===================================
 C) Theme Options
@@ -86,7 +86,7 @@ G) Licenses of bundled resources
 ===================================
 
 	1. Images, Copyright 2013 ThemeZee.com
-	Images such as default slider image included in this theme package are created by myself and licensed under GNU GPL.
+	Images such as the default slider image included in this theme package are created by myself and licensed under GNU GPL.
 	License URL Default Slider Image: http://www.gnu.org/licenses/gpl.html
 	
 	2. Genericons, Copyright 2015 Automattic, Inc.
@@ -94,16 +94,19 @@ G) Licenses of bundled resources
 	Source URL: http://genericons.com
 	License of Genericon Icon font: http://www.gnu.org/licenses/gpl.html
 
-	2. Screenshot Photography (used on screenshot.png)
-	The demo photos used in screenshot.png are coming from Pixabay and are licensed under CC0 (GPL compatible).
+	2. Screenshot Photography (used on screenshot.jpg)
+	
+	Slideshow Image: The Salad Picture in the slider was taken by Kathrin S. by order of ThemeZee.com and is published under GNU GPL.
+	Slideshow Picture License: http://www.gnu.org/licenses/gpl.html
+	
+	The rest of the demo photos used in screenshot.jpg are coming from Pixabay and are licensed under CC0 (GPL compatible).
 	Source URL: http://pixabay.com
-	Image 1: http://pixabay.com/en/mountains-bank-mood-mountain-549099/
-	Image 2: http://pixabay.com/en/hawsers-ropes-cords-tightropes-241783/
-	Image 3: http://pixabay.com/en/mountains-alps-panorama-533494/
-	Image 4: http://pixabay.com/en/bike-dawn-195516/
-	Image 5: http://pixabay.com/en/river-kayak-water-kayaking-summer-565517/
-	Image 6: http://pixabay.com/en/hiking-boots-hike-legs-walk-travel-455754/
-	Image 6: http://pixabay.com/en/carbine-rope-hook-backup-climbing-7104/
+	Image 1: http://pixabay.com/en/sushi-eat-japanese-asia-food-rice-491425/
+	Image 2: http://pixabay.com/en/pizza-slice-italian-toppings-329523/
+	Image 3: http://pixabay.com/en/greens-onion-spices-vegetables-266560/
+	Image 4: http://pixabay.com/en/salmon-dish-food-meal-fish-518032/
+	Image 5: http://pixabay.com/en/flaky-pastry-puff-paste-puff-pastry-406020/
+	Image 6: http://pixabay.com/en/hamburger-food-meal-tasty-dining-494706/
 	License URL: http://creativecommons.org/publicdomain/zero/1.0/deed.de
 
 	3. Flexslider, Copyright 2012 WooThemes

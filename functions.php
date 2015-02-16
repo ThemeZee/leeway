@@ -53,7 +53,7 @@ function leeway_enqueue_comment_reply() {
 // Retrieve Font URL to register default Google Fonts
 function leeway_google_fonts_url() {
     
-	$font_families = array('Muli', 'Oswald');
+	$font_families = array('Muli:400,700', 'Oswald');
 
 	$query_args = array(
 		'family' => urlencode( implode( '|', $font_families ) ),
@@ -62,7 +62,7 @@ function leeway_google_fonts_url() {
 
 	$fonts_url = add_query_arg( $query_args, '//fonts.googleapis.com/css' );
 
-    return apply_filters( 'leeway-fonts-url', $fonts_url );
+    return apply_filters( 'leeway_google_fonts_url', $fonts_url );
 }
 
 

@@ -93,7 +93,7 @@ function leeway_display_theme_info_page() {
 				
 				<div class="column column-half clearfix">
 					
-					<img src="<?php echo get_template_directory_uri(); ?>/screenshot.png" />
+					<img src="<?php echo get_template_directory_uri(); ?>/screenshot.jpg" />
 					
 				</div>
 				

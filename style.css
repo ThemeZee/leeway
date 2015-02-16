@@ -1,11 +1,11 @@
 /*======================================
 Theme Name: Leeway
 Theme URI: http://themezee.com/themes/leeway/
-Description: Leeway is a great way to start your personal blog or magazine website today. The theme is very easy to use and looks awesome on every device. It includes a beautiful featured post slideshow and a clean and flexible Magazine Homepage template. Hope you enjoy it!
+Description: Leeway is a free, responsive theme designed for small magazine websites or blogs. The theme includes two navigation menus, social icons, a fullwidth featured post slideshow and a flexible Magazine Homepage template. All settings are easy to configure in the Customizer.
 Version: 1.0
 Author: ThemeZee
 Author URI: http://themezee.com
-Tags: two-columns, light, blue, custom-background, custom-header, custom-menu, editor-style, featured-image-header, featured-images, flexible-header, custom-colors, full-width-template, sticky-post, threaded-comments, translation-ready, theme-options, fluid-layout, responsive-layout, one-column, left-sidebar, right-sidebar, three-columns, black, red, silver, white, green, gray
+Tags: two-columns, light, red, custom-background, custom-header, custom-menu, editor-style, featured-image-header, featured-images, flexible-header, custom-colors, full-width-template, sticky-post, threaded-comments, translation-ready, theme-options, fluid-layout, responsive-layout, one-column, left-sidebar, right-sidebar, three-columns, black, blue, silver, white, green, gray
 Text Domain: leeway
 Domain Path: /languages/
 License: GNU General Public License v2.0
@@ -286,7 +286,7 @@ input, textarea, select {
 
 /* Custom Header Image */
 #custom-header {
-	margin: 1px 0;
+	margin: 0.5em 0 0;
 }
 #custom-header img {
 	max-width: 1320px;
@@ -1498,9 +1498,6 @@ embed, iframe, object, video {
 /*============================ MEDIA QUERIES ============================*/
 
 @media only screen and (max-width: 80em) {
-	body {
-		border-top: 10px solid orange;
-	}
 	#logo .site-title {
 		padding: 0;
 		font-size: 2.6em;
@@ -1520,9 +1517,7 @@ embed, iframe, object, video {
 }
 /* Small screens | <1120px */
 @media only screen and (max-width: 70em) {
-	body {
-		border-top: 10px solid red;
-	}
+
 	.container {
 		width: 96%;
 	}
@@ -1547,9 +1542,7 @@ embed, iframe, object, video {
 }
 /* Smaller screens | <1120px */
 @media only screen and (max-width: 65em) {
-	body {
-		border-top: 10px solid purple;
-	}
+
 	.container {
 		width: 97%;
 	}
@@ -1583,9 +1576,7 @@ embed, iframe, object, video {
 }
 /* Tablets (landscape) | <960px */
 @media only screen and (max-width: 60em) {
-	body {
-		border-top: 10px solid blue;
-	}
+
 	.container {
 		width: 98%;
 	}
@@ -1876,9 +1867,7 @@ embed, iframe, object, video {
 
 /* Tablets (portrait) | <800px */
 @media only screen and (max-width: 50em) {
-	body {
-		border-top: 10px solid teal;
-	}
+
 	#logo .site-title {
 		font-size: 2.4em;
 	}
@@ -1983,9 +1972,6 @@ embed, iframe, object, video {
 
 /* Phablets (portrait) | <640px */
 @media only screen and (max-width: 40em) {
-	body {
-		border-top: 10px solid green;
-	}
 	#wrapper {
 		margin-top: 0.4em;
 	}
@@ -2040,9 +2026,6 @@ embed, iframe, object, video {
 
 /* Smartphones | <480px */
 @media only screen and (max-width: 30em) {
-	body {
-		border-top: 10px solid brown;
-	}
 	.container {
 		width: 100%;
 		margin: 0;
@@ -2150,9 +2133,6 @@ embed, iframe, object, video {
 }
 /* Smartphones | <320px */
 @media only screen and (max-width: 20em) {
-	body {
-		border-top: 10px solid yellow;
-	}
 	#header {
 		padding: 1.2em;
 	}
