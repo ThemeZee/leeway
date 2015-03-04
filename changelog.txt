@@ -2,6 +2,11 @@
 Leeway Changelog
 ===================================
 
+Version 1.0.1
+-----------------------------------
+[changed] implementation of title tag to add_theme_support method
+[fixed] image in comments overflow bug
+
 Version 1.0
 -----------------------------------
 Final Version
