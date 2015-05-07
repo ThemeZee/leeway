@@ -44,12 +44,6 @@ function leeway_display_theme_info_page() {
 				<a href="http://preview.themezee.com/leeway/" target="_blank"><?php _e('Theme Demo', 'leeway'); ?></a>
 				<a href="http://themezee.com/docs/leeway-documentation/" target="_blank"><?php _e('Theme Documentation', 'leeway'); ?></a>
 				<a href="http://wordpress.org/support/view/theme-reviews/leeway?filter=5" target="_blank"><?php _e('Rate this theme', 'leeway'); ?></a>
-				
-				<span class="social-icons">
-					<a href="http://themezee.com/newsletter/" target="_blank"><span class="genericon-mail"></span></a>
-					<a href="https://www.facebook.com/ThemeZee" target="_blank"><span class="genericon-facebook"></span></a>
-					<a href="https://twitter.com/ThemeZee" target="_blank"><span class="genericon-twitter"></a>
-				</span>
 			</p>
 		</div>
 		<hr>
@@ -129,9 +123,6 @@ function leeway_theme_info_page_css($hook) {
 	
 	// Embed theme info css style
 	wp_enqueue_style('leeway-theme-info-css', get_template_directory_uri() .'/css/theme-info.css');
-	
-	// Register Genericons
-	wp_enqueue_style('leeway-genericons', get_template_directory_uri() . '/css/genericons.css');
 
 }
 

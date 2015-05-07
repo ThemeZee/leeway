@@ -2,6 +2,12 @@
 Leeway Changelog
 ===================================
 
+Version 1.0.2
+-----------------------------------
+[added] new classes entry-title, updated and author for google microformats structure
+[changed] category dropdown setting in Category Post widgets to show empty categories
+[removed] unnecessary HTML markup and Genericons in theme-info.php
+
 Version 1.0.1
 -----------------------------------
 [changed] implementation of title tag to add_theme_support method
