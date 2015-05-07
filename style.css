@@ -589,7 +589,7 @@ input, textarea, select {
 	line-height: 1.5em;
 	background: #ddd;
 }
-.postmeta span {
+.postmeta .meta-date, .postmeta .meta-author, .postmeta .meta-comments {
 	display: inline-block;
 	padding: 0.5em 1em;
 	margin: 0;
@@ -2148,10 +2148,10 @@ embed, iframe, object, video {
 	.page-title, .post-title{
 		font-size: 1.3em;
 	}
-	.postmeta span, .postinfo span {
+	.postmeta .meta-date, .postmeta .meta-author, .postmeta .meta-comments, .postinfo span {
 		display: block;
 	}
-	.postmeta span {
+	.postmeta .meta-date, .postmeta .meta-author, .postmeta .meta-comments {
 		border-bottom: 1px solid #ccc;
 	}
 	.widget-category-posts .large-post .post-title {

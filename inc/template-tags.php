@@ -57,7 +57,7 @@ if ( ! function_exists( 'leeway_display_postmeta' ) ):
 	function leeway_display_postmeta() { ?>
 		
 		<span class="meta-date">
-		<?php printf(__('<a href="%1$s" title="%2$s" rel="bookmark"><time datetime="%3$s">%4$s</time></a>', 'leeway'), 
+		<?php printf(__('<a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date published updated" datetime="%3$s">%4$s</time></a>', 'leeway'), 
 				esc_url( get_permalink() ),
 				esc_attr( get_the_time() ),
 				esc_attr( get_the_date( 'c' ) ),
@@ -66,8 +66,8 @@ if ( ! function_exists( 'leeway_display_postmeta' ) ):
 		?>
 		</span>
 		
-		<span class="meta-author sep">
-		<?php printf(__('<a href="%1$s" title="%2$s" rel="author">%3$s</a>', 'leeway'), 
+		<span class="meta-author">
+		<?php printf(__('<span class="author vcard"><a class="fn" href="%1$s" title="%2$s" rel="author">%3$s</a></span>', 'leeway'), 
 				esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 				esc_attr( sprintf( __( 'View all posts by %s', 'leeway' ), get_the_author() ) ),
 				get_the_author()
@@ -77,7 +77,7 @@ if ( ! function_exists( 'leeway_display_postmeta' ) ):
 		
 	<?php if ( comments_open() ) : ?>
 		
-		<span class="meta-comments sep">
+		<span class="meta-comments">
 			<?php comments_popup_link( __('Leave a comment', 'leeway'),__('One comment','leeway'),__('% comments','leeway') ); ?>
 		</span>
 		
@@ -129,14 +129,14 @@ if ( ! function_exists( 'leeway_display_postinfo' ) ):
 	function leeway_display_postinfo() { ?>
 
 		<span class="meta-category">
-			<?php printf(__('Category: %1$s', 'leanstyle'), get_the_category_list(', ')); ?>
+			<?php printf(__('Category: %1$s', 'leeway'), get_the_category_list(', ')); ?>
 		</span>
 	
 	<?php
 		$tag_list = get_the_tag_list('', ', ');
 		if ( $tag_list ) : ?>
-			<span class="meta-tags sep">
-					<?php printf(__('Tags: %1$s', 'leanstyle'), $tag_list); ?>
+			<span class="meta-tags">
+					<?php printf(__('Tags: %1$s', 'leeway'), $tag_list); ?>
 			</span>
 	<?php 
 		endif;
