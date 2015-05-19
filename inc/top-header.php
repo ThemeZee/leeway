@@ -12,7 +12,6 @@
 ?>
 
 	<div id="topheader" class="clearfix">
-		<p id="topnav-icon-tablet" class="topnav-icon"></p><p id="topnav-icon-phone" class="topnav-icon"></p><p id="social-menu-icon"></p>
 		
 		<?php // Display Social Icons in Navigation
 			if ( isset($theme_options['header_icons']) and $theme_options['header_icons'] == true ) : ?>

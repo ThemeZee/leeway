@@ -2,7 +2,7 @@
 Theme Name: Leeway
 Theme URI: http://themezee.com/themes/leeway/
 Description: Leeway is a free, responsive theme designed for small magazine websites or blogs. The theme includes two navigation menus, social icons, a fullwidth featured post slideshow and a flexible Magazine Homepage template. All settings are easy to configure in the Customizer.
-Version: 1.0.2
+Version: 1.0.2.1
 Author: ThemeZee
 Author URI: http://themezee.com
 Tags: two-columns, light, red, custom-background, custom-header, custom-menu, editor-style, featured-image-header, featured-images, flexible-header, custom-colors, full-width-template, sticky-post, threaded-comments, translation-ready, theme-options, fluid-layout, responsive-layout, one-column, left-sidebar, right-sidebar, three-columns, black, blue, silver, white, green, gray
@@ -163,10 +163,10 @@ input, textarea, select {
 #topheader-wrap #navi-social-icons {
 	float: right;
 }
-#topnav-icon-tablet, #topnav-icon, #social-menu-icon {
+.topnav-toggle, #social-menu-toggle, #topnav-icon-tablet, #topnav-icon, #social-menu-icon {
 	display: none;
 }
-#topheader-wrap #topnav-menu {
+#topnav-menu {
 	display: inline;
 	list-style-type: none;
 	list-style-position: outside;
@@ -298,7 +298,7 @@ input, textarea, select {
 
 /* Navigation Menu
 -------------------------------------------------------------- */
-#mainnav-icon {
+#mainnav-icon, #mainnav-toggle {
 	display: none;
 }
 #mainnav {
@@ -1636,25 +1636,25 @@ embed, iframe, object, video {
 		display: inline;
 	}
 	
-	#topnav {
-		float: none;
-	}
-	#topnav-icon-tablet {
+	#topnav-toggle-tablet {
 		display: inline-block;
 	}
-	#topnav-icon-phone {
+	#topnav-toggle-phone {
 		display: none;
 	}
-	.topnav-icon {
-		padding: 0.95em;
+	.topnav-toggle {
+		margin: 0;
+		padding: 1em;
 		text-decoration: none;
 		color: #fff;
+		background: none;
+		border: none;
 	}
-	.topnav-icon:hover {
+	.topnav-toggle:hover {
 		cursor: pointer;
 		background: rgba(0,0,0,0.2);
 	}
-	.topnav-icon:after {
+	.topnav-toggle:after {
 		float: left;
 		display: inline-block;
 		font-size: 18px;
@@ -1669,9 +1669,9 @@ embed, iframe, object, video {
 	}
 	#topnav {
 		float: none;
-		display: none;
 	}
 	#topnav-menu {
+		display: none;
 		float: left;
 		width: 100%;
 		border-top: 1px solid rgba(255,255,255,0.1);
@@ -1736,6 +1736,37 @@ embed, iframe, object, video {
 		text-decoration: none;
 	}
 	
+	#topnav-menu .submenu-dropdown-toggle {
+		float: right;
+		display: block;
+		margin: 0;
+		padding: 0.8em 1em;
+	}
+	#topnav-menu .submenu-dropdown-toggle:hover {
+		cursor: pointer;
+		background: rgba(0,0,0,0.15);
+	}
+	#topnav-menu .submenu-dropdown-toggle:before {
+		font-size: 24px;
+		line-height: 1;
+		font-family: 'Genericons';
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		text-decoration: inherit;
+		vertical-align: middle;
+		content: '\f431';
+		color: #fff;
+	}
+	#topnav-menu .submenu-dropdown-toggle.active:before {
+		content: '\f432';
+	}
+	#topnav-menu ul .submenu-dropdown-toggle {
+		padding: 0.65em 0.8em;
+	}
+	#topnav-menu ul .submenu-dropdown-toggle:before {
+		font-size: 20px;
+	}
+	
 	/* Mobile Main Navigation */
 	
 	/* Reset */
@@ -1760,18 +1791,20 @@ embed, iframe, object, video {
 		display: inline;
 	}
 	
-	#mainnav-icon {
+	#mainnav-toggle {
 		float: right;
 		display: inline-block;
+		margin: 0;
 		padding: 0.8em;
 		text-decoration: none;
 		background: rgba(255, 255, 255, 0.08);
+		border: none;
 	}
-	#mainnav-icon:hover {
+	#mainnav-toggle:hover {
 		cursor: pointer;
 		background: rgba(255, 255, 255, 0.1);
 	}
-	#mainnav-icon:after {
+	#mainnav-toggle:after {
 		float: left;
 		display: inline-block;
 		font-size: 24px;
@@ -1848,6 +1881,37 @@ embed, iframe, object, video {
 	}
 	#mainnav-menu ul li.current_page_item a, #mainnav-menu ul li.current-menu-item a {
 		text-decoration: underline;
+	}
+	
+	#mainnav-menu .submenu-dropdown-toggle {
+		float: right;
+		display: block;
+		margin: 0;
+		padding: 0.9em 1.2em;
+	}
+	#mainnav-menu .submenu-dropdown-toggle:hover {
+		cursor: pointer;
+		background: rgba(255, 255, 255, 0.08);
+	}
+	#mainnav-menu .submenu-dropdown-toggle:before {
+		font-size: 24px;
+		line-height: 1;
+		font-family: 'Genericons';
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		text-decoration: inherit;
+		vertical-align: middle;
+		content: '\f431';
+		color: #fff;
+	}
+	#mainnav-menu .submenu-dropdown-toggle.active:before {
+		content: '\f432';
+	}
+	#mainnav-menu ul .submenu-dropdown-toggle {
+		padding: 0.65em 1em;
+	}
+	#mainnav-menu ul .submenu-dropdown-toggle:before {
+		font-size: 20px;
 	}
 	
 	/* Magazine Homepage: Category Post Widgets */
@@ -2066,26 +2130,29 @@ embed, iframe, object, video {
 	}
 	
 	/* Mobile Main Navigation */
-	#topnav-icon-tablet {
+	#topnav-toggle-tablet {
 		display: none;
 	}
-	#topnav-icon-phone {
+	#topnav-toggle-phone {
 		display: inline-block;
 	}
 	
 	/* Social Menu Dropdown */
-	#social-menu-icon {
+	#social-menu-toggle {
 		float: right;
 		display: inline-block;
+		margin: 0;
+		padding: 1em;
 		text-decoration: none;
 		color: #fff;
-		padding: 0.95em;
+		background: none;
+		border: none;
 	}
-	#social-menu-icon:hover {
+	#social-menu-toggle:hover {
 		cursor: pointer;
 		background: rgba(0,0,0,0.2);
 	}
-	#social-menu-icon:after {
+	#social-menu-toggle:after {
 		margin: 0;
 		display: inline-block;
 		font-size: 18px;
@@ -2139,10 +2206,10 @@ embed, iframe, object, video {
 	#logo .site-title {
 		font-size: 2.0em;
 	}
-	#mainnav-icon {
+	#mainnav-toggle {
 		padding: 0.6em;
 	}
-	#mainnav-icon:after {
+	#mainnav-toggle:after {
 		font-size: 20px;
 	}
 	.page-title, .post-title{
@@ -2169,7 +2236,7 @@ embed, iframe, object, video {
 /* Big Screens Navi Fix | >720px */
 @media only screen and (min-width: 60em) {
 	/* ensure navigation is visible on desktop version */
-	#mainnav-menu, #topnav {
+	#mainnav-menu, #topnav-menu {
 		display: block !important;
 	}
 	#topnav-menu li.menu-item:hover a {

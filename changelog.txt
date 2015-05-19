@@ -2,6 +2,13 @@
 Leeway Changelog
 ===================================
 
+Version 1.0.3
+-----------------------------------
+[changed] navigation.js to use our new developed responsiveMenu function
+[improved] styling of navigation menu
+[added] dropdown icons and animations for nested submenus on mobile navigation
+[removed] unnecessary header-content.php file
+
 Version 1.0.2
 -----------------------------------
 [added] new classes entry-title, updated and author for google microformats structure
