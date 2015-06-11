@@ -1,0 +1,610 @@
+# Translation of Leeway in German
+# This file is distributed under the same license as the Leeway package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2015-06-01 10:36+0100\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Poedit 1.5.7\n"
+"Project-Id-Version: Leeway\n"
+"POT-Creation-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+
+#: inc/template-tags.php:60
+msgid ""
+"<a href=\"%1$s\" title=\"%2$s\" rel=\"bookmark\"><time class=\"entry-date "
+"published updated\" datetime=\"%3$s\">%4$s</time></a>"
+msgstr ""
+"<a href=\"%1$s\" title=\"%2$s\" rel=\"bookmark\"><time class=\"entry-date "
+"published updated\" datetime=\"%3$s\">%4$s</time></a>"
+
+#: inc/template-tags.php:70
+msgid ""
+"<span class=\"author vcard\"><a class=\"fn\" href=\"%1$s\" title=\"%2$s\" "
+"rel=\"author\">%3$s</a></span>"
+msgstr ""
+"<span class=\"author vcard\"><a class=\"fn\" href=\"%1$s\" title=\"%2$s\" "
+"rel=\"author\">%3$s</a></span>"
+
+#: 404.php:9
+msgid "404 Error: Not found"
+msgstr "404 Error: Seite konnte nicht gefunden werden."
+
+#: 404.php:12
+msgid ""
+"The page you trying to reach does not exist, or has been moved. Please use "
+"the menus or the search box to find what you are looking for"
+msgstr ""
+"Die aufgerufene Seite existiert nicht oder wurde verschoben. Bitte verwende "
+"die Navigation oder die Suche, um die richtige Seite zu finden."
+
+#: 404.php:14
+msgid "Search"
+msgstr "Suche"
+
+#: 404.php:17
+msgid "Recent Posts"
+msgstr "Aktuelle Beiträge"
+
+#: 404.php:27
+msgid "Pages"
+msgstr "Seiten"
+
+#: archive.php:14
+msgid "Monthly Archives: %s"
+msgstr "Monatsarchiv: %s"
+
+#: archive.php:14
+msgid "F Y"
+msgstr "F Y"
+
+#: archive.php:16
+msgid "Archives"
+msgstr "Archive"
+
+#: author.php:16
+msgid "Author Archives: %s"
+msgstr "Autorenarchive: %s"
+
+#: category.php:12
+msgid "Category Archives: %s"
+msgstr "Kategorienarchiv: %s"
+
+#: comments.php:10
+msgid "Enter password to view comments."
+msgstr "Passwort eingeben, um Kommentare zu sehen."
+
+#: comments.php:20 inc/template-tags.php:81
+#: inc/widgets/widget-category-posts-boxed.php:310
+#: inc/widgets/widget-category-posts-columns.php:238
+#: inc/widgets/widget-category-posts-grid.php:267
+msgid "One comment"
+msgstr "Ein Kommentar"
+
+#: comments.php:20 inc/template-tags.php:81
+#: inc/widgets/widget-category-posts-boxed.php:310
+#: inc/widgets/widget-category-posts-columns.php:238
+#: inc/widgets/widget-category-posts-grid.php:267
+msgid "% comments"
+msgstr "% Kommentare"
+
+#: content-excerpt.php:12 content.php:11
+#: inc/widgets/widget-category-posts-boxed.php:166
+#: inc/widgets/widget-category-posts-boxed.php:251
+#: inc/widgets/widget-category-posts-columns.php:180
+msgid "Read more"
+msgstr "Weiterlesen"
+
+#: featured-content-slider.php:14
+msgid ""
+"There is no featured content to be displayed in the slider. To set up the "
+"slider, go to Appearance -> Customize -> Theme Options, and add a tag under "
+"Tag Name in the Featured Content section. The slideshow will then display "
+"all posts which are tagged with that keyword."
+msgstr ""
+"Es gibt keinen hervorgehobenen Inhalt zum anzeigen im Slider. Um den Slider "
+"hinzuzufügen gehe bitte auf Design -> Anpassen -> Theme Optionen. Dort kann "
+"ein Schlagwort im hervorgehobenen Inhaltsbereich hinzugefügt werden. Die "
+"Slideshow zeigt all Beiträge an, die entsprechend verschlagwortet wurden."
+
+#: functions.php:113
+msgid "Main Navigation"
+msgstr "Hauptnavigation"
+
+#: functions.php:114
+msgid "Top Navigation"
+msgstr "Oberes primäres Menu"
+
+#: functions.php:115
+msgid "Footer Navigation"
+msgstr "Footer Navigation"
+
+#: functions.php:118
+msgid "Social Icons"
+msgstr "Social Icons"
+
+#: functions.php:154
+msgid "Sidebar"
+msgstr "Seitenleiste"
+
+#: functions.php:156
+msgid "Appears on posts and pages except front page and fullwidth template."
+msgstr ""
+"Erscheint auf allen Beiträgen und Seiten außer dem Magazine Front Page und "
+"Fullwidth Seitentemplate."
+
+#: functions.php:163
+msgid "Magazine Homepage"
+msgstr "Magazine Homepage"
+
+#: functions.php:165
+msgid ""
+"Appears on Magazine Homepage template only. You can use the Category Posts "
+"widgets here."
+msgstr ""
+"Erscheint nur auf einem Magazine Homepage Template. Du kannst das Kategorien "
+"Beitrags Widget hier benutzen."
+
+#: functions.php:239
+msgid "Pingback:"
+msgstr "Pingback:"
+
+#: functions.php:240 functions.php:260
+msgid "(Edit)"
+msgstr "(Bearbeiten)"
+
+#: functions.php:251
+msgid "<span class=\"fn\">%s</span>"
+msgstr "<span class=\"fn\">%s</span>"
+
+#: functions.php:255
+msgid "Your comment is awaiting moderation."
+msgstr "Dein Kommentar wird überprüft."
+
+#: functions.php:259
+msgid "%1$s at %2$s"
+msgstr "%1$s am %2$s"
+
+#: image.php:19
+msgid "Previous"
+msgstr "Zurück"
+
+#: image.php:20
+msgid "Next"
+msgstr "Weiter"
+
+#: image.php:26
+msgid "Return to Gallery"
+msgstr "Zurück zur Galerie"
+
+#: image.php:27
+msgid "Return to"
+msgstr "Zurück zu"
+
+#: search.php:13 search.php:27
+msgid "Search Results for: %s"
+msgstr "Suchergebnisse für: %s"
+
+#: search.php:33
+msgid ""
+"No matches. Please try again, or use the navigation menus to find what you "
+"search for."
+msgstr ""
+"Keine Ergebnisse gefunden. Bitte verwende die Navigation oder die Suche, um "
+"die richtige Seite zu finden."
+
+#: searchform.php:4
+msgid "Search for:"
+msgstr "Suchen nach:"
+
+#: sidebar.php:14
+msgid "Widget Area"
+msgstr "Widgetbereich"
+
+#: sidebar.php:16
+msgid ""
+"There are no active widgets to be displayed. Please go to Appearance -> "
+"Widgets to setup your sidebar."
+msgstr ""
+"Es gibt keine aktiven Widgets zum anzeigen. Bitte gehe auf Design -> "
+"Widgets, um die Seitenleiste einzurichten."
+
+#: tag.php:12
+msgid "Tag Archives: %s"
+msgstr "Schlagwortarchiv: %s"
+
+#: template-magazine.php:39
+msgid ""
+"There are no widgets to be displayed. Please go to Appearance -> Widgets and "
+"add at least one widget to the \"Magazine Homepage\" widget area. You can "
+"use the three Category Posts widgets to set up the theme like the demo "
+"website."
+msgstr ""
+"Es gibt keine Widgets zum anzeigen. Bitte gehe auf Design -> Widgets und "
+"füge wenigstens ein Widget zum \"Magazine Homepage\"-Widgetbereich hinzu. Du "
+"kannst die drei Kategoriebeiträge Widgets nutzen, um ein Theme wie auf der "
+"Demo Webseite zu erstellen."
+
+#: inc/featured-content.php:419
+msgid "Featured Content"
+msgstr "Hervorgehobener Inhalt"
+
+#: inc/featured-content.php:420
+msgid ""
+"Use a <a href=\"%1$s\">tag</a> to feature your posts. If no posts match the "
+"tag, <a href=\"%2$s\">sticky posts</a> will be displayed instead."
+msgstr ""
+"Verwende Schlagwort <a href=\"%1$s\">tag</a>, um bestimmte Beiträge "
+"hervorzuheben. Falls keine Beiträge dem Schlagwort vorhanden sind, werden "
+"stattdessen <a href=\"%2$s\">sticky posts</a> angezeigt."
+
+#: inc/featured-content.php:421 inc/featured-content.php:430
+#: inc/featured-content.php:490
+msgid "featured"
+msgstr "hervorgehoben"
+
+#: inc/featured-content.php:442
+msgid "Tag Name"
+msgstr "Schlagwort"
+
+#: inc/featured-content.php:447
+msgid "Don&rsquo;t display tag on front end."
+msgstr "Zeige das Schlagwort auf der Webseite nicht an."
+
+#: inc/template-tags.php:72
+msgid "View all posts by %s"
+msgstr "Alle Beiträge von %s anzeigen."
+
+#: inc/template-tags.php:81 inc/widgets/widget-category-posts-boxed.php:310
+#: inc/widgets/widget-category-posts-columns.php:238
+#: inc/widgets/widget-category-posts-grid.php:267
+msgid "Leave a comment"
+msgstr "Kommentieren"
+
+#: inc/template-tags.php:132
+msgid "Category: %1$s"
+msgstr "Kategorie: %1$s"
+
+#: inc/template-tags.php:139
+msgid "Tags: %1$s"
+msgstr "Schlagworte: %1$s"
+
+#: inc/template-tags.php:189
+msgid "Powered by %1$s and %2$s."
+msgstr "Bereitgestellt von %1$s und %2$s."
+
+#: inc/template-tags.php:190
+msgid "WordPress"
+msgstr "WordPress"
+
+#: inc/template-tags.php:191
+msgid "Leeway"
+msgstr "Leeway"
+
+#: inc/template-tags.php:223
+msgid ""
+"Please go to WP-Admin-> Appearance-> Menus and create a new custom menu with "
+"custom links to all your social networks. Then click on \"Manage Locations\" "
+"tab and assign your created menu to the \"Social Icons\" theme location."
+msgstr ""
+"Bitte gehe zu WP-Admin -> Design -> Menüs und erstelle ein neues "
+"benutzerdefiniertes Menu mit eigenen Links zu all deinen sozialen "
+"Netzwerken. Klicke danach auf die Registerkarte 'Standorte verwalten' und "
+"verlinke dein erstelltes Menu mit dem'Social Icons'-Theme."
+
+#: inc/theme-info.php:15
+msgid "Welcome to Leeway"
+msgstr "Willkommen zu Leeway"
+
+#: inc/theme-info.php:16
+msgid "Theme Info"
+msgstr "Theme Information"
+
+#: inc/theme-info.php:35
+msgid "Welcome to %1s %2s"
+msgstr "Willkommen bei %1s %2s"
+
+#: inc/theme-info.php:41
+msgid "Important Links:"
+msgstr "Wichtige Links:"
+
+#: inc/theme-info.php:42
+msgid "Theme Info Page"
+msgstr "Theme Informations Seite"
+
+#: inc/theme-info.php:43
+msgid "Changelog"
+msgstr "Changelog"
+
+#: inc/theme-info.php:44
+msgid "Theme Demo"
+msgstr "Theme Demo"
+
+#: inc/theme-info.php:45 inc/theme-info.php:60
+msgid "Theme Documentation"
+msgstr "Theme Dokumentation"
+
+#: inc/theme-info.php:46
+msgid "Rate this theme"
+msgstr "Dieses Theme bewerten"
+
+#: inc/theme-info.php:57
+msgid "Getting Started with %s"
+msgstr "Erste Schritte mit %s"
+
+#: inc/theme-info.php:62
+msgid ""
+"Need any help to setup and configure this theme? We got you covered with an "
+"extensive theme documentation on our website."
+msgstr ""
+"Du brauchst Hilfe mit der Einrichtung und Konfiguration dieses Themes? Wir "
+"haben die Lösung in Form einer ausführlichen Dokumentation (in Englisch) auf "
+"unserer Webseite."
+
+#: inc/theme-info.php:64
+msgid "Visit Leeway Documentation"
+msgstr "Schaue dir die Leeway Dokumentation an."
+
+#: inc/theme-info.php:69 inc/customizer/customizer.php:28
+msgid "Theme Options"
+msgstr "Theme Optionen"
+
+#: inc/theme-info.php:71
+msgid ""
+"Leeway supports the awesome Theme Customizer for all theme settings. Click "
+"\"Customize Theme\" to open the Customizer now."
+msgstr ""
+"Leeway unterstützt einen tollen \"Theme Designer\" für alle Design-"
+"Einstellungen. Klicke auf \"Anpassen\", um den \"Designer\" jetzt zu öffnen."
+
+#: inc/theme-info.php:73
+msgid "Customize Theme"
+msgstr "Theme anpassen"
+
+#: inc/theme-info.php:78
+msgid "Pro Version"
+msgstr "PRO Version"
+
+#: inc/theme-info.php:80
+msgid ""
+"Need more features? Check out the PRO version which comes with additional "
+"features and advanced customization options."
+msgstr ""
+"Nicht genügend Funktionen? Schaue dir die PRO Version an, die zusätzlichen "
+"Funktionen und erweiterte Anpassungsmöglichkeiten hat."
+
+#: inc/theme-info.php:82 inc/customizer/sections/customizer-upgrade.php:62
+msgid "Learn more about Leeway Pro"
+msgstr "Erfahre mehr über die PRO Version von Leeway"
+
+#: inc/theme-info.php:102
+msgid ""
+"Leeway is proudly brought to you by %1s. If you like this theme, %2s :) "
+msgstr "Leeway wird dir vorgestellt von %1s. Wenn Du das Theme magst, %2s :)"
+
+#: inc/theme-info.php:104
+msgid "rate it"
+msgstr "bewerten"
+
+#: inc/customizer/customizer.php:53
+msgid "Display Tagline below site title."
+msgstr "Zeige den Untertitel unter dem Seitentitel."
+
+#: inc/customizer/sections/customizer-general.php:14
+msgid "General Settings"
+msgstr "Allgemeine Einstellungen"
+
+#: inc/customizer/sections/customizer-general.php:29
+msgid "Theme Layout"
+msgstr "Theme Layout"
+
+#: inc/customizer/sections/customizer-general.php:35
+msgid "Left Sidebar"
+msgstr "Linke Seitenleiste"
+
+#: inc/customizer/sections/customizer-general.php:36
+msgid "Right Sidebar"
+msgstr "Rechte Seitenleiste"
+
+#: inc/customizer/sections/customizer-header.php:14
+msgid "Header Settings"
+msgstr "Kopfzeile Einstellungen"
+
+#: inc/customizer/sections/customizer-header.php:30
+msgid "Header Content"
+msgstr "Inhalt der Kopfzeile "
+
+#: inc/customizer/sections/customizer-header.php:47
+msgid "Display Social Icons on top navigation."
+msgstr "Zeige 'Social Icons' im oberen Navigationsbereich an."
+
+#: inc/customizer/sections/customizer-post.php:14
+msgid "Post Settings"
+msgstr "Beitrags Optionen"
+
+#: inc/customizer/sections/customizer-post.php:29
+msgid "Post Length on archives"
+msgstr "Länge der Beiträge auf Archivseiten"
+
+#: inc/customizer/sections/customizer-post.php:35
+msgid "Show full posts"
+msgstr "Zeige komplette Beiträge an"
+
+#: inc/customizer/sections/customizer-post.php:36
+msgid "Show post summaries (excerpt)"
+msgstr "Zeige Textauszüge an (Excerpt)"
+
+#: inc/customizer/sections/customizer-post.php:51
+msgid "Post Images"
+msgstr "Beitragsbilder"
+
+#: inc/customizer/sections/customizer-post.php:66
+msgid "Display featured images on archive pages"
+msgstr "Zeige Artikelbilder auf Archivseiten an"
+
+#: inc/customizer/sections/customizer-post.php:82
+msgid "Display featured images on single posts"
+msgstr "Zeige Artikelbilder auf einzelnen Beitragsseiten an"
+
+#: inc/customizer/sections/customizer-slider.php:14
+msgid "Post Slider"
+msgstr "Beitrags Slideshow"
+
+#: inc/customizer/sections/customizer-slider.php:15
+msgid ""
+"The slideshow displays your featured posts, which you can configure on the "
+"\"Featured Content\" section above."
+msgstr ""
+"Die Slideshow zeigt all deine hervorgehobenen Beiträge, welche du in der "
+"obigen Sektion \"Hervorgehobener Inhalt\" konfigurieren kannst."
+
+#: inc/customizer/sections/customizer-slider.php:31
+msgid "Activate Featured Post Slider"
+msgstr "Aktiviere Beitrags Slideshow"
+
+#: inc/customizer/sections/customizer-slider.php:46
+msgid "Display Slider on Magazine Front Page template."
+msgstr "Zeige Slideshow auf Magazine Front Page Seitentemplate."
+
+#: inc/customizer/sections/customizer-slider.php:61
+msgid "Display Slider on normal blog index."
+msgstr "Zeige Slideshow auf \"Letzte Beiträge\" Seite."
+
+#: inc/customizer/sections/customizer-slider.php:77
+msgid "Slider Animation"
+msgstr "Slider Animation"
+
+#: inc/customizer/sections/customizer-slider.php:83
+msgid "Horizontal Slider"
+msgstr "Horizontaler Slider"
+
+#: inc/customizer/sections/customizer-slider.php:84
+msgid "Fade Slider"
+msgstr "Überblendung bei Slider"
+
+#: inc/customizer/sections/customizer-upgrade.php:14
+msgid "Leeway Pro"
+msgstr "Leeway PRO"
+
+#: inc/customizer/sections/customizer-upgrade.php:30
+msgid "Need more features?"
+msgstr "Mehr Funktionen?"
+
+#: inc/customizer/sections/customizer-upgrade.php:46
+msgid ""
+"Check out the PRO version which comes with additional features and advanced "
+"customization options."
+msgstr ""
+"Versuche die PRO Version, die mit zusätzlichen Funktionen und erweiterten "
+"Anpassungsmöglichkeiten angeboten wird. "
+
+#: inc/widgets/widget-category-posts-boxed.php:11
+msgid ""
+"Display latest posts from category in boxed layout. Please use this widget "
+"ONLY on Frontpage Magazine widget area."
+msgstr ""
+"Zeige die letzten Beiträge der Kategorie in einem Boxed Layout. Bitte "
+"verwende dieses Widget NUR im Magazine Front Page Widgetbereich."
+
+#: inc/widgets/widget-category-posts-boxed.php:13
+msgid "Category Posts Boxed (Leeway)"
+msgstr "Kategoriebeiträge eingerahmt (Leeway)"
+
+#: inc/widgets/widget-category-posts-boxed.php:340
+#: inc/widgets/widget-category-posts-columns.php:268
+#: inc/widgets/widget-category-posts-grid.php:297
+msgid "View all posts from category %s"
+msgstr "Zeige alle Beiträge der Kategorie %s"
+
+#: inc/widgets/widget-category-posts-boxed.php:374
+#: inc/widgets/widget-category-posts-grid.php:332
+msgid "Title:"
+msgstr "Titel:"
+
+#: inc/widgets/widget-category-posts-boxed.php:380
+#: inc/widgets/widget-category-posts-grid.php:338
+msgid "Category:"
+msgstr "Kategorie: "
+
+#: inc/widgets/widget-category-posts-boxed.php:383
+#: inc/widgets/widget-category-posts-columns.php:314
+#: inc/widgets/widget-category-posts-columns.php:335
+#: inc/widgets/widget-category-posts-grid.php:341
+msgid "All Categories"
+msgstr "Alle Kategorien"
+
+#: inc/widgets/widget-category-posts-boxed.php:395
+msgid "Post Layout:"
+msgstr "Beitrags Layout:"
+
+#: inc/widgets/widget-category-posts-boxed.php:397
+msgid "Horizontal Arrangement"
+msgstr "Horizontale Anordnung"
+
+#: inc/widgets/widget-category-posts-boxed.php:398
+msgid "Vertical Arrangement"
+msgstr "Vertikale Anordnung"
+
+#: inc/widgets/widget-category-posts-columns.php:11
+msgid ""
+"Display latest posts from two specified categories. Please use this widget "
+"ONLY on Frontpage Magazine widget area."
+msgstr ""
+"Zeigt die letzten Beiträge von zwei ausgewählten Kategorien. Bitte verwende "
+"dieses Widget NUR im Magazine Front Page Widgetbereich."
+
+#: inc/widgets/widget-category-posts-columns.php:13
+msgid "Category Posts Columns (Leeway)"
+msgstr "Kategoriebeiträge Spalten (Leeway)"
+
+#: inc/widgets/widget-category-posts-columns.php:305
+msgid "Left Category Title:"
+msgstr "Titel der Kateogie links:"
+
+#: inc/widgets/widget-category-posts-columns.php:311
+msgid "Left Category:"
+msgstr "Kategorie Links:"
+
+#: inc/widgets/widget-category-posts-columns.php:326
+msgid "Right Category Title:"
+msgstr "Titel der Kateogie rechts:"
+
+#: inc/widgets/widget-category-posts-columns.php:332
+msgid "Right Category:"
+msgstr "Kategorie Rechts:"
+
+#: inc/widgets/widget-category-posts-columns.php:347
+#: inc/widgets/widget-category-posts-grid.php:361
+msgid "Number of posts:"
+msgstr "Anzahl der Beiträge:"
+
+#: inc/widgets/widget-category-posts-columns.php:355
+msgid "Highlight First Post (Big Image + Excerpt)"
+msgstr "Heben den ersten Beitrag hervor (Großes Thumbnail + Textauszug)"
+
+#: inc/widgets/widget-category-posts-grid.php:11
+msgid ""
+"Display latest posts from category in a grid layout. Please use this widget "
+"ONLY on Frontpage Magazine widget area."
+msgstr ""
+"Zeigt die letzten Beiträge einer Kategorie in einem Grid Layout. Bitte "
+"verwende dieses Widget NUR im Magazine Front Page Widgetbereich."
+
+#: inc/widgets/widget-category-posts-grid.php:13
+msgid "Category Posts Grid (Leeway)"
+msgstr "Kategoriebeiträge Gitter (Leeway)"
+
+#: inc/widgets/widget-category-posts-grid.php:353
+msgid "Grid Layout:"
+msgstr "Gitter Layout:"
+
+#: inc/widgets/widget-category-posts-grid.php:355
+msgid "Two Columns Grid"
+msgstr "Zwei Spalten Gitter"
+
+#: inc/widgets/widget-category-posts-grid.php:356
+msgid "Three Columns Grid"
+msgstr "Drei Spalten Gitter"

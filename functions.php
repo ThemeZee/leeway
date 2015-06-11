@@ -99,13 +99,6 @@ function leeway_setup() {
 		'height' => 250,
 		'flex-height' => true));
 		
-	// Add theme support for Jetpack Featured Content
-	add_theme_support( 'featured-content', array(
-		'featured_content_filter' => 'leeway_get_featured_content',
-		'max_posts'  => 20
-		)
-	);
-	
 	// Add Theme Support for Leeway Pro Plugin
 	add_theme_support( 'leeway-pro' );
 
@@ -295,9 +288,7 @@ require( get_template_directory() . '/inc/widgets/widget-category-posts-boxed.ph
 require( get_template_directory() . '/inc/widgets/widget-category-posts-columns.php' );
 require( get_template_directory() . '/inc/widgets/widget-category-posts-grid.php' );
 
-// Include Featured Content class in case it does not exist yet (e.g. user has not Jetpack installed)
-if ( ! class_exists( 'Featured_Content' ) && 'plugins.php' !== $GLOBALS['pagenow'] ) {
-	require( get_template_directory() . '/inc/featured-content.php' );
-}
+// Include Featured Content class
+require( get_template_directory() . '/inc/featured-content.php' );
 
 ?>

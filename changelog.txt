@@ -2,6 +2,14 @@
 Leeway Changelog
 ===================================
 
+Version 1.0.4
+-----------------------------------
+[updated] Featured Content class to new version with many code improvements
+- [moved] featured content settings to post slider section in Customizer
+- [added] number of posts setting for the Featured Post Slider
+- [added] active_callback parameter to display slider controls only when slider is activated
+[added] translation files for German
+
 Version 1.0.3
 -----------------------------------
 [changed] navigation.js to use our new developed responsiveMenu function
