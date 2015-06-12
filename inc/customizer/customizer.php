@@ -70,7 +70,6 @@ add_action( 'customize_controls_print_styles', 'leeway_customize_preview_css' );
 
 function leeway_customize_preview_css() {
 	wp_enqueue_style( 'leeway-customizer-css', get_template_directory_uri() . '/css/customizer.css', array(), '20140312' );
-
 }
 
 
