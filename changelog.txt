@@ -2,6 +2,14 @@
 Leeway Changelog
 ===================================
 
+Version 1.0.5
+-----------------------------------
+[added] setting to display or hide post date
+[added] setting to display or hide post author
+[added] setting to display or hide post categories
+[added] setting to display or hide post tags
+[fixed] description of widgets and sidebars
+
 Version 1.0.4
 -----------------------------------
 [updated] Featured Content class to new version with many code improvements

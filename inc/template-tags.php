@@ -54,34 +54,48 @@ endif;
 // Display Postmeta Data
 if ( ! function_exists( 'leeway_display_postmeta' ) ):
 	
-	function leeway_display_postmeta() { ?>
+	function leeway_display_postmeta() { 
+	
+		// Get Theme Options from Database
+		$theme_options = leeway_theme_options();
+
+		// Display Date unless user has deactivated it via settings
+		if ( isset($theme_options['meta_date']) and $theme_options['meta_date'] == true ) : ?>
 		
-		<span class="meta-date">
-		<?php printf(__('<a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date published updated" datetime="%3$s">%4$s</time></a>', 'leeway'), 
-				esc_url( get_permalink() ),
-				esc_attr( get_the_time() ),
-				esc_attr( get_the_date( 'c' ) ),
-				esc_html( get_the_date() )
-			);
-		?>
-		</span>
+			<span class="meta-date">
+			<?php printf(__('<a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date published updated" datetime="%3$s">%4$s</time></a>', 'leeway'), 
+					esc_url( get_permalink() ),
+					esc_attr( get_the_time() ),
+					esc_attr( get_the_date( 'c' ) ),
+					esc_html( get_the_date() )
+				);
+			?>
+			</span>
+			
+		<?php endif; 
 		
-		<span class="meta-author">
-		<?php printf(__('<span class="author vcard"><a class="fn" href="%1$s" title="%2$s" rel="author">%3$s</a></span>', 'leeway'), 
-				esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-				esc_attr( sprintf( __( 'View all posts by %s', 'leeway' ), get_the_author() ) ),
-				get_the_author()
-			);
-		?>
-		</span>
+		// Display Author unless user has deactivated it via settings
+		if ( isset($theme_options['meta_author']) and $theme_options['meta_author'] == true ) : ?>		
 		
-	<?php if ( comments_open() ) : ?>
+			<span class="meta-author">
+			<?php printf(__('<span class="author vcard"><a class="fn" href="%1$s" title="%2$s" rel="author">%3$s</a></span>', 'leeway'), 
+					esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
+					esc_attr( sprintf( __( 'View all posts by %s', 'leeway' ), get_the_author() ) ),
+					get_the_author()
+				);
+			?>
+			</span>
 		
-		<span class="meta-comments">
-			<?php comments_popup_link( __('Leave a comment', 'leeway'),__('One comment','leeway'),__('% comments','leeway') ); ?>
-		</span>
+		<?php endif;
+
+		// Display Comments
+		if ( comments_open() ) : ?>
 		
-	<?php endif;
+			<span class="meta-comments">
+				<?php comments_popup_link( __('Leave a comment', 'leeway'),__('One comment','leeway'),__('% comments','leeway') ); ?>
+			</span>
+			
+		<?php endif;
 	
 	}
 	
@@ -126,19 +140,32 @@ function leeway_display_thumbnail_single() {
 // Display Postinfo Data
 if ( ! function_exists( 'leeway_display_postinfo' ) ):
 	
-	function leeway_display_postinfo() { ?>
-
-		<span class="meta-category">
-			<?php printf(__('Category: %1$s', 'leeway'), get_the_category_list(', ')); ?>
-		</span>
+	function leeway_display_postinfo() {  
 	
-	<?php
-		$tag_list = get_the_tag_list('', ', ');
-		if ( $tag_list ) : ?>
-			<span class="meta-tags">
-					<?php printf(__('Tags: %1$s', 'leeway'), $tag_list); ?>
+		// Get Theme Options from Database
+		$theme_options = leeway_theme_options();
+		
+		if ( $theme_options['meta_category'] == true ) : ?>
+
+			<span class="meta-category">
+				<?php printf(__('Category: %1$s', 'leeway'), get_the_category_list(', ')); ?>
 			</span>
-	<?php 
+	
+		<?php endif;
+	
+		// Display Tags unless user has deactivated it via settings
+		if ( $theme_options['meta_tags'] == true ) :
+		
+			$tag_list = get_the_tag_list('', ', ');
+		
+			if ( $tag_list ) : ?>
+				
+				<span class="meta-tags">
+						<?php printf(__('Tags: %1$s', 'leeway'), $tag_list); ?>
+				</span>
+			
+			<?php endif;
+			
 		endif;
 
 	}

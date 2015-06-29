@@ -8,7 +8,7 @@ class Leeway_Category_Posts_Columns_Widget extends WP_Widget {
 		// Setup Widget
 		$widget_ops = array(
 			'classname' => 'leeway_category_posts_columns', 
-			'description' => __('Display latest posts from two specified categories. Please use this widget ONLY on Frontpage Magazine widget area.', 'leeway')
+			'description' => __('Displays your latest posts from two specified categories. Please use this widget ONLY in the Magazine Homepage widget area.', 'leeway')
 		);
 		$this->WP_Widget('leeway_category_posts_columns', __('Category Posts Columns (Leeway)', 'leeway'), $widget_ops);
 		

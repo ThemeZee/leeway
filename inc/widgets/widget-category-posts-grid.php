@@ -8,7 +8,7 @@ class Leeway_Category_Posts_Grid_Widget extends WP_Widget {
 		// Setup Widget
 		$widget_ops = array(
 			'classname' => 'leeway_category_posts_grid', 
-			'description' => __('Display latest posts from category in a grid layout. Please use this widget ONLY on Frontpage Magazine widget area.', 'leeway')
+			'description' => __('Displays your latest posts from a selected category in a grid layout. Please use this widget ONLY in the Magazine Homepage widget area.', 'leeway')
 		);
 		$this->WP_Widget('leeway_category_posts_grid', __('Category Posts Grid (Leeway)', 'leeway'), $widget_ops);
 		

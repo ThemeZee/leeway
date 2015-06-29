@@ -3,6 +3,7 @@
  *
  */
 
+#customize-control-leeway_control_postmeta_headline,
 #customize-control-leeway_control_slider_activated   {
 	margin-top: 12px;
 }
@@ -16,6 +17,7 @@
 #customize-control-leeway_control_header_content,
 #customize-control-leeway_control_post_images,
 #customize-control-leeway_control_excerpt_text_headline,
+#customize-control-leeway_control_postmeta_headline,
 #customize-control-leeway_control_slider_activated  {
 	margin-bottom: 0;
 }
