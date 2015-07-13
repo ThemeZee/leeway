@@ -8,12 +8,13 @@
 		
 		<section id="content" class="primary" role="main">
 		
-		<?php if (have_posts()) : ?>
-			<h2 id="search-title" class="archive-title">
-				<?php printf( __( 'Search Results for: %s', 'leeway' ), '<span>' . get_search_query() . '</span>' ); ?>
-			</h2>
-		
-		<?php while (have_posts()) : the_post();
+			<header class="page-header">
+				<h2 id="search-title" class="archive-title">
+					<?php printf( __( 'Search Results for: %s', 'leeway' ), '<span>' . get_search_query() . '</span>' ); ?>
+				</h2>
+			</header>
+			
+		<?php if (have_posts()) : while (have_posts()) : the_post();
 		
 				get_template_part( 'content', $theme_options['posts_length'] );
 		
@@ -23,11 +24,7 @@
 
 		else : ?>
 
-			<h2 id="search-title" class="archive-title">
-				<?php printf( __( 'Search Results for: %s', 'leeway' ), '<span>' . get_search_query() . '</span>' ); ?>
-			</h2>
-			
-			<div class="post">
+			<div class="type-page">
 				
 				<div class="entry">
 					<p><?php _e('No matches. Please try again, or use the navigation menus to find what you search for.', 'leeway'); ?></p>
