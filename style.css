@@ -2,7 +2,7 @@
 Theme Name: Leeway
 Theme URI: http://themezee.com/themes/leeway/
 Description: Leeway is a free, responsive theme designed for small magazine websites or blogs. The theme includes two navigation menus, social icons, a fullwidth featured post slideshow and a flexible Magazine Homepage template. All settings are easy to configure in the Customizer.
-Version: 1.0.6
+Version: 1.0.7
 Author: ThemeZee
 Author URI: http://themezee.com
 Tags: two-columns, light, red, custom-background, custom-header, custom-menu, editor-style, featured-image-header, featured-images, flexible-header, custom-colors, full-width-template, sticky-post, threaded-comments, translation-ready, theme-options, fluid-layout, responsive-layout, one-column, left-sidebar, right-sidebar, three-columns, black, blue, silver, white, green, gray
@@ -57,7 +57,7 @@ html {
 	font-size: 100.01%;
 }
 body {
-	font-family: 'Muli', Tahoma, Verdana, Arial;
+	font-family: 'Muli', Arial, Verdana;
 	font-size: 1.0em;
 	border: 0;
 	color: #111;
@@ -80,7 +80,7 @@ input, textarea {
 	border: 1px solid #ddd;
 	font-size: 1.0em;
 	color: #222;
-	font-family: 'Muli', Tahoma, Verdana, Arial;
+	font-family: 'Muli', Arial, Verdana;
 }
 input[type="submit"] {
 	padding: 0.5em 1em;
@@ -317,7 +317,7 @@ input, textarea, select {
 }
 #mainnav-menu a {
 	display: block;
-	font-family: 'Muli', Tahoma, Verdana, Arial;
+	font-family: 'Muli', Arial, Verdana;
 	font-weight: bold;
 	padding: 1.4em;
 	text-decoration: none;
@@ -402,7 +402,7 @@ input, textarea, select {
 	padding: 0.6em 0.8em;
 }
 .widgettitle span {
-	font: 'Muli', Tahoma, Verdana, Arial;
+	font-family: 'Muli', Arial, Verdana;
 	font-weight: bold;
 	line-height: 1.4em;
 }
@@ -1081,7 +1081,7 @@ embed, iframe, object, video {
 	margin: 0;
 }
 #comments .comments-title, #respond #reply-title {
-	font-family: 'Muli', Tahoma, Verdana, Arial;
+	font-family: 'Muli', Arial, Verdana;
 	font-weight: bold;
 	color: #fff;
 	background: #bb0000;

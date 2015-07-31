@@ -52,15 +52,27 @@ function leeway_enqueue_comment_reply() {
 
 // Retrieve Font URL to register default Google Fonts
 function leeway_google_fonts_url() {
-    
-	$font_families = array('Muli:400,700', 'Oswald');
-
-	$query_args = array(
-		'family' => urlencode( implode( '|', $font_families ) ),
-		'subset' => urlencode( 'latin,latin-ext' ),
-	);
-
-	$fonts_url = add_query_arg( $query_args, '//fonts.googleapis.com/css' );
+    $fonts_url = '';
+	
+	// Get Theme Options from Database
+	$theme_options = leeway_theme_options();
+	
+	// Only embed Google Fonts if not deactivated
+	if ( ! ( isset($theme_options['deactivate_google_fonts']) and $theme_options['deactivate_google_fonts'] == true ) ) :
+		
+		// Define Default Fonts
+		$font_families = array('Muli:400,700', 'Oswald');
+		
+		// Set Google Font Query Args
+		$query_args = array(
+			'family' => urlencode( implode( '|', $font_families ) ),
+			'subset' => urlencode( 'latin,latin-ext' ),
+		);
+		
+		// Create Fonts URL
+		$fonts_url = add_query_arg( $query_args, '//fonts.googleapis.com/css' );
+		
+	endif;
 
     return apply_filters( 'leeway_google_fonts_url', $fonts_url );
 }

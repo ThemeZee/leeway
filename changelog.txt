@@ -2,6 +2,11 @@
 Leeway Changelog
 ===================================
 
+Version 1.0.7
+-----------------------------------
+[added] setting for deactivating default google fonts in case they are not compatible with user language
+[added] translation files for Dutch, Italian and Spanish
+
 Version 1.0.6
 -----------------------------------
 [changed] search title HTML markup in search.php
