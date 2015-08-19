@@ -10,7 +10,7 @@ class Leeway_Category_Posts_Columns_Widget extends WP_Widget {
 			'classname' => 'leeway_category_posts_columns', 
 			'description' => __('Displays your latest posts from two specified categories. Please use this widget ONLY in the Magazine Homepage widget area.', 'leeway')
 		);
-		$this->WP_Widget('leeway_category_posts_columns', __('Category Posts Columns (Leeway)', 'leeway'), $widget_ops);
+		parent::__construct('leeway_category_posts_columns', __('Category Posts Columns (Leeway)', 'leeway'), $widget_ops);
 		
 		// Delete Widget Cache on certain actions
 		add_action( 'save_post', array( $this, 'delete_widget_cache' ) );

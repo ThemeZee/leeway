@@ -10,7 +10,7 @@ class Leeway_Category_Posts_Boxed_Widget extends WP_Widget {
 			'classname' => 'leeway_category_posts_boxed', 
 			'description' => __('Displays your latest posts from a selected category in a boxed layout. Please use this widget ONLY in the Magazine Homepage widget area.', 'leeway')
 		);
-		$this->WP_Widget('leeway_category_posts_boxed', __('Category Posts Boxed (Leeway)', 'leeway'), $widget_ops);
+		parent::__construct('leeway_category_posts_boxed', __('Category Posts Boxed (Leeway)', 'leeway'), $widget_ops);
 		
 		// Delete Widget Cache on certain actions
 		add_action( 'save_post', array( $this, 'delete_widget_cache' ) );
