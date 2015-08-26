@@ -8,9 +8,9 @@ class Leeway_Category_Posts_Columns_Widget extends WP_Widget {
 		// Setup Widget
 		$widget_ops = array(
 			'classname' => 'leeway_category_posts_columns', 
-			'description' => __('Displays your latest posts from two specified categories. Please use this widget ONLY in the Magazine Homepage widget area.', 'leeway')
+			'description' => __('Displays your posts from two selected categories. Please use this widget ONLY in the Magazine Homepage widget area.', 'leeway')
 		);
-		parent::__construct('leeway_category_posts_columns', __('Category Posts Columns (Leeway)', 'leeway'), $widget_ops);
+		parent::__construct('leeway_category_posts_columns', sprintf( __('Category Posts: 2 Columns (%s)', 'leeway'), wp_get_theme()->Name ), $widget_ops);
 		
 		// Delete Widget Cache on certain actions
 		add_action( 'save_post', array( $this, 'delete_widget_cache' ) );
@@ -352,7 +352,7 @@ class Leeway_Category_Posts_Columns_Widget extends WP_Widget {
 		<p>
 			<label for="<?php echo $this->get_field_id('highlight_post'); ?>">
 				<input class="checkbox" type="checkbox" <?php checked( $highlight_post ) ; ?> id="<?php echo $this->get_field_id('highlight_post'); ?>" name="<?php echo $this->get_field_name('highlight_post'); ?>" />
-				<?php _e('Highlight First Post (Big Image + Excerpt)', 'leeway'); ?>
+				<?php _e('Highlight first post (big image + excerpt)', 'leeway'); ?>
 			</label>
 		</p>
 		

@@ -63,7 +63,7 @@ if ( ! function_exists( 'leeway_display_postmeta' ) ):
 		if ( isset($theme_options['meta_date']) and $theme_options['meta_date'] == true ) : ?>
 		
 			<span class="meta-date">
-			<?php printf(__('<a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date published updated" datetime="%3$s">%4$s</time></a>', 'leeway'), 
+			<?php printf( '<a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date published updated" datetime="%3$s">%4$s</time></a>', 
 					esc_url( get_permalink() ),
 					esc_attr( get_the_time() ),
 					esc_attr( get_the_date( 'c' ) ),
@@ -78,7 +78,7 @@ if ( ! function_exists( 'leeway_display_postmeta' ) ):
 		if ( isset($theme_options['meta_author']) and $theme_options['meta_author'] == true ) : ?>		
 		
 			<span class="meta-author">
-			<?php printf(__('<span class="author vcard"><a class="fn" href="%1$s" title="%2$s" rel="author">%3$s</a></span>', 'leeway'), 
+			<?php printf( '<span class="author vcard"><a class="fn" href="%1$s" title="%2$s" rel="author">%3$s</a></span>', 
 					esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 					esc_attr( sprintf( __( 'View all posts by %s', 'leeway' ), get_the_author() ) ),
 					get_the_author()
