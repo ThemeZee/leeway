@@ -26,14 +26,14 @@ function leeway_customize_register_post_settings( $wp_customize ) {
 		)
 	);
     $wp_customize->add_control( 'leeway_control_posts_length', array(
-        'label'    => __( 'Post Length on archives', 'leeway' ),
+        'label'    => __( 'Post length on archives', 'leeway' ),
         'section'  => 'leeway_section_post',
         'settings' => 'leeway_theme_options[posts_length]',
         'type'     => 'radio',
 		'priority' => 1,
         'choices'  => array(
             'index' => __( 'Show full posts', 'leeway' ),
-            'excerpt' => __( 'Show post summaries (excerpt)', 'leeway' )
+            'excerpt' => __( 'Show post excerpts', 'leeway' )
 			)
 		)
 	);

@@ -27,7 +27,7 @@ function leeway_customize_register_slider_settings( $wp_customize ) {
     );
     $wp_customize->add_control( new Leeway_Customize_Header_Control(
         $wp_customize, 'leeway_control_slider_activated', array(
-            'label' => __( 'Activate Featured Post Slider', 'leeway' ),
+            'label' => __( 'Activate Post Slider', 'leeway' ),
             'section' => 'leeway_section_slider',
             'settings' => 'leeway_theme_options[slider_active_header]',
             'priority' => 1
@@ -42,7 +42,7 @@ function leeway_customize_register_slider_settings( $wp_customize ) {
 		)
 	);
     $wp_customize->add_control( 'leeway_control_slider_active_magazine', array(
-        'label'    => __( 'Display Slider on Magazine Front Page template.', 'leeway' ),
+        'label'    => __( 'Show Slider on Magazine Homepage', 'leeway' ),
         'section'  => 'leeway_section_slider',
         'settings' => 'leeway_theme_options[slider_active_magazine]',
         'type'     => 'checkbox',
@@ -57,7 +57,7 @@ function leeway_customize_register_slider_settings( $wp_customize ) {
 		)
 	);
     $wp_customize->add_control( 'leeway_control_slider_active_blog', array(
-        'label'    => __( 'Display Slider on normal blog index.', 'leeway' ),
+        'label'    => __( 'Show Slider on posts page', 'leeway' ),
         'section'  => 'leeway_section_slider',
         'settings' => 'leeway_theme_options[slider_active_blog]',
         'type'     => 'checkbox',
@@ -117,8 +117,8 @@ function leeway_customize_register_slider_settings( $wp_customize ) {
 		'priority' => 9,
 		'active_callback' => 'leeway_slider_activated_callback',
         'choices'  => array(
-            'horizontal' => __( 'Horizontal Slider', 'leeway' ),
-            'fade' => __( 'Fade Slider', 'leeway' )
+            'horizontal' => __( 'Slide Effect', 'leeway' ),
+            'fade' => __( 'Fade Effect', 'leeway' )
 			)
 		)
 	);

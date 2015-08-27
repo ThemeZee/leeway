@@ -213,9 +213,9 @@ add_action( 'leeway_footer_text', 'leeway_display_footer_text' );
 function leeway_display_footer_text() { ?>
 
 	<span class="credit-link">
-		<?php printf(__( 'Powered by %1$s and %2$s.', 'leeway' ), 
-			sprintf( '<a href="http://wordpress.org" title="WordPress">%s</a>', __( 'WordPress', 'leeway' ) ),
-			sprintf( '<a href="http://themezee.com/themes/leeway/" title="Leeway WordPress Theme">%s</a>', __( 'Leeway', 'leeway' ) )
+		<?php printf( __( 'Powered by %1$s and %2$s.', 'leeway' ), 
+			'<a href="http://wordpress.org" title="WordPress">WordPress</a>',
+			'<a href="http://themezee.com/themes/leeway/" title="Leeway WordPress Theme">Leeway</a>'
 		); ?>
 	</span>
 

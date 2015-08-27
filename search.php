@@ -16,7 +16,15 @@
 			
 		<?php if (have_posts()) : while (have_posts()) : the_post();
 		
-				get_template_part( 'content', $theme_options['posts_length'] );
+				if ( 'post' == get_post_type() ) :
+		
+					get_template_part( 'content', $theme_options['posts_length'] );
+				
+				else :
+				
+					get_template_part( 'content', 'search' );
+					
+				endif;
 		
 			endwhile;
 			
@@ -26,13 +34,19 @@
 
 			<div class="type-page">
 				
-				<div class="entry">
-					<p><?php _e('No matches. Please try again, or use the navigation menus to find what you search for.', 'leeway'); ?></p>
+				<h2 class="page-title entry-title"><?php _e('No matches', 'leeway'); ?></h2>
+				
+				<div class="entry clearfix">
+					
+					<p><?php esc_html_e('Please try again, or use the navigation menus to find what you search for.', 'leeway'); ?></p>
+					
+					<?php get_search_form(); ?>
+					
 				</div>
 				
 			</div>
 
-			<?php endif; ?>
+		<?php endif; ?>
 			
 		</section>
 		
