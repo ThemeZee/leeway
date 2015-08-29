@@ -44,7 +44,7 @@ function leeway_customize_register_header_settings( $wp_customize ) {
 		)
 	);
     $wp_customize->add_control( 'leeway_control_header_icons', array(
-        'label'    => __( 'Display Social Icons on top navigation.', 'leeway' ),
+        'label'    => __( 'Display Social Icons on top navigation', 'leeway' ),
         'section'  => 'leeway_section_header',
         'settings' => 'leeway_theme_options[header_icons]',
         'type'     => 'checkbox',

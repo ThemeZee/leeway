@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Leeway\n"
 "Report-Msgid-Bugs-To: http://themezee.com/\n"
-"POT-Creation-Date: 2015-08-25 15:20+0100\n"
-"PO-Revision-Date: 2015-08-25 15:20+0100\n"
+"POT-Creation-Date: 2015-08-29 14:29+0100\n"
+"PO-Revision-Date: 2015-08-29 14:29+0100\n"
 "Last-Translator: \n"
 "Language-Team: ThemeZee <support@themezee.com>\n"
 "Language: en_US\n"
@@ -21,25 +21,13 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 
 #: 404.php:9
-msgid "404 Error: Not found"
+msgid "404: Page not found"
 msgstr ""
 
 #: 404.php:12
 msgid ""
-"The page you trying to reach does not exist, or has been moved. Please use "
-"the menus or the search box to find what you are looking for"
-msgstr ""
-
-#: 404.php:14
-msgid "Search"
-msgstr ""
-
-#: 404.php:17
-msgid "Recent Posts"
-msgstr ""
-
-#: 404.php:27
-msgid "Pages"
+"It looks like nothing was found at this location. Maybe try a search or one "
+"of the links below?"
 msgstr ""
 
 #: comments.php:10
@@ -61,7 +49,7 @@ msgstr ""
 msgid "% comments"
 msgstr ""
 
-#: content-excerpt.php:12 content.php:11
+#: content-excerpt.php:12 content-search.php:8 content.php:11
 #: inc/widgets/widget-category-posts-boxed.php:166
 #: inc/widgets/widget-category-posts-boxed.php:251
 #: inc/widgets/widget-category-posts-columns.php:180
@@ -71,9 +59,9 @@ msgstr ""
 #: featured-content-slider.php:14
 msgid ""
 "There is no featured content to be displayed in the slider. To set up the "
-"slider, go to Appearance -> Customize -> Theme Options, and add a tag under "
-"Tag Name in the Featured Content section. The slideshow will then display "
-"all posts which are tagged with that keyword."
+"slider, go to Appearance &#8594; Customize &#8594; Theme Options, and add a "
+"featured tag in the Post Slider section. The slideshow displays all your "
+"posts which are tagged with that keyword."
 msgstr ""
 
 #: functions.php:118
@@ -92,14 +80,13 @@ msgstr ""
 msgid "Social Icons"
 msgstr ""
 
-#: functions.php:159
+#: functions.php:159 sidebar.php:14
 msgid "Sidebar"
 msgstr ""
 
 #: functions.php:161
 msgid ""
-"Appears on posts and pages except Magazine Homepage and Fullwidth page "
-"template."
+"Appears on posts and pages except Magazine Homepage and Fullwidth template."
 msgstr ""
 
 #: functions.php:168
@@ -120,11 +107,6 @@ msgstr ""
 msgid "(Edit)"
 msgstr ""
 
-#: functions.php:256
-#, php-format
-msgid "<span class=\"fn\">%s</span>"
-msgstr ""
-
 #: functions.php:260
 msgid "Your comment is awaiting moderation."
 msgstr ""
@@ -134,31 +116,18 @@ msgstr ""
 msgid "%1$s at %2$s"
 msgstr ""
 
-#: image.php:19
-msgid "Previous"
-msgstr ""
-
-#: image.php:20
-msgid "Next"
-msgstr ""
-
-#: image.php:26
-msgid "Return to Gallery"
-msgstr ""
-
-#: image.php:27
-msgid "Return to"
-msgstr ""
-
 #: search.php:13
 #, php-format
 msgid "Search Results for: %s"
 msgstr ""
 
-#: search.php:30
+#: search.php:37
+msgid "No matches"
+msgstr ""
+
+#: search.php:41
 msgid ""
-"No matches. Please try again, or use the navigation menus to find what you "
-"search for."
+"Please try again, or use the navigation menus to find what you search for."
 msgstr ""
 
 #: searchform.php:4
@@ -171,22 +140,16 @@ msgctxt "placeholder"
 msgid "Search &hellip;"
 msgstr ""
 
-#: sidebar.php:14
-msgid "Widget Area"
-msgstr ""
-
 #: sidebar.php:16
 msgid ""
-"There are no active widgets to be displayed. Please go to Appearance -> "
-"Widgets to setup your sidebar."
+"Please go to Appearance &#8594; Widgets and add some widgets to your sidebar."
 msgstr ""
 
 #: template-magazine.php:39
 msgid ""
-"There are no widgets to be displayed. Please go to Appearance -> Widgets and "
-"add at least one widget to the \"Magazine Homepage\" widget area. You can "
-"use the three Category Posts widgets to set up the theme like the demo "
-"website."
+"Please go to Appearance &#8594; Widgets and add at least one widget to the "
+"\"Magazine Homepage\" widget area. You can use the Category Posts widgets to "
+"set up the theme like the demo website."
 msgstr ""
 
 #: inc/featured-content.php:368
@@ -205,20 +168,6 @@ msgstr ""
 msgid "Number of Posts"
 msgstr ""
 
-#: inc/template-tags.php:66
-#, php-format
-msgid ""
-"<a href=\"%1$s\" title=\"%2$s\" rel=\"bookmark\"><time class=\"entry-date "
-"published updated\" datetime=\"%3$s\">%4$s</time></a>"
-msgstr ""
-
-#: inc/template-tags.php:81
-#, php-format
-msgid ""
-"<span class=\"author vcard\"><a class=\"fn\" href=\"%1$s\" title=\"%2$s\" "
-"rel=\"author\">%3$s</a></span>"
-msgstr ""
-
 #: inc/template-tags.php:83
 #, php-format
 msgid "View all posts by %s"
@@ -232,7 +181,7 @@ msgstr ""
 
 #: inc/template-tags.php:151
 #, php-format
-msgid "Category: %1$s"
+msgid "Category: %s"
 msgstr ""
 
 #: inc/template-tags.php:164
@@ -245,108 +194,98 @@ msgstr ""
 msgid "Powered by %1$s and %2$s."
 msgstr ""
 
-#: inc/template-tags.php:217
-msgid "WordPress"
-msgstr ""
-
-#: inc/template-tags.php:218
-msgid "Leeway"
-msgstr ""
-
 #: inc/template-tags.php:250
 msgid ""
-"Please go to WP-Admin-> Appearance-> Menus and create a new custom menu with "
+"Please go to Appearance &#8594; Menus and create a new custom menu with "
 "custom links to all your social networks. Then click on \"Manage Locations\" "
-"tab and assign your created menu to the \"Social Icons\" theme location."
+"tab and assign your created menu to the \"Social Icons\" location."
 msgstr ""
 
-#: inc/theme-info.php:15
-msgid "Welcome to Leeway"
+#: inc/theme-info.php:18 inc/theme-info.php:38
+#, php-format
+msgid "Welcome to %1$s %2$s"
 msgstr ""
 
-#: inc/theme-info.php:16
+#: inc/theme-info.php:19
 msgid "Theme Info"
 msgstr ""
 
-#: inc/theme-info.php:35
-#, php-format
-msgid "Welcome to %1s %2s"
-msgstr ""
-
-#: inc/theme-info.php:41
+#: inc/theme-info.php:44
 msgid "Important Links:"
 msgstr ""
 
-#: inc/theme-info.php:42
-msgid "Theme Info Page"
-msgstr ""
-
-#: inc/theme-info.php:43
-msgid "Changelog"
-msgstr ""
-
-#: inc/theme-info.php:44
-msgid "Theme Demo"
-msgstr ""
-
-#: inc/theme-info.php:45 inc/theme-info.php:60
-msgid "Theme Documentation"
+#: inc/theme-info.php:45
+msgid "Theme Page"
 msgstr ""
 
 #: inc/theme-info.php:46
+msgid "Changelog"
+msgstr ""
+
+#: inc/theme-info.php:47
+msgid "Theme Demo"
+msgstr ""
+
+#: inc/theme-info.php:48 inc/theme-info.php:63
+msgid "Theme Documentation"
+msgstr ""
+
+#: inc/theme-info.php:49
 msgid "Rate this theme"
 msgstr ""
 
-#: inc/theme-info.php:57
+#: inc/theme-info.php:60
 #, php-format
 msgid "Getting Started with %s"
 msgstr ""
 
-#: inc/theme-info.php:62
+#: inc/theme-info.php:66
 msgid ""
-"Need any help to setup and configure this theme? We got you covered with an "
+"You need help to setup and configure this theme? We got you covered with an "
 "extensive theme documentation on our website."
 msgstr ""
 
-#: inc/theme-info.php:64
-msgid "Visit Leeway Documentation"
+#: inc/theme-info.php:70
+#, php-format
+msgid "View %s Documentation"
 msgstr ""
 
-#: inc/theme-info.php:69 inc/customizer/customizer.php:28
+#: inc/theme-info.php:76 inc/customizer/customizer.php:28
 msgid "Theme Options"
 msgstr ""
 
-#: inc/theme-info.php:71
+#: inc/theme-info.php:79
+#, php-format
 msgid ""
-"Leeway supports the awesome Theme Customizer for all theme settings. Click "
-"\"Customize Theme\" to open the Customizer now."
+"%s makes use of the Customizer for all theme settings. Click on \"Customize "
+"Theme\" to open the Customizer now."
 msgstr ""
 
-#: inc/theme-info.php:73
+#: inc/theme-info.php:82
 msgid "Customize Theme"
 msgstr ""
 
-#: inc/theme-info.php:78
+#: inc/theme-info.php:87 inc/customizer/sections/customizer-upgrade.php:17
 msgid "Pro Version"
 msgstr ""
 
-#: inc/theme-info.php:80
+#: inc/theme-info.php:90
 msgid ""
-"Need more features? Check out the PRO version which comes with additional "
-"features and advanced customization options."
+"You need more features? Purchase the Pro Version to get additional features "
+"and advanced customization options."
 msgstr ""
 
-#: inc/theme-info.php:82 inc/customizer/sections/customizer-upgrade.php:62
-msgid "Learn more about Leeway Pro"
-msgstr ""
-
-#: inc/theme-info.php:102
+#: inc/theme-info.php:94 inc/customizer/sections/customizer-upgrade.php:65
 #, php-format
-msgid ""
-"Leeway is proudly brought to you by %1s. If you like this theme, %2s :) "
+msgid "Learn more about %s Pro"
 msgstr ""
 
-#: inc/theme-info.php:104
+#: inc/theme-info.php:115
+#, php-format
+msgid "%1$s is proudly brought to you by %2$s. If you like this theme, %3$s :)"
+msgstr ""
+
+#: inc/theme-info.php:118
 msgid "rate it"
 msgstr ""
 
@@ -387,7 +326,7 @@ msgid "Header Content"
 msgstr ""
 
 #: inc/customizer/sections/customizer-header.php:47
-msgid "Display Social Icons on top navigation."
+msgid "Display Social Icons on top navigation"
 msgstr ""
 
 #: inc/customizer/sections/customizer-post.php:14
@@ -395,7 +334,7 @@ msgid "Post Settings"
 msgstr ""
 
 #: inc/customizer/sections/customizer-post.php:29
-msgid "Post Length on archives"
+msgid "Post length on archives"
 msgstr ""
 
 #: inc/customizer/sections/customizer-post.php:35
@@ -403,7 +342,7 @@ msgid "Show full posts"
 msgstr ""
 
 #: inc/customizer/sections/customizer-post.php:36
-msgid "Show post summaries (excerpt)"
+msgid "Show post excerpts"
 msgstr ""
 
 #: inc/customizer/sections/customizer-post.php:51
@@ -419,23 +358,23 @@ msgid "Display featured images on single posts"
 msgstr ""
 
 #: inc/customizer/sections/customizer-post.php:100
-msgid "Postmeta"
+msgid "Post Meta"
 msgstr ""
 
 #: inc/customizer/sections/customizer-post.php:115
-msgid "Display date on posts."
+msgid "Display post date"
 msgstr ""
 
 #: inc/customizer/sections/customizer-post.php:130
-msgid "Display author on posts."
+msgid "Display post author"
 msgstr ""
 
 #: inc/customizer/sections/customizer-post.php:145
-msgid "Display categories on posts."
+msgid "Display post categories"
 msgstr ""
 
 #: inc/customizer/sections/customizer-post.php:160
-msgid "Display tags on posts."
+msgid "Display post tags"
 msgstr ""
 
 #: inc/customizer/sections/customizer-slider.php:14
@@ -443,15 +382,15 @@ msgid "Post Slider"
 msgstr ""
 
 #: inc/customizer/sections/customizer-slider.php:30
-msgid "Activate Featured Post Slider"
+msgid "Activate Post Slider"
 msgstr ""
 
 #: inc/customizer/sections/customizer-slider.php:45
-msgid "Display Slider on Magazine Front Page template."
+msgid "Show Slider on Magazine Homepage"
 msgstr ""
 
 #: inc/customizer/sections/customizer-slider.php:60
-msgid "Display Slider on normal blog index."
+msgid "Show Slider on posts page"
 msgstr ""
 
 #: inc/customizer/sections/customizer-slider.php:78
@@ -469,35 +408,32 @@ msgid "Slider Animation"
 msgstr ""
 
 #: inc/customizer/sections/customizer-slider.php:120
-msgid "Horizontal Slider"
+msgid "Slide Effect"
 msgstr ""
 
 #: inc/customizer/sections/customizer-slider.php:121
-msgid "Fade Slider"
+msgid "Fade Effect"
 msgstr ""
 
-#: inc/customizer/sections/customizer-upgrade.php:14
-msgid "Leeway Pro"
+#: inc/customizer/sections/customizer-upgrade.php:33
+msgid "You need more features?"
 msgstr ""
 
-#: inc/customizer/sections/customizer-upgrade.php:30
-msgid "Need more features?"
-msgstr ""
-
-#: inc/customizer/sections/customizer-upgrade.php:46
+#: inc/customizer/sections/customizer-upgrade.php:49
 msgid ""
-"Check out the PRO version which comes with additional features and advanced "
+"Purchase the Pro Version to get additional features and advanced "
 "customization options."
 msgstr ""
 
 #: inc/widgets/widget-category-posts-boxed.php:11
 msgid ""
-"Displays your latest posts from a selected category in a boxed layout. "
-"Please use this widget ONLY in the Magazine Homepage widget area."
+"Displays your posts from a selected category in a boxed layout. Please use "
+"this widget ONLY in the Magazine Homepage widget area."
 msgstr ""
 
 #: inc/widgets/widget-category-posts-boxed.php:13
-msgid "Category Posts Boxed (Leeway)"
+#, php-format
+msgid "Category Posts: Boxed (%s)"
 msgstr ""
 
 #: inc/widgets/widget-category-posts-boxed.php:340
@@ -538,12 +474,13 @@ msgstr ""
 
 #: inc/widgets/widget-category-posts-columns.php:11
 msgid ""
-"Displays your latest posts from two specified categories. Please use this "
-"widget ONLY in the Magazine Homepage widget area."
+"Displays your posts from two selected categories. Please use this widget "
+"ONLY in the Magazine Homepage widget area."
 msgstr ""
 
 #: inc/widgets/widget-category-posts-columns.php:13
-msgid "Category Posts Columns (Leeway)"
+#, php-format
+msgid "Category Posts: 2 Columns (%s)"
 msgstr ""
 
 #: inc/widgets/widget-category-posts-columns.php:305
@@ -568,17 +505,18 @@ msgid "Number of posts:"
 msgstr ""
 
 #: inc/widgets/widget-category-posts-columns.php:355
-msgid "Highlight First Post (Big Image + Excerpt)"
+msgid "Highlight first post (big image + excerpt)"
 msgstr ""
 
 #: inc/widgets/widget-category-posts-grid.php:11
 msgid ""
-"Displays your latest posts from a selected category in a grid layout. Please "
-"use this widget ONLY in the Magazine Homepage widget area."
+"Displays your posts from a selected category in a grid layout. Please use "
+"this widget ONLY in the Magazine Homepage widget area."
 msgstr ""
 
 #: inc/widgets/widget-category-posts-grid.php:13
-msgid "Category Posts Grid (Leeway)"
+#, php-format
+msgid "Category Posts: Grid (%s)"
 msgstr ""
 
 #: inc/widgets/widget-category-posts-grid.php:353

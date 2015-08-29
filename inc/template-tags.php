@@ -148,7 +148,7 @@ if ( ! function_exists( 'leeway_display_postinfo' ) ):
 		if ( $theme_options['meta_category'] == true ) : ?>
 
 			<span class="meta-category">
-				<?php printf(__('Category: %1$s', 'leeway'), get_the_category_list(', ')); ?>
+				<?php printf(__('Category: %s', 'leeway'), get_the_category_list(', ')); ?>
 			</span>
 	
 		<?php endif;
@@ -247,7 +247,7 @@ function leeway_display_social_icons() {
 	else: // Display Hint how to configure Social Icons ?>
 
 		<p class="social-icons-hint">
-			<?php _e('Please go to WP-Admin-> Appearance-> Menus and create a new custom menu with custom links to all your social networks. Then click on "Manage Locations" tab and assign your created menu to the "Social Icons" theme location.', 'leeway'); ?>
+			<?php _e('Please go to Appearance &#8594; Menus and create a new custom menu with custom links to all your social networks. Then click on "Manage Locations" tab and assign your created menu to the "Social Icons" location.', 'leeway'); ?>
 		</p>
 <?php
 	endif;

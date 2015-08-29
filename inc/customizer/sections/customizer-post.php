@@ -87,7 +87,7 @@ function leeway_customize_register_post_settings( $wp_customize ) {
 		)
 	);
 	
-	// Add Postmeta Settings
+	// Add Post Meta Settings
 	$wp_customize->add_setting( 'leeway_theme_options[postmeta_headline]', array(
         'default'           => '',
 		'type'           	=> 'option',
@@ -97,7 +97,7 @@ function leeway_customize_register_post_settings( $wp_customize ) {
     );
     $wp_customize->add_control( new Leeway_Customize_Header_Control(
         $wp_customize, 'leeway_control_postmeta_headline', array(
-            'label' => __( 'Postmeta', 'leeway' ),
+            'label' => __( 'Post Meta', 'leeway' ),
             'section' => 'leeway_section_post',
             'settings' => 'leeway_theme_options[postmeta_headline]',
             'priority' => 5
@@ -112,7 +112,7 @@ function leeway_customize_register_post_settings( $wp_customize ) {
 		)
 	);
     $wp_customize->add_control( 'leeway_control_meta_date', array(
-        'label'    => __( 'Display date on posts.', 'leeway' ),
+        'label'    => __( 'Display post date', 'leeway' ),
         'section'  => 'leeway_section_post',
         'settings' => 'leeway_theme_options[meta_date]',
         'type'     => 'checkbox',
@@ -127,7 +127,7 @@ function leeway_customize_register_post_settings( $wp_customize ) {
 		)
 	);
     $wp_customize->add_control( 'leeway_control_meta_author', array(
-        'label'    => __( 'Display author on posts.', 'leeway' ),
+        'label'    => __( 'Display post author', 'leeway' ),
         'section'  => 'leeway_section_post',
         'settings' => 'leeway_theme_options[meta_author]',
         'type'     => 'checkbox',
@@ -142,7 +142,7 @@ function leeway_customize_register_post_settings( $wp_customize ) {
 		)
 	);
     $wp_customize->add_control( 'leeway_control_meta_category', array(
-        'label'    => __( 'Display categories on posts.', 'leeway' ),
+        'label'    => __( 'Display post categories', 'leeway' ),
         'section'  => 'leeway_section_post',
         'settings' => 'leeway_theme_options[meta_category]',
         'type'     => 'checkbox',
@@ -157,7 +157,7 @@ function leeway_customize_register_post_settings( $wp_customize ) {
 		)
 	);
     $wp_customize->add_control( 'leeway_control_meta_tags', array(
-        'label'    => __( 'Display tags on posts.', 'leeway' ),
+        'label'    => __( 'Display post tags', 'leeway' ),
         'section'  => 'leeway_section_post',
         'settings' => 'leeway_theme_options[meta_tags]',
         'type'     => 'checkbox',
