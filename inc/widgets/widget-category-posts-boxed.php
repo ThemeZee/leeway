@@ -402,5 +402,3 @@ class Leeway_Category_Posts_Boxed_Widget extends WP_Widget {
 <?php
 	}
 }
-register_widget('Leeway_Category_Posts_Boxed_Widget');
-?>

@@ -154,7 +154,7 @@ add_action( 'widgets_init', 'leeway_register_sidebars' );
 if ( ! function_exists( 'leeway_register_sidebars' ) ):
 function leeway_register_sidebars() {
 
-	// Register Sidebars
+	// Register Sidebar
 	register_sidebar( array(
 		'name' => __( 'Sidebar', 'leeway' ),
 		'id' => 'sidebar',
@@ -164,6 +164,8 @@ function leeway_register_sidebars() {
 		'before_title' => '<h3 class="widgettitle"><span>',
 		'after_title' => '</span></h3>',
 	));
+	
+	// Register Magazine Homepage
 	register_sidebar( array(
 		'name' => __( 'Magazine Homepage', 'leeway' ),
 		'id' => 'magazine-homepage',
@@ -173,6 +175,11 @@ function leeway_register_sidebars() {
 		'before_title' => '<h3 class="widgettitle"><span>',
 		'after_title' => '</span></h3>',
 	));
+	
+	// Register Category Posts Widgets
+	register_widget('Leeway_Category_Posts_Boxed_Widget');
+	register_widget('Leeway_Category_Posts_Columns_Widget');
+	register_widget('Leeway_Category_Posts_Grid_Widget');
 
 }
 endif;
