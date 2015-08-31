@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Leeway\n"
 "Report-Msgid-Bugs-To: http://themezee.com/\n"
-"POT-Creation-Date: 2015-08-29 14:29+0100\n"
-"PO-Revision-Date: 2015-08-29 14:29+0100\n"
+"POT-Creation-Date: 2015-08-31 20:01+0100\n"
+"PO-Revision-Date: 2015-08-31 20:01+0100\n"
 "Last-Translator: \n"
 "Language-Team: ThemeZee <support@themezee.com>\n"
 "Language: en_US\n"
@@ -89,29 +89,29 @@ msgid ""
 "Appears on posts and pages except Magazine Homepage and Fullwidth template."
 msgstr ""
 
-#: functions.php:168
+#: functions.php:170
 msgid "Magazine Homepage"
 msgstr ""
 
-#: functions.php:170
+#: functions.php:172
 msgid ""
 "Appears on Magazine Homepage template only. You can use the Category Posts "
 "widgets here."
 msgstr ""
 
-#: functions.php:244
+#: functions.php:251
 msgid "Pingback:"
 msgstr ""
 
-#: functions.php:245 functions.php:265
+#: functions.php:252 functions.php:272
 msgid "(Edit)"
 msgstr ""
 
-#: functions.php:260
+#: functions.php:267
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: functions.php:264
+#: functions.php:271
 #, php-format
 msgid "%1$s at %2$s"
 msgstr ""
@@ -287,6 +287,10 @@ msgstr ""
 
 #: inc/theme-info.php:118
 msgid "rate it"
+msgstr ""
+
+#: inc/customizer/customizer.php:38
+msgid "Background"
 msgstr ""
 
 #: inc/customizer/customizer.php:49

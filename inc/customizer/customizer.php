@@ -35,7 +35,7 @@ function leeway_customize_register_options( $wp_customize ) {
 	
 	// Change default background section
 	$wp_customize->get_control( 'background_color'  )->section   = 'background_image';
-	$wp_customize->get_section( 'background_image'  )->title     = 'Background';
+	$wp_customize->get_section( 'background_image'  )->title     = __( 'Background', 'leeway' );
 	
 	// Add Header Tagline option
 	$wp_customize->add_setting( 'leeway_theme_options[header_tagline]', array(
