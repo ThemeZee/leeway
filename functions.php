@@ -175,11 +175,6 @@ function leeway_register_sidebars() {
 		'before_title' => '<h3 class="widgettitle"><span>',
 		'after_title' => '</span></h3>',
 	));
-	
-	// Register Category Posts Widgets
-	register_widget('Leeway_Category_Posts_Boxed_Widget');
-	register_widget('Leeway_Category_Posts_Columns_Widget');
-	register_widget('Leeway_Category_Posts_Grid_Widget');
 
 }
 endif;
