@@ -255,4 +255,48 @@ function leeway_display_social_icons() {
 }
 
 
-?>
+// Custom Template for comments and pingbacks.
+if ( ! function_exists( 'leeway_list_comments' ) ):
+function leeway_list_comments($comment, $args, $depth) {
+
+	$GLOBALS['comment'] = $comment;
+
+	if( $comment->comment_type == 'pingback' or $comment->comment_type == 'trackback' ) : ?>
+
+		<li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
+			<p><?php _e( 'Pingback:', 'leeway' ); ?> <?php comment_author_link(); ?>
+			<?php edit_comment_link( __( '(Edit)', 'leeway' ), '<span class="edit-link">', '</span>' ); ?>
+			</p>
+
+	<?php else : ?>
+
+		<li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
+
+			<div id="div-comment-<?php comment_ID(); ?>" class="comment-body">
+
+				<div class="comment-author vcard">
+					<?php echo get_avatar( $comment, 56 ); ?>
+					<?php printf( '<span class="fn">%s</span>', get_comment_author_link() ); ?>
+				</div>
+
+		<?php if ($comment->comment_approved == '0') : ?>
+				<p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'leeway' ); ?></p>
+		<?php endif; ?>
+
+				<div class="comment-meta commentmetadata">
+					<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>"><?php printf(__('%1$s at %2$s', 'leeway'), get_comment_date(),  get_comment_time()) ?></a>
+					<?php edit_comment_link(__('(Edit)', 'leeway'),'  ','') ?>
+				</div>
+
+				<div class="comment-content"><?php comment_text(); ?></div>
+
+				<div class="reply">
+					<?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
+				</div>
+
+			</div>
+<?php
+	endif;
+
+}
+endif;
