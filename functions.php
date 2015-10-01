@@ -5,7 +5,6 @@
 // Load default style.css and Javascripts
 add_action('wp_enqueue_scripts', 'leeway_enqueue_scripts');
 
-if ( ! function_exists( 'leeway_enqueue_scripts' ) ):
 function leeway_enqueue_scripts() {
 
 	// Get Theme Options from Database
@@ -35,20 +34,16 @@ function leeway_enqueue_scripts() {
 
 	endif;
 
+	// Register Comment Reply Script for Threaded Comments
+	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+		wp_enqueue_script( 'comment-reply' );
+	}
+
 	// Register and Enqueue Fonts
 	wp_enqueue_style('leeway-default-fonts', leeway_google_fonts_url(), array(), null );
 
 }
-endif;
 
-// Load comment-reply.js if comment form is loaded and threaded comments activated
-add_action( 'comment_form_before', 'leeway_enqueue_comment_reply' );
-
-function leeway_enqueue_comment_reply() {
-	if( get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
-}
 
 // Retrieve Font URL to register default Google Fonts
 function leeway_google_fonts_url() {
@@ -81,7 +76,6 @@ function leeway_google_fonts_url() {
 // Setup Function: Registers support for various WordPress features
 add_action( 'after_setup_theme', 'leeway_setup' );
 
-if ( ! function_exists( 'leeway_setup' ) ):
 function leeway_setup() {
 
 	// Set Content Width
@@ -123,13 +117,11 @@ function leeway_setup() {
 	register_nav_menu( 'social', __('Social Icons', 'leeway') );
 
 }
-endif;
 
 
 // Add custom Image Sizes
 add_action( 'after_setup_theme', 'leeway_add_image_sizes' );
 
-if ( ! function_exists( 'leeway_add_image_sizes' ) ):
 function leeway_add_image_sizes() {
 	
 	// Add Custom Header Image Size
@@ -145,13 +137,11 @@ function leeway_add_image_sizes() {
 	add_image_size( 'leeway-category-posts-widget-extra-large', 600, 350, true);
 	
 }
-endif;
 
 
 // Register Sidebars
 add_action( 'widgets_init', 'leeway_register_sidebars' );
 
-if ( ! function_exists( 'leeway_register_sidebars' ) ):
 function leeway_register_sidebars() {
 
 	// Register Sidebar
@@ -177,7 +167,6 @@ function leeway_register_sidebars() {
 	));
 
 }
-endif;
 
 
 /*==================================== INCLUDE FILES ====================================*/
