@@ -104,9 +104,6 @@ function leeway_setup() {
 		'width'	=> 1320,
 		'height' => 250,
 		'flex-height' => true));
-		
-	// Add Theme Support for Leeway Pro Plugin
-	add_theme_support( 'leeway-pro' );
 
 	// Register Navigation Menus
 	register_nav_menu( 'primary', __('Main Navigation', 'leeway') );
@@ -187,6 +184,9 @@ require get_template_directory() . '/inc/extras.php';
 
 // include Template Functions
 require( get_template_directory() . '/inc/template-tags.php' );
+
+// Include support functions for Theme Addons
+require get_template_directory() . '/inc/addons.php';
 
 // include Widget Files
 require( get_template_directory() . '/inc/widgets/widget-category-posts-boxed.php' );
