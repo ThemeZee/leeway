@@ -33,7 +33,8 @@ class Leeway_Category_Posts_Columns_Widget extends WP_Widget {
 			'category_one_title'	=> '',
 			'category_two_title'	=> '',
 			'number'				=> 4,
-			'highlight_post'		=> true
+			'highlight_post'		=> true,
+			'postmeta'			=> 3
 		);
 		
 		return $defaults;
@@ -221,23 +222,32 @@ class Leeway_Category_Posts_Columns_Widget extends WP_Widget {
 	}
 	
 	// Display Postmeta
-	function display_postmeta($instance) { ?>
-
-		<span class="meta-date">
-		<?php printf('<a href="%1$s" title="%2$s" rel="bookmark"><time datetime="%3$s">%4$s</time></a>',
-				esc_url( get_permalink() ),
-				esc_attr( get_the_time() ),
-				esc_attr( get_the_date( 'c' ) ),
-				esc_html( get_the_date() )
-			);
-		?>
-		</span>
-
-	<?php if ( comments_open() ) : ?>
-		<span class="meta-comments sep">
-			<?php comments_popup_link( __('Leave a comment', 'leeway'),__('One comment','leeway'),__('% comments','leeway') ); ?>
-		</span>
-	<?php endif;
+	function display_postmeta( $instance ) {
+	
+		// Get Widget Settings
+		$defaults = $this->default_settings();
+		extract( wp_parse_args( $instance, $defaults ) );
+		
+		// Display Date unless deactivated
+		if ( $postmeta > 0 ) :
+		
+			leeway_meta_date();
+					
+		endif; 
+		
+		// Display Author unless deactivated
+		if ( $postmeta == 2 ) :	
+		
+			leeway_meta_author();
+		
+		endif; 
+		
+		// Display Comments
+		if ( $postmeta == 3 and comments_open() ) :
+			
+			leeway_meta_comments();
+			
+		endif;
 
 	}
 	
@@ -288,6 +298,7 @@ class Leeway_Category_Posts_Columns_Widget extends WP_Widget {
 		$instance['category_two'] = (int)$new_instance['category_two'];
 		$instance['number'] = (int)$new_instance['number'];
 		$instance['highlight_post'] = !empty($new_instance['highlight_post']);
+		$instance['postmeta'] = (int)$new_instance['postmeta'];
 		
 		$this->delete_widget_cache();
 		
@@ -354,6 +365,16 @@ class Leeway_Category_Posts_Columns_Widget extends WP_Widget {
 				<input class="checkbox" type="checkbox" <?php checked( $highlight_post ) ; ?> id="<?php echo $this->get_field_id('highlight_post'); ?>" name="<?php echo $this->get_field_name('highlight_post'); ?>" />
 				<?php _e('Highlight first post (big image + excerpt)', 'leeway'); ?>
 			</label>
+		</p>
+		
+		<p>
+			<label for="<?php echo $this->get_field_id( 'postmeta' ); ?>"><?php _e( 'Post Meta:', 'leeway' ); ?></label><br/>
+			<select id="<?php echo $this->get_field_id( 'postmeta' ); ?>" name="<?php echo $this->get_field_name( 'postmeta' ); ?>">
+				<option value="0" <?php selected($postmeta, 0); ?>><?php _e( 'Hide post meta', 'leeway' ); ?></option>
+				<option value="1" <?php selected($postmeta, 1); ?>><?php _e( 'Display post date', 'leeway' ); ?></option>
+				<option value="2" <?php selected($postmeta, 2); ?>><?php _e( 'Display date and author', 'leeway' ); ?></option>
+				<option value="3" <?php selected($postmeta, 3); ?>><?php _e( 'Display date and comments', 'leeway' ); ?></option>
+			</select>
 		</p>
 		
 <?php
