@@ -106,12 +106,12 @@ function leeway_setup() {
 		'flex-height' => true));
 
 	// Register Navigation Menus
-	register_nav_menu( 'primary', __('Main Navigation', 'leeway') );
-	register_nav_menu( 'secondary', __('Top Navigation', 'leeway') );
-	register_nav_menu( 'footer', __('Footer Navigation', 'leeway') );
+	register_nav_menu( 'primary', esc_html__( 'Main Navigation', 'leeway' ) );
+	register_nav_menu( 'secondary', esc_html__( 'Top Navigation', 'leeway' ) );
+	register_nav_menu( 'footer', esc_html__( 'Footer Navigation', 'leeway' ) );
 	
 	// Register Social Icons Menu
-	register_nav_menu( 'social', __('Social Icons', 'leeway') );
+	register_nav_menu( 'social', esc_html__( 'Social Icons', 'leeway' ) );
 
 }
 
@@ -143,9 +143,9 @@ function leeway_register_sidebars() {
 
 	// Register Sidebar
 	register_sidebar( array(
-		'name' => __( 'Sidebar', 'leeway' ),
+		'name' => esc_html__( 'Sidebar', 'leeway' ),
 		'id' => 'sidebar',
-		'description' => __( 'Appears on posts and pages except Magazine Homepage and Fullwidth template.', 'leeway' ),
+		'description' => esc_html__( 'Appears on posts and pages except Magazine Homepage and Fullwidth template.', 'leeway' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s clearfix">',
 		'after_widget' => '</aside>',
 		'before_title' => '<h3 class="widgettitle"><span>',
@@ -154,9 +154,9 @@ function leeway_register_sidebars() {
 	
 	// Register Magazine Homepage
 	register_sidebar( array(
-		'name' => __( 'Magazine Homepage', 'leeway' ),
+		'name' => esc_html__( 'Magazine Homepage', 'leeway' ),
 		'id' => 'magazine-homepage',
-		'description' => __( 'Appears on Magazine Homepage template only. You can use the Category Posts widgets here.', 'leeway' ),
+		'description' => esc_html__( 'Appears on Magazine Homepage template only. You can use the Category Posts widgets here.', 'leeway' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h3 class="widgettitle"><span>',

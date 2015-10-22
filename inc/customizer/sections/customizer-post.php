@@ -11,7 +11,7 @@ function leeway_customize_register_post_settings( $wp_customize ) {
 
 	// Add Sections for Post Settings
 	$wp_customize->add_section( 'leeway_section_post', array(
-        'title'    => __( 'Post Settings', 'leeway' ),
+        'title'    => esc_html__( 'Post Settings', 'leeway' ),
         'priority' => 30,
 		'panel' => 'leeway_options_panel' 
 		)
@@ -26,14 +26,14 @@ function leeway_customize_register_post_settings( $wp_customize ) {
 		)
 	);
     $wp_customize->add_control( 'leeway_control_posts_length', array(
-        'label'    => __( 'Post length on archives', 'leeway' ),
+        'label'    => esc_html__( 'Post length on archives', 'leeway' ),
         'section'  => 'leeway_section_post',
         'settings' => 'leeway_theme_options[posts_length]',
         'type'     => 'radio',
 		'priority' => 1,
         'choices'  => array(
-            'index' => __( 'Show full posts', 'leeway' ),
-            'excerpt' => __( 'Show post excerpts', 'leeway' )
+            'index' => esc_html__( 'Show full posts', 'leeway' ),
+            'excerpt' => esc_html__( 'Show post excerpts', 'leeway' )
 			)
 		)
 	);
@@ -48,7 +48,7 @@ function leeway_customize_register_post_settings( $wp_customize ) {
     );
     $wp_customize->add_control( new Leeway_Customize_Header_Control(
         $wp_customize, 'leeway_control_post_images', array(
-            'label' => __( 'Post Images', 'leeway' ),
+            'label' => esc_html__( 'Post Images', 'leeway' ),
             'section' => 'leeway_section_post',
             'settings' => 'leeway_theme_options[post_images]',
             'priority' => 	2
@@ -63,7 +63,7 @@ function leeway_customize_register_post_settings( $wp_customize ) {
 		)
 	);
     $wp_customize->add_control( 'leeway_control_posts_thumbnails_index', array(
-        'label'    => __( 'Display featured images on archive pages', 'leeway' ),
+        'label'    => esc_html__( 'Display featured images on archive pages', 'leeway' ),
         'section'  => 'leeway_section_post',
         'settings' => 'leeway_theme_options[post_thumbnails_index]',
         'type'     => 'checkbox',
@@ -79,7 +79,7 @@ function leeway_customize_register_post_settings( $wp_customize ) {
 		)
 	);
     $wp_customize->add_control( 'leeway_control_posts_thumbnails_single', array(
-        'label'    => __( 'Display featured images on single posts', 'leeway' ),
+        'label'    => esc_html__( 'Display featured images on single posts', 'leeway' ),
         'section'  => 'leeway_section_post',
         'settings' => 'leeway_theme_options[post_thumbnails_single]',
         'type'     => 'checkbox',
@@ -97,7 +97,7 @@ function leeway_customize_register_post_settings( $wp_customize ) {
     );
     $wp_customize->add_control( new Leeway_Customize_Header_Control(
         $wp_customize, 'leeway_control_postmeta_headline', array(
-            'label' => __( 'Post Meta', 'leeway' ),
+            'label' => esc_html__( 'Post Meta', 'leeway' ),
             'section' => 'leeway_section_post',
             'settings' => 'leeway_theme_options[postmeta_headline]',
             'priority' => 5
@@ -112,7 +112,7 @@ function leeway_customize_register_post_settings( $wp_customize ) {
 		)
 	);
     $wp_customize->add_control( 'leeway_control_meta_date', array(
-        'label'    => __( 'Display post date', 'leeway' ),
+        'label'    => esc_html__( 'Display post date', 'leeway' ),
         'section'  => 'leeway_section_post',
         'settings' => 'leeway_theme_options[meta_date]',
         'type'     => 'checkbox',
@@ -127,7 +127,7 @@ function leeway_customize_register_post_settings( $wp_customize ) {
 		)
 	);
     $wp_customize->add_control( 'leeway_control_meta_author', array(
-        'label'    => __( 'Display post author', 'leeway' ),
+        'label'    => esc_html__( 'Display post author', 'leeway' ),
         'section'  => 'leeway_section_post',
         'settings' => 'leeway_theme_options[meta_author]',
         'type'     => 'checkbox',
@@ -142,7 +142,7 @@ function leeway_customize_register_post_settings( $wp_customize ) {
 		)
 	);
     $wp_customize->add_control( 'leeway_control_meta_category', array(
-        'label'    => __( 'Display post categories', 'leeway' ),
+        'label'    => esc_html__( 'Display post categories', 'leeway' ),
         'section'  => 'leeway_section_post',
         'settings' => 'leeway_theme_options[meta_category]',
         'type'     => 'checkbox',
@@ -157,7 +157,7 @@ function leeway_customize_register_post_settings( $wp_customize ) {
 		)
 	);
     $wp_customize->add_control( 'leeway_control_meta_tags', array(
-        'label'    => __( 'Display post tags', 'leeway' ),
+        'label'    => esc_html__( 'Display post tags', 'leeway' ),
         'section'  => 'leeway_section_post',
         'settings' => 'leeway_theme_options[meta_tags]',
         'type'     => 'checkbox',

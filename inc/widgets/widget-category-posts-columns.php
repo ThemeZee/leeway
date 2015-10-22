@@ -8,9 +8,9 @@ class Leeway_Category_Posts_Columns_Widget extends WP_Widget {
 		// Setup Widget
 		$widget_ops = array(
 			'classname' => 'leeway_category_posts_columns', 
-			'description' => __('Displays your posts from two selected categories. Please use this widget ONLY in the Magazine Homepage widget area.', 'leeway')
+			'description' => esc_html__( 'Displays your posts from two selected categories. Please use this widget ONLY in the Magazine Homepage widget area.', 'leeway' )
 		);
-		parent::__construct('leeway_category_posts_columns', sprintf( __('Category Posts: 2 Columns (%s)', 'leeway'), wp_get_theme()->Name ), $widget_ops);
+		parent::__construct('leeway_category_posts_columns', sprintf( esc_html__( 'Category Posts: 2 Columns (%s)', 'leeway' ), wp_get_theme()->Name ), $widget_ops);
 		
 		// Delete Widget Cache on certain actions
 		add_action( 'save_post', array( $this, 'delete_widget_cache' ) );
@@ -178,7 +178,7 @@ class Leeway_Category_Posts_Columns_Widget extends WP_Widget {
 
 						<div class="entry">
 							<?php the_excerpt(); ?>
-							<a href="<?php esc_url(the_permalink()) ?>" class="more-link"><?php _e('Read more', 'leeway'); ?></a>
+							<a href="<?php esc_url(the_permalink()) ?>" class="more-link"><?php esc_html_e( 'Read more', 'leeway' ); ?></a>
 						</div>
 
 					</article>
@@ -275,7 +275,7 @@ class Leeway_Category_Posts_Columns_Widget extends WP_Widget {
 
 			else:
 			
-				$link_title = sprintf( __('View all posts from category %s', 'leeway'), get_cat_name( $category_id ) );
+				$link_title = sprintf( esc_html__( 'View all posts from category %s', 'leeway' ), get_cat_name( $category_id ) );
 				$link_url = esc_url( get_category_link( $category_id ) );
 				
 				echo '<a href="'. $link_url .'" title="'. $link_title . '">'. $widget_title . '</a>';
@@ -313,16 +313,16 @@ class Leeway_Category_Posts_Columns_Widget extends WP_Widget {
 
 ?>
 		<p>
-			<label for="<?php echo $this->get_field_id('category_one_title'); ?>"><?php _e('Left Category Title:', 'leeway'); ?>
+			<label for="<?php echo $this->get_field_id('category_one_title'); ?>"><?php esc_html_e( 'Left Category Title:', 'leeway' ); ?>
 				<input class="widefat" id="<?php echo $this->get_field_id('category_one_title'); ?>" name="<?php echo $this->get_field_name('category_one_title'); ?>" type="text" value="<?php echo $category_one_title; ?>" />
 			</label>
 		</p>
 
 		<p>
-			<label for="<?php echo $this->get_field_id('category_one'); ?>"><?php _e('Left Category:', 'leeway'); ?></label><br/>
+			<label for="<?php echo $this->get_field_id('category_one'); ?>"><?php esc_html_e( 'Left Category:', 'leeway' ); ?></label><br/>
 			<?php // Display Category One Select
 				$args = array(
-					'show_option_all'    => __('All Categories', 'leeway'),
+					'show_option_all'    => esc_html__( 'All Categories', 'leeway' ),
 					'show_count' 		 => true,
 					'hide_empty'		 => false,
 					'selected'           => $category_one,
@@ -334,16 +334,16 @@ class Leeway_Category_Posts_Columns_Widget extends WP_Widget {
 		</p>
 		
 				<p>
-			<label for="<?php echo $this->get_field_id('category_two_title'); ?>"><?php _e('Right Category Title:', 'leeway'); ?>
+			<label for="<?php echo $this->get_field_id('category_two_title'); ?>"><?php esc_html_e( 'Right Category Title:', 'leeway' ); ?>
 				<input class="widefat" id="<?php echo $this->get_field_id('category_two_title'); ?>" name="<?php echo $this->get_field_name('category_two_title'); ?>" type="text" value="<?php echo $category_two_title; ?>" />
 			</label>
 		</p>
 		
 		<p>
-			<label for="<?php echo $this->get_field_id('category_two'); ?>"><?php _e('Right Category:', 'leeway'); ?></label><br/>
+			<label for="<?php echo $this->get_field_id('category_two'); ?>"><?php esc_html_e( 'Right Category:', 'leeway' ); ?></label><br/>
 			<?php // Display Category One Select
 				$args = array(
-					'show_option_all'    => __('All Categories', 'leeway'),
+					'show_option_all'    => esc_html__( 'All Categories', 'leeway' ),
 					'show_count' 		 => true,
 					'hide_empty'		 => false,
 					'selected'           => $category_two,
@@ -355,7 +355,7 @@ class Leeway_Category_Posts_Columns_Widget extends WP_Widget {
 		</p>
 		
 		<p>
-			<label for="<?php echo $this->get_field_id('number'); ?>"><?php _e('Number of posts:', 'leeway'); ?>
+			<label for="<?php echo $this->get_field_id('number'); ?>"><?php esc_html_e( 'Number of posts:', 'leeway' ); ?>
 				<input id="<?php echo $this->get_field_id('number'); ?>" name="<?php echo $this->get_field_name('number'); ?>" type="text" value="<?php echo (int)$number; ?>" size="3" />
 			</label>
 		</p>
@@ -363,17 +363,17 @@ class Leeway_Category_Posts_Columns_Widget extends WP_Widget {
 		<p>
 			<label for="<?php echo $this->get_field_id('highlight_post'); ?>">
 				<input class="checkbox" type="checkbox" <?php checked( $highlight_post ) ; ?> id="<?php echo $this->get_field_id('highlight_post'); ?>" name="<?php echo $this->get_field_name('highlight_post'); ?>" />
-				<?php _e('Highlight first post (big image + excerpt)', 'leeway'); ?>
+				<?php esc_html_e( 'Highlight first post (big image + excerpt)', 'leeway' ); ?>
 			</label>
 		</p>
 		
 		<p>
-			<label for="<?php echo $this->get_field_id( 'postmeta' ); ?>"><?php _e( 'Post Meta:', 'leeway' ); ?></label><br/>
+			<label for="<?php echo $this->get_field_id( 'postmeta' ); ?>"><?php esc_html_e( 'Post Meta:', 'leeway' ); ?></label><br/>
 			<select id="<?php echo $this->get_field_id( 'postmeta' ); ?>" name="<?php echo $this->get_field_name( 'postmeta' ); ?>">
-				<option value="0" <?php selected($postmeta, 0); ?>><?php _e( 'Hide post meta', 'leeway' ); ?></option>
-				<option value="1" <?php selected($postmeta, 1); ?>><?php _e( 'Display post date', 'leeway' ); ?></option>
-				<option value="2" <?php selected($postmeta, 2); ?>><?php _e( 'Display date and author', 'leeway' ); ?></option>
-				<option value="3" <?php selected($postmeta, 3); ?>><?php _e( 'Display date and comments', 'leeway' ); ?></option>
+				<option value="0" <?php selected($postmeta, 0); ?>><?php esc_html_e( 'Hide post meta', 'leeway' ); ?></option>
+				<option value="1" <?php selected($postmeta, 1); ?>><?php esc_html_e( 'Display post date', 'leeway' ); ?></option>
+				<option value="2" <?php selected($postmeta, 2); ?>><?php esc_html_e( 'Display date and author', 'leeway' ); ?></option>
+				<option value="3" <?php selected($postmeta, 3); ?>><?php esc_html_e( 'Display date and comments', 'leeway' ); ?></option>
 			</select>
 		</p>
 		

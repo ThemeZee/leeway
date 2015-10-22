@@ -11,7 +11,7 @@ function leeway_customize_register_slider_settings( $wp_customize ) {
 
 	// Add Sections for Slider Settings
 	$wp_customize->add_section( 'leeway_section_slider', array(
-        'title'    => __( 'Post Slider', 'leeway' ),
+        'title'    => esc_html__( 'Post Slider', 'leeway' ),
         'priority' => 50,
 		'panel' => 'leeway_options_panel' 
 		)
@@ -27,7 +27,7 @@ function leeway_customize_register_slider_settings( $wp_customize ) {
     );
     $wp_customize->add_control( new Leeway_Customize_Header_Control(
         $wp_customize, 'leeway_control_slider_activated', array(
-            'label' => __( 'Activate Post Slider', 'leeway' ),
+            'label' => esc_html__( 'Activate Post Slider', 'leeway' ),
             'section' => 'leeway_section_slider',
             'settings' => 'leeway_theme_options[slider_active_header]',
             'priority' => 1
@@ -42,7 +42,7 @@ function leeway_customize_register_slider_settings( $wp_customize ) {
 		)
 	);
     $wp_customize->add_control( 'leeway_control_slider_active_magazine', array(
-        'label'    => __( 'Show Slider on Magazine Homepage', 'leeway' ),
+        'label'    => esc_html__( 'Show Slider on Magazine Homepage', 'leeway' ),
         'section'  => 'leeway_section_slider',
         'settings' => 'leeway_theme_options[slider_active_magazine]',
         'type'     => 'checkbox',
@@ -57,7 +57,7 @@ function leeway_customize_register_slider_settings( $wp_customize ) {
 		)
 	);
     $wp_customize->add_control( 'leeway_control_slider_active_blog', array(
-        'label'    => __( 'Show Slider on posts page', 'leeway' ),
+        'label'    => esc_html__( 'Show Slider on posts page', 'leeway' ),
         'section'  => 'leeway_section_slider',
         'settings' => 'leeway_theme_options[slider_active_blog]',
         'type'     => 'checkbox',
@@ -75,7 +75,7 @@ function leeway_customize_register_slider_settings( $wp_customize ) {
     );
     $wp_customize->add_control( new Leeway_Customize_Header_Control(
         $wp_customize, 'leeway_control_featured_posts_header', array(
-            'label' => __( 'Select Featured Posts', 'leeway' ),
+            'label' => esc_html__( 'Select Featured Posts', 'leeway' ),
             'section' => 'leeway_section_slider',
             'settings' => 'leeway_theme_options[featured_posts_header]',
             'priority' => 4,
@@ -92,7 +92,7 @@ function leeway_customize_register_slider_settings( $wp_customize ) {
     );
     $wp_customize->add_control( new Leeway_Customize_Description_Control(
         $wp_customize, 'leeway_control_featured_posts_description', array(
-			'label'    => __( 'The slideshow displays all your featured posts. You can easily feature posts by a tag of your choice.', 'leeway' ),
+			'label'    => esc_html__( 'The slideshow displays all your featured posts. You can easily feature posts by a tag of your choice.', 'leeway' ),
             'section' => 'leeway_section_slider',
             'settings' => 'leeway_theme_options[featured_posts_description]',
             'priority' => 5,
@@ -110,15 +110,15 @@ function leeway_customize_register_slider_settings( $wp_customize ) {
 		)
 	);
     $wp_customize->add_control( 'leeway_control_slider_animation', array(
-        'label'    => __( 'Slider Animation', 'leeway' ),
+        'label'    => esc_html__( 'Slider Animation', 'leeway' ),
         'section'  => 'leeway_section_slider',
         'settings' => 'leeway_theme_options[slider_animation]',
         'type'     => 'radio',
 		'priority' => 9,
 		'active_callback' => 'leeway_slider_activated_callback',
         'choices'  => array(
-            'horizontal' => __( 'Slide Effect', 'leeway' ),
-            'fade' => __( 'Fade Effect', 'leeway' )
+            'horizontal' => esc_html__( 'Slide Effect', 'leeway' ),
+            'fade' => esc_html__( 'Fade Effect', 'leeway' )
 			)
 		)
 	);

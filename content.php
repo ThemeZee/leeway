@@ -8,7 +8,7 @@
 		<?php leeway_display_thumbnail_index(); ?>
 		
 		<div class="entry clearfix">
-			<?php the_content(__('Read more', 'leeway')); ?>
+			<?php the_content( esc_html__( 'Read more', 'leeway' ) ); ?>
 			<div class="page-links"><?php wp_link_pages(); ?></div>
 		</div>
 		

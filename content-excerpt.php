@@ -9,7 +9,7 @@
 
 		<div class="entry clearfix">
 			<?php the_excerpt(); ?>
-			<a href="<?php esc_url(the_permalink()) ?>" class="more-link"><?php _e('Read more', 'leeway'); ?></a>
+			<a href="<?php esc_url(the_permalink()) ?>" class="more-link"><?php esc_html_e( 'Read more', 'leeway' ); ?></a>
 		</div>
 		
 		<div class="postinfo clearfix"><?php leeway_display_postinfo(); ?></div>
