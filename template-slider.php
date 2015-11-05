@@ -1,5 +1,12 @@
-<?php get_header(); ?>
+<?php
+/*
+Template Name: Post Slider
+*/
 
+get_header(); ?>
+	
+	<?php get_template_part( 'featured-content-slider' ); ?>
+	
 	<div id="wrap" class="clearfix">
 		
 		<section id="content" class="primary" role="main">
