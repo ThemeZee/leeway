@@ -2,6 +2,11 @@
 Leeway Changelog
 ===================================
 
+Version 1.1.4
+-----------------------------------
+[changed] all h2 post and page titles to h1 for better SEO
+[fixed] postmeta styling for widget bundle
+
 Version 1.1.3
 -----------------------------------
 [added] escaping for translation strings for improved security

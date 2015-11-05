@@ -52,9 +52,7 @@ add_filter('excerpt_length', 'leeway_slideshow_excerpt_length');
 					
 					<div class="slide-content">
 						
-						<h2 class="slide-title">
-							<a href="<?php esc_url(the_permalink()) ?>" rel="bookmark"><?php the_title(); ?></a>
-						</h2>
+						<?php the_title( sprintf( '<h1 class="slide-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
 						
 						<div class="slide-entry">
 							<a href="<?php esc_url(the_permalink()) ?>" rel="bookmark"><span><?php the_excerpt(); ?></span></a>
