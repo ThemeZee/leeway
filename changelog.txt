@@ -2,6 +2,11 @@
 Leeway Changelog
 ===================================
 
+Version 1.1.5
+-----------------------------------
+[removed] empty spaces at the end of template files
+[fixed] styling of 404 template
+
 Version 1.1.4
 -----------------------------------
 [added] Post Slider page template
