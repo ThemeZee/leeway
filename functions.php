@@ -103,6 +103,9 @@ function leeway_setup() {
 		'width'	=> 1320,
 		'height' => 250,
 		'flex-height' => true));
+		
+	// Add Theme Support for wooCommerce
+	add_theme_support( 'woocommerce' );
 
 	// Register Navigation Menus
 	register_nav_menu( 'primary', esc_html__( 'Main Navigation', 'leeway' ) );

@@ -4,6 +4,8 @@ Leeway Changelog
 
 Version 1.1.5
 -----------------------------------
+[added] basic support for wooCommerce
+[added] email icon to social menu
 [removed] empty spaces at the end of template files
 [fixed] styling of 404 template
 
