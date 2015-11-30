@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Leeway\n"
 "Report-Msgid-Bugs-To: http://themezee.com/\n"
-"POT-Creation-Date: 2015-11-12 10:01+0100\n"
-"PO-Revision-Date: 2015-11-12 10:01+0100\n"
+"POT-Creation-Date: 2015-11-30 14:31+0100\n"
+"PO-Revision-Date: 2015-11-30 14:31+0100\n"
 "Last-Translator: \n"
 "Language-Team: ThemeZee <support@themezee.com>\n"
 "Language: en_US\n"
@@ -20,11 +20,11 @@ msgstr ""
 "X-Textdomain-Support: yes\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: 404.php:9
+#: 404.php:11
 msgid "404: Page not found"
 msgstr ""
 
-#: 404.php:12
+#: 404.php:14
 msgid ""
 "It looks like nothing was found at this location. Maybe try a search or one "
 "of the links below?"
@@ -58,51 +58,51 @@ msgid ""
 "posts which are tagged with that keyword."
 msgstr ""
 
-#: functions.php:108
+#: functions.php:111
 msgid "Main Navigation"
 msgstr ""
 
-#: functions.php:109
+#: functions.php:112
 msgid "Top Navigation"
 msgstr ""
 
-#: functions.php:110
+#: functions.php:113
 msgid "Footer Navigation"
 msgstr ""
 
-#: functions.php:113
+#: functions.php:116
 msgid "Social Icons"
 msgstr ""
 
-#: functions.php:145 sidebar.php:14
+#: functions.php:148 sidebar.php:14
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:147
+#: functions.php:150
 msgid ""
 "Appears on posts and pages except Magazine Homepage and Fullwidth template."
 msgstr ""
 
-#: functions.php:156
+#: functions.php:159
 msgid "Magazine Homepage"
 msgstr ""
 
-#: functions.php:158
+#: functions.php:161
 msgid ""
 "Appears on Magazine Homepage template only. You can use the Category Posts "
 "widgets here."
 msgstr ""
 
-#: search.php:13
+#: search.php:20
 #, php-format
 msgid "Search Results for: %s"
 msgstr ""
 
-#: search.php:37
+#: search.php:47
 msgid "No matches"
 msgstr ""
 
-#: search.php:41
+#: search.php:51
 msgid ""
 "Please try again, or use the navigation menus to find what you search for."
 msgstr ""
