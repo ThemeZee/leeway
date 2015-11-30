@@ -680,6 +680,50 @@ input, textarea, select {
 	text-decoration: underline;
 }
 
+/* Breadcrumbs */
+.breadcrumbs {
+	font-weight: bold;
+	color: #fff;
+	background: #bb0000;
+	padding: 0.6em 1.0em;
+	line-height: 1.4em;
+	margin-bottom: 0.5em;
+}
+.breadcrumbs .trail-browse,
+.breadcrumbs .trail-items,
+.breadcrumbs .trail-items li {
+	display: inline;
+	line-height: 1.4;
+}
+.breadcrumbs .trail-browse {
+	margin-right: 0.5em;
+}
+.breadcrumbs .trail-items {
+	list-style: none;
+}
+.breadcrumbs .trail-items li a:link,
+.breadcrumbs .trail-items li a:visited {
+	color: #fff;
+	text-decoration: underline;
+}
+.breadcrumbs .trail-items li a:active,
+.breadcrumbs .trail-items li a:hover {
+	text-decoration: none;
+}
+.breadcrumbs .trail-items li::after {
+	content: "\00bb"; /* Raquo */
+	padding: 0 0.5em;
+}
+.trail-separator-slash .trail-items li::after { content: "\002F"; }
+.trail-separator-dash .trail-items li::after { content: "\2013"; }
+.trail-separator-bull .trail-items li::after { content: "\2022"; }
+.trail-separator-arrow-bracket .trail-items li::after { content: "\003e"; }
+.trail-separator-raquo .trail-items li::after { content: "\00bb"; }
+.trail-separator-single-arrow .trail-items li::after { content: "\2192"; }
+.trail-separator-double-arrow .trail-items li::after { content: "\21D2"; }
+.breadcrumbs .trail-items li:last-of-type::after {
+	display: none;
+}
 
 /* Text Elements
 -------------------------------------------------------------- */

@@ -8,13 +8,23 @@
 		
 		<section id="content" class="primary" role="main">
 		
-			<header class="page-header">
-				<h2 id="search-title" class="archive-title">
-					<?php printf( esc_html__( 'Search Results for: %s', 'leeway' ), '<span>' . get_search_query() . '</span>' ); ?>
-				</h2>
-			</header>
+			<?php // Display breadcrumbs or archive title
+			if ( function_exists( 'themezee_breadcrumbs' ) ) :
+
+				themezee_breadcrumbs(); 
+				
+			else : ?>
 			
-		<?php if (have_posts()) : while (have_posts()) : the_post();
+				<header class="page-header">
+					<h2 id="search-title" class="archive-title">
+						<?php printf( esc_html__( 'Search Results for: %s', 'leeway' ), '<span>' . get_search_query() . '</span>' ); ?>
+					</h2>
+				</header>
+			
+			<?php
+			endif;
+			
+			if (have_posts()) : while (have_posts()) : the_post();
 		
 				if ( 'post' == get_post_type() ) :
 		
