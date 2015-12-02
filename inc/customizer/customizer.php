@@ -95,7 +95,29 @@ function leeway_customize_register_options( $wp_customize ) {
 add_action( 'customize_preview_init', 'leeway_customize_preview_js' );
 
 function leeway_customize_preview_js() {
-	wp_enqueue_script( 'leeway-customizer-js', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20140312', true );
+	wp_enqueue_script( 'leeway-customizer-preview', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20151202', true );
+}
+
+
+// Embed JS file for Customizer Controls
+add_action( 'customize_controls_enqueue_scripts', 'leeway_customize_controls_js' );
+
+function leeway_customize_controls_js() {
+	
+	wp_enqueue_script( 'leeway-customizer-controls', get_template_directory_uri() . '/js/customizer-controls.js', array(), '20151202', true );
+	
+	// Localize the script
+	wp_localize_script( 'leeway-customizer-controls', 'leeway_theme_links', array(
+		'title'	=> esc_html__( 'Theme Links', 'leeway' ),
+		'themeURL'	=> esc_url( 'http://themezee.com/themes/leeway/' ),
+		'themeLabel'	=> esc_html__( 'Theme Page', 'leeway' ),
+		'docuURL'	=> esc_url( 'http://themezee.com/docs/leeway-documentation/' ),
+		'docuLabel'	=>  esc_html__( 'Theme Documentation', 'leeway' ),
+		'rateURL'	=> esc_url( 'http://wordpress.org/support/view/theme-reviews/leeway?filter=5' ),
+		'rateLabel'	=> esc_html__( 'Rate this theme', 'leeway' ),
+		)
+	);
+
 }
 
 
@@ -103,9 +125,5 @@ function leeway_customize_preview_js() {
 add_action( 'customize_controls_print_styles', 'leeway_customize_preview_css' );
 
 function leeway_customize_preview_css() {
-	wp_enqueue_style( 'leeway-customizer-css', get_template_directory_uri() . '/css/customizer.css', array(), '20140312' );
+	wp_enqueue_style( 'leeway-customizer-css', get_template_directory_uri() . '/css/customizer.css', array(), '20151202' );
 }
-
-
-
-?>

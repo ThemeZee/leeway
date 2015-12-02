@@ -41,7 +41,7 @@ function leeway_display_theme_info_page() {
 		
 		<hr>
 		<div class="important-links clearfix">
-			<p><strong><?php esc_html_e( 'Important Links:', 'leeway' ); ?></strong>
+			<p><strong><?php esc_html_e( 'Theme Links:', 'leeway' ); ?></strong>
 				<a href="http://themezee.com/themes/leeway/" target="_blank"><?php esc_html_e( 'Theme Page', 'leeway' ); ?></a>
 				<a href="<?php echo get_template_directory_uri(); ?>/changelog.txt" target="_blank"><?php esc_html_e( 'Changelog', 'leeway' ); ?></a>
 				<a href="http://preview.themezee.com/leeway/" target="_blank"><?php esc_html_e( 'Theme Demo', 'leeway' ); ?></a>
