@@ -22,3 +22,10 @@
 #customize-control-leeway_control_slider_activated  {
 	margin-bottom: 0;
 }
+
+#customize-control-leeway_control_upgrade div {
+	margin: 4px 0 32px;
+}
+#customize-control-leeway_control_upgrade div .customize-control-title {
+	margin-bottom: 4px;
+}

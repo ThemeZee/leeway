@@ -41,23 +41,23 @@ function leeway_display_theme_info_page() {
 		
 		<hr>
 		<div class="important-links clearfix">
-			<p><strong><?php esc_html_e( 'Theme Links:', 'leeway' ); ?></strong>
-				<a href="http://themezee.com/themes/leeway/" target="_blank"><?php esc_html_e( 'Theme Page', 'leeway' ); ?></a>
+			<p><strong><?php esc_html_e( 'Theme Links', 'leeway' ); ?>:</strong>
+				<a href="<?php echo esc_url( 'http://themezee.com/themes/leeway/?utm_source=theme-info&utm_medium=textlink&utm_campaign=leeway&utm_content=theme-page' ); ?>" target="_blank"><?php esc_html_e( 'Theme Page', 'leeway' ); ?></a>
 				<a href="<?php echo get_template_directory_uri(); ?>/changelog.txt" target="_blank"><?php esc_html_e( 'Changelog', 'leeway' ); ?></a>
-				<a href="http://preview.themezee.com/leeway/" target="_blank"><?php esc_html_e( 'Theme Demo', 'leeway' ); ?></a>
-				<a href="http://themezee.com/docs/leeway-documentation/" target="_blank"><?php esc_html_e( 'Theme Documentation', 'leeway' ); ?></a>
-				<a href="http://wordpress.org/support/view/theme-reviews/leeway?filter=5" target="_blank"><?php esc_html_e( 'Rate this theme', 'leeway' ); ?></a>
+				<a href="<?php echo esc_url( 'http://preview.themezee.com/leeway/?utm_source=theme-info&utm_medium=textlink&utm_campaign=leeway&utm_content=demo' ); ?>" target="_blank"><?php esc_html_e( 'Theme Demo', 'leeway' ); ?></a>
+				<a href="<?php echo esc_url( 'http://themezee.com/docs/leeway-documentation/?utm_source=theme-info&utm_medium=textlink&utm_campaign=leeway&utm_content=documentation' ); ?>" target="_blank"><?php esc_html_e( 'Theme Documentation', 'leeway' ); ?></a>
+				<a href="<?php echo esc_url( 'http://wordpress.org/support/view/theme-reviews/leeway?filter=5' ); ?>" target="_blank"><?php esc_html_e( 'Rate this theme', 'leeway' ); ?></a>
 			</p>
 		</div>
 		<hr>
 				
 		<div id="getting-started">
-
+		
+			<h3><?php printf( esc_html__( 'Getting Started with %s', 'leeway' ), $theme->get( 'Name' ) ); ?></h3>
+			
 			<div class="columns-wrapper clearfix">
 
 				<div class="column column-half clearfix">
-				
-					<h3><?php printf( esc_html__( 'Getting Started with %s', 'leeway' ), $theme->get( 'Name' ) ); ?></h3>
 						
 					<div class="section">
 						<h4><?php esc_html_e( 'Theme Documentation', 'leeway' ); ?></h4>
@@ -66,8 +66,8 @@ function leeway_display_theme_info_page() {
 							<?php esc_html_e( 'You need help to setup and configure this theme? We got you covered with an extensive theme documentation on our website.', 'leeway' ); ?>
 						</p>
 						<p>
-							<a href="http://themezee.com/docs/leeway-documentation/" target="_blank" class="button button-secondary">
-								<?php printf( esc_html__( 'View %s Documentation', 'leeway' ), $theme->get( 'Name' ) ); ?>
+							<a href="<?php echo esc_url( 'http://themezee.com/docs/leeway-documentation/?utm_source=theme-info&utm_medium=button&utm_campaign=leeway&utm_content=documentation' ); ?>" target="_blank" class="button button-secondary">
+								<?php printf( esc_html__( 'View %s Documentation', 'leeway' ), 'Leeway' ); ?>
 							</a>
 						</p>
 					</div>
@@ -79,7 +79,9 @@ function leeway_display_theme_info_page() {
 							<?php printf( esc_html__( '%s makes use of the Customizer for all theme settings. Click on "Customize Theme" to open the Customizer now.', 'leeway' ), $theme->get( 'Name' ) ); ?>
 						</p>
 						<p>
-							<a href="<?php echo admin_url( 'customize.php' ); ?>" class="button button-primary"><?php esc_html_e( 'Customize Theme', 'leeway' ); ?></a>
+							<a href="<?php echo admin_url( 'customize.php' ); ?>" class="button button-primary">
+								<?php esc_html_e( 'Customize Theme', 'leeway' ); ?>
+							</a>
 						</p>
 					</div>
 					
@@ -87,11 +89,11 @@ function leeway_display_theme_info_page() {
 						<h4><?php esc_html_e( 'Pro Version', 'leeway' ); ?></h4>
 						
 						<p class="about">
-							<?php esc_html_e( 'You need more features? Purchase the Pro Version to get additional features and advanced customization options.', 'leeway' ); ?>
+							<?php printf( esc_html__( 'Purchase the Pro Version of %s to get additional features and advanced customization options.', 'leeway' ), 'Leeway'); ?>
 						</p>
 						<p>
-							<a href="http://themezee.com/themes/leeway/#PROVersion-1" target="_blank" class="button button-secondary">
-								<?php printf( esc_html__( 'Learn more about %s Pro', 'leeway' ), $theme->get( 'Name' ) ); ?>
+							<a href="<?php echo esc_url( 'http://themezee.com/themes/leeway/?utm_source=theme-info&utm_medium=button&utm_campaign=leeway&utm_content=pro-version' ); ?>" target="_blank" class="button button-secondary">
+								<?php printf( esc_html__( 'Learn more about %s Pro', 'leeway' ), 'Leeway'); ?>
 							</a>
 						</p>
 					</div>
@@ -114,8 +116,8 @@ function leeway_display_theme_info_page() {
 			
 			<p><?php printf( esc_html__( '%1$s is proudly brought to you by %2$s. If you like this theme, %3$s :)', 'leeway' ), 
 				$theme->get( 'Name' ),
-				'<a target="_blank" href="http://themezee.com" title="ThemeZee">ThemeZee</a>',
-				'<a target="_blank" href="http://wordpress.org/support/view/theme-reviews/leeway?filter=5" title="Leeway Review">' . esc_html__( 'rate it', 'leeway' ) . '</a>'); ?>
+				'<a target="_blank" href="http://themezee.com/?utm_source=theme-info&utm_medium=footer&utm_campaign=leeway" title="ThemeZee">ThemeZee</a>',
+				'<a target="_blank" href="http://wordpress.org/support/view/theme-reviews/leeway?filter=5" title="Leeway Lite Review">' . esc_html__( 'rate it', 'leeway' ) . '</a>'); ?>
 			</p>
 		
 		</div>
@@ -128,7 +130,7 @@ function leeway_display_theme_info_page() {
 
 // Add CSS for Theme Info Panel
 add_action('admin_enqueue_scripts', 'leeway_theme_info_page_css');
-function leeway_theme_info_page_css($hook) { 
+function leeway_theme_info_page_css( $hook ) { 
 
 	// Load styles and scripts only on theme info page
 	if ( 'appearance_page_leeway' != $hook ) {
@@ -139,6 +141,3 @@ function leeway_theme_info_page_css($hook) {
 	wp_enqueue_style('leeway-theme-info-css', get_template_directory_uri() .'/css/theme-info.css');
 
 }
-
-
-?>
