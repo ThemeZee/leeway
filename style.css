@@ -582,29 +582,29 @@ input, textarea, select {
 }
 
 /* Postmeta */
-.postmeta {
+.entry-meta {
 	color: #222;
 	margin: 0.8em 0 0;
 	font-size: 0.85em;
 	line-height: 1.5em;
 	background: #ddd;
 }
-.postmeta .meta-date, .postmeta .meta-author, .postmeta .meta-comments {
+.entry-meta .meta-date, .entry-meta .meta-author, .entry-meta .meta-comments {
 	display: inline-block;
 	padding: 0.5em 1em;
 	margin: 0;
 }
-.postmeta .meta-date {
+.entry-meta .meta-date {
 	background: #bb0000;
 	color: #fff;
 }
-.postmeta .meta-date a:link, .postmeta .meta-date a:visited {
+.entry-meta .meta-date a:link, .entry-meta .meta-date a:visited {
 	color: #fff;
 }
-.postmeta .meta-date a:hover, .postmeta .meta-date a:active {
+.entry-meta .meta-date a:hover, .entry-meta .meta-date a:active {
 	text-decoration: none;
 }
-.postmeta .meta-comments {
+.entry-meta .meta-comments {
 	float: right;
 	font-weight: bold;
 }
@@ -1310,31 +1310,31 @@ embed, iframe, object, video {
 	border: none;
 	background: none;
 }
-.widget-category-posts .type-post .postmeta {
+.widget-category-posts .type-post .entry-meta {
 	margin: 0.5em 0 0;
 }
-.widget-category-posts .type-post .postmeta-small {
+.widget-category-posts .type-post .entry-meta-small {
 	margin: 0.5em 0 0;
 	font-size: 0.8em;
 	line-height: 1.5em;
 }
-.widget-category-posts .type-post .postmeta-small span{
+.widget-category-posts .type-post .entry-meta-small span{
 	margin-right: 0.5em;
 }
-.widget-category-posts .type-post .postmeta-small span:before {
+.widget-category-posts .type-post .entry-meta-small span:before {
 	display: inline-block;
 	-webkit-font-smoothing: antialiased;
 	font: normal 16px 'Genericons';
 	vertical-align: middle;
 	color: #222;
 }
-.widget-category-posts .type-post .postmeta-small .meta-date:before{
+.widget-category-posts .type-post .entry-meta-small .meta-date:before{
 	content: '\f307';
 }
-.widget-category-posts .type-post .postmeta-small .meta-author:before{
+.widget-category-posts .type-post .entry-meta-small .meta-author:before{
 	content: '\f304';
 }
-.widget-category-posts .type-post .postmeta-small .meta-comments:before{
+.widget-category-posts .type-post .entry-meta-small .meta-comments:before{
 	content: '\f300';
 }
 .widget-category-posts .type-post .more-link {
@@ -1984,7 +1984,7 @@ embed, iframe, object, video {
 	#logo .site-title {
 		font-size: 2.4em;
 	}
-	.postmeta .meta-comments {
+	.entry-meta .meta-comments {
 		float: none;
 		font-weight: normal;
 	}
@@ -2264,10 +2264,10 @@ embed, iframe, object, video {
 	.page-title, .entry-title{
 		font-size: 1.3em;
 	}
-	.postmeta .meta-date, .postmeta .meta-author, .postmeta .meta-comments, .postinfo span {
+	.entry-meta .meta-date, .entry-meta .meta-author, .entry-meta .meta-comments, .postinfo span {
 		display: block;
 	}
-	.postmeta .meta-date, .postmeta .meta-author, .postmeta .meta-comments {
+	.entry-meta .meta-date, .entry-meta .meta-author, .entry-meta .meta-comments {
 		border-bottom: 1px solid #ccc;
 	}
 	.widget-category-posts .large-post .entry-title {

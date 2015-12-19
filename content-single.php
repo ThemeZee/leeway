@@ -3,7 +3,7 @@
 
 		<?php the_title( '<h1 class="entry-title post-title">', '</h1>' ); ?>
 		
-		<div class="postmeta clearfix"><?php leeway_display_postmeta(); ?></div>
+		<div class="entry-meta postmeta clearfix"><?php leeway_display_postmeta(); ?></div>
 		
 		<?php leeway_display_thumbnail_single(); ?>
 		
