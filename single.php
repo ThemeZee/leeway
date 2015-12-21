@@ -14,6 +14,8 @@
 		
 		endif; ?>
 			
+		<?php leeway_display_related_posts(); ?>
+		
 		<?php comments_template(); ?>
 		
 		</section>
