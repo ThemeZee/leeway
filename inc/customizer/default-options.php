@@ -43,13 +43,12 @@ function leeway_default_options() {
 		'meta_author'						=> true,
 		'meta_category'						=> true,
 		'meta_tags'							=> true,
+		'post_navigation' 					=> false,
 		'slider_active_magazine' 			=> false,
 		'slider_active_blog' 				=> false,
-		'slider_animation' 					=> 'horizontal'
+		'slider_animation' 					=> 'horizontal',
 	);
 	
 	return $default_options;
+	
 }
-
-
-?>

@@ -212,7 +212,25 @@ if ( ! function_exists( 'leeway_display_postinfo' ) ):
 endif;
 
 
-// Display Leeway plugin
+// Display Single Post Navigation
+if ( ! function_exists( 'leeway_display_post_navigation' ) ):
+	
+	function leeway_display_post_navigation() { 
+		
+		// Get Theme Options from Database
+		$theme_options = leeway_theme_options();
+		
+		if ( true == $theme_options['post_navigation'] ) {
+
+			the_post_navigation( array( 'prev_text' => '&laquo; %title', 'next_text' => '%title &raquo;' ) );
+			
+		}
+	}
+	
+endif;
+
+
+// Display ThemeZee Related Posts plugin
 if ( ! function_exists( 'leeway_display_related_posts' ) ):
 	
 	function leeway_display_related_posts() { 

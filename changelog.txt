@@ -2,6 +2,10 @@
 Leeway Changelog
 ===================================
 
+Version 1.1.7
+-----------------------------------
+[added] previous/next post navigation on single post view
+
 Version 1.1.6
 -----------------------------------
 [added] support for ThemeZee Related Posts plugin
