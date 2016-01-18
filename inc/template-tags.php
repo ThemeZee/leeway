@@ -291,7 +291,7 @@ function leeway_display_footer_text() { ?>
 	<span class="credit-link">
 		<?php printf( esc_html__( 'Powered by %1$s and %2$s.', 'leeway' ), 
 			'<a href="http://wordpress.org" title="WordPress">WordPress</a>',
-			'<a href="http://themezee.com/themes/leeway/" title="Leeway WordPress Theme">Leeway</a>'
+			'<a href="https://themezee.com/themes/leeway/" title="Leeway WordPress Theme">Leeway</a>'
 		); ?>
 	</span>
 
