@@ -42,10 +42,10 @@ function leeway_display_theme_info_page() {
 		<hr>
 		<div class="important-links clearfix">
 			<p><strong><?php esc_html_e( 'Theme Links', 'leeway' ); ?>:</strong>
-				<a href="<?php echo esc_url( 'https://themezee.com/themes/leeway/?utm_source=theme-info&utm_medium=textlink&utm_campaign=leeway&utm_content=theme-page' ); ?>" target="_blank"><?php esc_html_e( 'Theme Page', 'leeway' ); ?></a>
+				<a href="<?php echo esc_url( __( 'https://themezee.com/themes/leeway/', 'leeway' ) . '?utm_source=theme-info&utm_medium=textlink&utm_campaign=leeway&utm_content=theme-page' ); ?>" target="_blank"><?php esc_html_e( 'Theme Page', 'leeway' ); ?></a>
 				<a href="<?php echo get_template_directory_uri(); ?>/changelog.txt" target="_blank"><?php esc_html_e( 'Changelog', 'leeway' ); ?></a>
 				<a href="<?php echo esc_url( 'http://preview.themezee.com/leeway/?utm_source=theme-info&utm_medium=textlink&utm_campaign=leeway&utm_content=demo' ); ?>" target="_blank"><?php esc_html_e( 'Theme Demo', 'leeway' ); ?></a>
-				<a href="<?php echo esc_url( 'https://themezee.com/docs/leeway-documentation/?utm_source=theme-info&utm_medium=textlink&utm_campaign=leeway&utm_content=documentation' ); ?>" target="_blank"><?php esc_html_e( 'Theme Documentation', 'leeway' ); ?></a>
+				<a href="<?php echo esc_url( __( 'https://themezee.com/docs/leeway-documentation/', 'leeway' ) . '?utm_source=theme-info&utm_medium=textlink&utm_campaign=leeway&utm_content=documentation' ); ?>" target="_blank"><?php esc_html_e( 'Theme Documentation', 'leeway' ); ?></a>
 				<a href="<?php echo esc_url( 'http://wordpress.org/support/view/theme-reviews/leeway?filter=5' ); ?>" target="_blank"><?php esc_html_e( 'Rate this theme', 'leeway' ); ?></a>
 			</p>
 		</div>
@@ -66,7 +66,7 @@ function leeway_display_theme_info_page() {
 							<?php esc_html_e( 'You need help to setup and configure this theme? We got you covered with an extensive theme documentation on our website.', 'leeway' ); ?>
 						</p>
 						<p>
-							<a href="<?php echo esc_url( 'https://themezee.com/docs/leeway-documentation/?utm_source=theme-info&utm_medium=button&utm_campaign=leeway&utm_content=documentation' ); ?>" target="_blank" class="button button-secondary">
+							<a href="<?php echo esc_url( __( 'https://themezee.com/docs/leeway-documentation/', 'leeway' ) . '?utm_source=theme-info&utm_medium=button&utm_campaign=leeway&utm_content=documentation' ); ?>" target="_blank" class="button button-secondary">
 								<?php printf( esc_html__( 'View %s Documentation', 'leeway' ), 'Leeway' ); ?>
 							</a>
 						</p>
@@ -92,7 +92,7 @@ function leeway_display_theme_info_page() {
 							<?php printf( esc_html__( 'Purchase the Pro Version of %s to get additional features and advanced customization options.', 'leeway' ), 'Leeway'); ?>
 						</p>
 						<p>
-							<a href="<?php echo esc_url( 'https://themezee.com/themes/leeway/?utm_source=theme-info&utm_medium=button&utm_campaign=leeway&utm_content=pro-version' ); ?>" target="_blank" class="button button-secondary">
+							<a href="<?php echo esc_url( __( 'https://themezee.com/addons/leeway-pro/', 'leeway' ) . '?utm_source=theme-info&utm_medium=button&utm_campaign=leeway&utm_content=pro-version' ); ?>" target="_blank" class="button button-secondary">
 								<?php printf( esc_html__( 'Learn more about %s Pro', 'leeway' ), 'Leeway'); ?>
 							</a>
 						</p>
@@ -116,7 +116,7 @@ function leeway_display_theme_info_page() {
 			
 			<p><?php printf( esc_html__( '%1$s is proudly brought to you by %2$s. If you like this theme, %3$s :)', 'leeway' ), 
 				$theme->get( 'Name' ),
-				'<a target="_blank" href="https://themezee.com/?utm_source=theme-info&utm_medium=footer&utm_campaign=leeway" title="ThemeZee">ThemeZee</a>',
+				'<a target="_blank" href="' . __( 'https://themezee.com/', 'leeway' ) . '?utm_source=theme-info&utm_medium=footer&utm_campaign=leeway" title="ThemeZee">ThemeZee</a>',
 				'<a target="_blank" href="http://wordpress.org/support/view/theme-reviews/leeway?filter=5" title="Leeway Lite Review">' . esc_html__( 'rate it', 'leeway' ) . '</a>'); ?>
 			</p>
 		

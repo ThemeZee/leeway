@@ -109,9 +109,9 @@ function leeway_customize_controls_js() {
 	// Localize the script
 	wp_localize_script( 'leeway-customizer-controls', 'leeway_theme_links', array(
 		'title'	=> esc_html__( 'Theme Links', 'leeway' ),
-		'themeURL'	=> esc_url( 'https://themezee.com/themes/leeway/?utm_source=customizer&utm_medium=textlink&utm_campaign=leeway&utm_content=theme-page' ),
+		'themeURL'	=> esc_url( __( 'https://themezee.com/themes/leeway/', 'leeway' ) . '?utm_source=customizer&utm_medium=textlink&utm_campaign=leeway&utm_content=theme-page' ),
 		'themeLabel'	=> esc_html__( 'Theme Page', 'leeway' ),
-		'docuURL'	=> esc_url( 'https://themezee.com/docs/leeway-documentation/?utm_source=customizer&utm_medium=textlink&utm_campaign=leeway&utm_content=documentation' ),
+		'docuURL'	=> esc_url( __( 'https://themezee.com/docs/leeway-documentation/', 'leeway' ) . '?utm_source=customizer&utm_medium=textlink&utm_campaign=leeway&utm_content=documentation' ),
 		'docuLabel'	=>  esc_html__( 'Theme Documentation', 'leeway' ),
 		'rateURL'	=> esc_url( 'http://wordpress.org/support/view/theme-reviews/leeway?filter=5' ),
 		'rateLabel'	=> esc_html__( 'Rate this theme', 'leeway' ),
