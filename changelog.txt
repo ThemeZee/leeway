@@ -5,6 +5,8 @@ Leeway Changelog
 Version 1.1.7
 -----------------------------------
 [added] previous/next post navigation on single post view
+[removed] extract() function from widget files for better readable code
+[changed] all themezee.com links to https and made them translatable
 
 Version 1.1.6
 -----------------------------------

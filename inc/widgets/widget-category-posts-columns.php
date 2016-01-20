@@ -42,7 +42,7 @@ class Leeway_Category_Posts_Columns_Widget extends WP_Widget {
 	}
 	
 	// Display Widget
-	function widget($args, $instance) {
+	function widget( $args, $instance ) {
 
 		$cache = array();
 				
@@ -63,27 +63,23 @@ class Leeway_Category_Posts_Columns_Widget extends WP_Widget {
 		// Start Output Buffering
 		ob_start();
 		
-		// Get Sidebar Arguments
-		extract($args);
-		
 		// Get Widget Settings
-		$defaults = $this->default_settings();
-		extract( wp_parse_args( $instance, $defaults ) );
+		$settings = wp_parse_args( $instance, $this->default_settings() );
 
 		// Output
-		echo $before_widget;
+		echo $args['before_widget'];
 	?>
 		<div id="widget-category-posts-columns" class="widget-category-posts clearfix">
 			
 			<div class="widget-category-posts-content clearfix">
 			
-				<?php echo $this->render($args, $instance); ?>
+				<?php echo $this->render( $args, $settings ); ?>
 				
 			</div>
 
 		</div>
 	<?php
-		echo $after_widget;
+		echo $args['after_widget'];
 		
 		// Set Cache
 		if ( ! $this->is_preview() ) {
@@ -96,21 +92,19 @@ class Leeway_Category_Posts_Columns_Widget extends WP_Widget {
 	}
 	
 	// Render Widget Content
-	function render($args, $instance) {
+	function render( $args, $settings ) {
 		
-		// Get Widget Settings
-		$defaults = $this->default_settings();
-		extract( wp_parse_args( $instance, $defaults ) ); ?>
+		?>
 		
 		<div class="category-posts-column-left category-posts-columns clearfix">
 				
 			<div class="category-posts-columns-content clearfix">
 			
 				<?php //Display Category Title
-					$this->display_category_title($args, $instance, $category_one, $category_one_title); ?>
+					$this->display_category_title( $args, $settings, $settings['category_one'], $settings['category_one_title'] ); ?>
 					
 				<div class="category-posts-columns-post-list clearfix">
-					<?php $this->display_category_posts($instance, $category_one); ?>
+					<?php $this->display_category_posts( $settings, $settings['category_one'] ); ?>
 				</div>
 				
 			</div>
@@ -122,10 +116,10 @@ class Leeway_Category_Posts_Columns_Widget extends WP_Widget {
 			<div class="category-posts-columns-content clearfix">
 			
 				<?php //Display Category Title
-					$this->display_category_title($args, $instance, $category_two, $category_two_title); ?>
+					$this->display_category_title( $args, $settings, $settings['category_two'], $settings['category_two_title'] ); ?>
 					
 				<div class="category-posts-columns-post-list clearfix">
-					<?php $this->display_category_posts($instance, $category_two); ?>
+					<?php $this->display_category_posts( $settings, $settings['category_two'] ); ?>
 				</div>
 				
 			</div>
@@ -136,19 +130,15 @@ class Leeway_Category_Posts_Columns_Widget extends WP_Widget {
 	}
 	
 	// Display Category Posts
-	function display_category_posts($instance, $category_id) {
+	function display_category_posts( $settings, $category_id ) {
 	
-		// Get Widget Settings
-		$defaults = $this->default_settings();
-		extract( wp_parse_args( $instance, $defaults ) );
-		
 		// Get latest posts from database
 		$query_arguments = array(
-			'posts_per_page' => (int)$number,
+			'posts_per_page' => (int)$settings['number'],
 			'ignore_sticky_posts' => true,
 			'cat' => (int)$category_id
 		);
-		$posts_query = new WP_Query($query_arguments);
+		$posts_query = new WP_Query( $query_arguments );
 		$i = 0;
 		
 		// Limit the number of words for the excerpt
@@ -162,7 +152,7 @@ class Leeway_Category_Posts_Columns_Widget extends WP_Widget {
 				
 				$posts_query->the_post(); 
 				
-				if( $highlight_post == true and (isset($i) and $i == 0) ) : 
+				if( $settings['highlight_post'] == true and (isset($i) and $i == 0) ) : 
 				
 					// Limit the number of words for the excerpt
 					add_filter('excerpt_length', 'leeway_category_posts_medium_excerpt');
@@ -174,7 +164,7 @@ class Leeway_Category_Posts_Columns_Widget extends WP_Widget {
 
 						<?php the_title( sprintf( '<h1 class="entry-title post-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
 
-						<div class="entry-meta postmeta"><?php $this->display_postmeta($instance); ?></div>
+						<div class="entry-meta postmeta"><?php $this->display_postmeta( $settings ); ?></div>
 
 						<div class="entry">
 							<?php the_excerpt(); ?>
@@ -198,7 +188,7 @@ class Leeway_Category_Posts_Columns_Widget extends WP_Widget {
 						<div class="small-post-content">
 							
 							<?php the_title( sprintf( '<h1 class="entry-title post-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
-							<div class="entry-meta-small postmeta-small"><?php $this->display_postmeta($instance); ?></div>
+							<div class="entry-meta-small postmeta-small"><?php $this->display_postmeta( $settings ); ?></div>
 							
 						</div>
 
@@ -222,28 +212,24 @@ class Leeway_Category_Posts_Columns_Widget extends WP_Widget {
 	}
 	
 	// Display Postmeta
-	function display_postmeta( $instance ) {
+	function display_postmeta( $settings ) {
 	
-		// Get Widget Settings
-		$defaults = $this->default_settings();
-		extract( wp_parse_args( $instance, $defaults ) );
-		
 		// Display Date unless deactivated
-		if ( $postmeta > 0 ) :
+		if ( $settings['postmeta'] > 0 ) :
 		
 			leeway_meta_date();
 					
 		endif; 
 		
 		// Display Author unless deactivated
-		if ( $postmeta == 2 ) :	
+		if ( $settings['postmeta'] == 2 ) :	
 		
 			leeway_meta_author();
 		
 		endif; 
 		
 		// Display Comments
-		if ( $postmeta == 3 and comments_open() ) :
+		if ( $settings['postmeta'] == 3 and comments_open() ) :
 			
 			leeway_meta_comments();
 			
@@ -252,21 +238,14 @@ class Leeway_Category_Posts_Columns_Widget extends WP_Widget {
 	}
 	
 	// Display Category Widget Title
-	function display_category_title($args, $instance, $category_id, $category_title) {
-		
-		// Get Sidebar Arguments
-		extract($args);
-		
-		// Get Widget Settings
-		$defaults = $this->default_settings();
-		extract( wp_parse_args( $instance, $defaults ) );
+	function display_category_title( $args, $settings, $category_id, $category_title ) {
 		
 		// Add Widget Title Filter
-		$widget_title = apply_filters('widget_title', $category_title, $instance, $this->id_base);
+		$widget_title = apply_filters('widget_title', $category_title, $settings, $this->id_base);
 		
 		if( !empty( $widget_title ) ) :
 		
-			echo $before_title;
+			echo $args['before_title'];
 			
 			// Check if "All Categories" is selected
 			if( $category_id == 0 ) :
@@ -283,21 +262,21 @@ class Leeway_Category_Posts_Columns_Widget extends WP_Widget {
 			
 			endif;
 			
-			echo $after_title; 
+			echo $args['after_title']; 
 			
 		endif;
 
 	}
 
-	function update($new_instance, $old_instance) {
+	function update( $new_instance, $old_instance ) {
 
 		$instance = $old_instance;
-		$instance['category_one_title'] = sanitize_text_field($new_instance['category_one_title']);
+		$instance['category_one_title'] = sanitize_text_field($new_instance['category_one_title'] );
 		$instance['category_one'] = (int)$new_instance['category_one'];
-		$instance['category_two_title'] = sanitize_text_field($new_instance['category_two_title']);
+		$instance['category_two_title'] = sanitize_text_field($new_instance['category_two_title'] );
 		$instance['category_two'] = (int)$new_instance['category_two'];
 		$instance['number'] = (int)$new_instance['number'];
-		$instance['highlight_post'] = !empty($new_instance['highlight_post']);
+		$instance['highlight_post'] = !empty($new_instance['highlight_post'] );
 		$instance['postmeta'] = (int)$new_instance['postmeta'];
 		
 		$this->delete_widget_cache();
@@ -308,13 +287,12 @@ class Leeway_Category_Posts_Columns_Widget extends WP_Widget {
 	function form( $instance ) {
 		
 		// Get Widget Settings
-		$defaults = $this->default_settings();
-		extract( wp_parse_args( $instance, $defaults ) );
-
-?>
+		$settings = wp_parse_args( $instance, $this->default_settings() ); 
+		?>
+		
 		<p>
 			<label for="<?php echo $this->get_field_id('category_one_title'); ?>"><?php esc_html_e( 'Left Category Title:', 'leeway' ); ?>
-				<input class="widefat" id="<?php echo $this->get_field_id('category_one_title'); ?>" name="<?php echo $this->get_field_name('category_one_title'); ?>" type="text" value="<?php echo $category_one_title; ?>" />
+				<input class="widefat" id="<?php echo $this->get_field_id('category_one_title'); ?>" name="<?php echo $this->get_field_name('category_one_title'); ?>" type="text" value="<?php echo $settings['category_one_title']; ?>" />
 			</label>
 		</p>
 
@@ -325,7 +303,7 @@ class Leeway_Category_Posts_Columns_Widget extends WP_Widget {
 					'show_option_all'    => esc_html__( 'All Categories', 'leeway' ),
 					'show_count' 		 => true,
 					'hide_empty'		 => false,
-					'selected'           => $category_one,
+					'selected'           => $settings['category_one'],
 					'name'               => $this->get_field_name('category_one'),
 					'id'                 => $this->get_field_id('category_one')
 				);
@@ -335,7 +313,7 @@ class Leeway_Category_Posts_Columns_Widget extends WP_Widget {
 		
 				<p>
 			<label for="<?php echo $this->get_field_id('category_two_title'); ?>"><?php esc_html_e( 'Right Category Title:', 'leeway' ); ?>
-				<input class="widefat" id="<?php echo $this->get_field_id('category_two_title'); ?>" name="<?php echo $this->get_field_name('category_two_title'); ?>" type="text" value="<?php echo $category_two_title; ?>" />
+				<input class="widefat" id="<?php echo $this->get_field_id('category_two_title'); ?>" name="<?php echo $this->get_field_name('category_two_title'); ?>" type="text" value="<?php echo $settings['category_two_title']; ?>" />
 			</label>
 		</p>
 		
@@ -346,7 +324,7 @@ class Leeway_Category_Posts_Columns_Widget extends WP_Widget {
 					'show_option_all'    => esc_html__( 'All Categories', 'leeway' ),
 					'show_count' 		 => true,
 					'hide_empty'		 => false,
-					'selected'           => $category_two,
+					'selected'           => $settings['category_two'],
 					'name'               => $this->get_field_name('category_two'),
 					'id'                 => $this->get_field_id('category_two')
 				);
@@ -356,13 +334,13 @@ class Leeway_Category_Posts_Columns_Widget extends WP_Widget {
 		
 		<p>
 			<label for="<?php echo $this->get_field_id('number'); ?>"><?php esc_html_e( 'Number of posts:', 'leeway' ); ?>
-				<input id="<?php echo $this->get_field_id('number'); ?>" name="<?php echo $this->get_field_name('number'); ?>" type="text" value="<?php echo (int)$number; ?>" size="3" />
+				<input id="<?php echo $this->get_field_id('number'); ?>" name="<?php echo $this->get_field_name('number'); ?>" type="text" value="<?php echo (int)$settings['number']; ?>" size="3" />
 			</label>
 		</p>
 		
 		<p>
 			<label for="<?php echo $this->get_field_id('highlight_post'); ?>">
-				<input class="checkbox" type="checkbox" <?php checked( $highlight_post ) ; ?> id="<?php echo $this->get_field_id('highlight_post'); ?>" name="<?php echo $this->get_field_name('highlight_post'); ?>" />
+				<input class="checkbox" type="checkbox" <?php checked( $settings['highlight_post'] ) ; ?> id="<?php echo $this->get_field_id('highlight_post'); ?>" name="<?php echo $this->get_field_name('highlight_post'); ?>" />
 				<?php esc_html_e( 'Highlight first post (big image + excerpt)', 'leeway' ); ?>
 			</label>
 		</p>
@@ -370,10 +348,10 @@ class Leeway_Category_Posts_Columns_Widget extends WP_Widget {
 		<p>
 			<label for="<?php echo $this->get_field_id( 'postmeta' ); ?>"><?php esc_html_e( 'Post Meta:', 'leeway' ); ?></label><br/>
 			<select id="<?php echo $this->get_field_id( 'postmeta' ); ?>" name="<?php echo $this->get_field_name( 'postmeta' ); ?>">
-				<option value="0" <?php selected($postmeta, 0); ?>><?php esc_html_e( 'Hide post meta', 'leeway' ); ?></option>
-				<option value="1" <?php selected($postmeta, 1); ?>><?php esc_html_e( 'Display post date', 'leeway' ); ?></option>
-				<option value="2" <?php selected($postmeta, 2); ?>><?php esc_html_e( 'Display date and author', 'leeway' ); ?></option>
-				<option value="3" <?php selected($postmeta, 3); ?>><?php esc_html_e( 'Display date and comments', 'leeway' ); ?></option>
+				<option value="0" <?php selected( $settings['postmeta'], 0); ?>><?php esc_html_e( 'Hide post meta', 'leeway' ); ?></option>
+				<option value="1" <?php selected( $settings['postmeta'], 1); ?>><?php esc_html_e( 'Display post date', 'leeway' ); ?></option>
+				<option value="2" <?php selected( $settings['postmeta'], 2); ?>><?php esc_html_e( 'Display date and author', 'leeway' ); ?></option>
+				<option value="3" <?php selected( $settings['postmeta'], 3); ?>><?php esc_html_e( 'Display date and comments', 'leeway' ); ?></option>
 			</select>
 		</p>
 		
