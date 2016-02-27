@@ -19,6 +19,13 @@ function leeway_theme_addons_setup() {
 	add_theme_support( 'themezee-breadcrumbs' );
 	add_theme_support( 'themezee-related-posts' );
 	
+	// Add Support for Infinite Scroll
+	add_theme_support( 'infinite-scroll', array(
+		'type' 		=> 'click',
+		'container' => 'content',
+		'render'    => 'leeway_infinite_scroll_render',
+	) );
+	
 }
 
 
@@ -63,3 +70,19 @@ function leeway_theme_addons_image_sizes() {
 	add_image_size( 'themezee-related-posts', 480, 280, true );
 
 }
+
+
+/**
+ * Custom render function for Infinite Scroll.
+ */
+function leeway_infinite_scroll_render() {
+
+	// Get Theme Options from Database
+	$theme_options = leeway_theme_options();
+	
+	while ( have_posts() ) {
+		the_post();
+		get_template_part( 'content', $theme_options['posts_length'] );
+	}
+	
+} // leeway_infinite_scroll_render()

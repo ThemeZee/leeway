@@ -2,7 +2,7 @@
 Theme Name: Leeway
 Theme URI: https://themezee.com/themes/leeway/
 Description: Leeway is a free, responsive theme designed for small magazine websites or blogs. The theme includes two navigation menus, social icons, a fullwidth featured post slideshow and a flexible Magazine Homepage template. All settings are easy to configure in the Customizer.
-Version: 1.1.7
+Version: 1.1.8
 Author: ThemeZee
 Author URI: https://themezee.com
 Tags: two-columns, light, red, custom-background, custom-header, custom-menu, editor-style, featured-image-header, featured-images, flexible-header, custom-colors, full-width-template, sticky-post, threaded-comments, translation-ready, theme-options, fluid-layout, responsive-layout, one-column, left-sidebar, right-sidebar, three-columns, black, blue, silver, white, green, gray
@@ -672,6 +672,30 @@ input, textarea, select {
 	margin: 0.5em 0 1em;
 }
 
+/* Post Navigation */
+.post-navigation {
+	margin: 0 0 0.5em 0;
+	padding: 0.8em;
+	color: #333;
+	background: #eee;
+	border-top: 1px solid #ddd;
+	border-bottom: 2px solid #ddd;
+}
+.post-navigation .nav-links:before,
+.post-navigation .nav-links:after {
+	content: "";
+	display: table;
+}
+.post-navigation .nav-links:after {
+	clear: both;
+}
+.post-navigation .nav-links .nav-previous {
+	float: left;
+}
+.post-navigation .nav-links .nav-next {
+	float: right;
+}
+
 /* Archives and Search Heading */
 .archive-title {
 	font-weight: bold;
@@ -717,28 +741,24 @@ input, textarea, select {
 	text-decoration: underline;
 }
 
-/* Post Navigation */
-.post-navigation {
-	margin: 0 0 0.5em 0;
-	padding: 0.8em;
-	color: #333;
-	background: #eee;
-	border-top: 1px solid #ddd;
-	border-bottom: 2px solid #ddd;
+/* Infinite Scroll Pagination */
+.infinite-scroll .post-pagination {
+	display: none;
 }
-.post-navigation .nav-links:before,
-.post-navigation .nav-links:after {
-	content: "";
-	display: table;
+.infinite-scroll #infinite-handle span {
+	display: inline-block;
+	margin-bottom: 0.5em;
+	padding: 0.5em 1em;
+	line-height: 1.5;
+	font-size: 1em;
+	font-weight: bold;
+	text-align: center;
+	text-decoration: none;
+	color: #fff;
+	background: #bb0000;
 }
-.post-navigation .nav-links:after {
-	clear: both;
-}
-.post-navigation .nav-links .nav-previous {
-	float: left;
-}
-.post-navigation .nav-links .nav-next {
-	float: right;
+.infinite-scroll #infinite-handle span:hover {
+	background-color: #222;
 }
 
 /* Breadcrumbs */
@@ -872,8 +892,6 @@ big, .big_tag {
 	font-size: 1.3em;
 }
 ins {
-	padding: 1px 2px;
-	background: #ffa;
 	text-decoration: none;
 }
 code, pre {

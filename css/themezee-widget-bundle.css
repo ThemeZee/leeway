@@ -64,10 +64,19 @@
 	padding: 0;
 	font-size: 0.8em;
 	color: #222;
+	background: none;
 }
 
 .tzwb-posts-list  .tzwb-entry-meta span {
 	margin-right: 0.4em;
+}
+
+.tzwb-posts-list .tzwb-entry-meta .tzwb-meta-date,
+.tzwb-posts-list .tzwb-entry-meta .tzwb-meta-author,
+.tzwb-posts-list .tzwb-entry-meta .tzwb-meta-comments {
+	padding: 0;
+	background: none;
+	color: #222;
 }
 
 .tzwb-posts-list .tzwb-entry-meta span:before {

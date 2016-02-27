@@ -2,6 +2,11 @@
 Leeway Changelog
 ===================================
 
+Version 1.1.8
+-----------------------------------
+[added] support for Jetpack Infinite Scroll feature
+[fixed] some minor CSS styling bugs
+
 Version 1.1.7
 -----------------------------------
 [added] previous/next post navigation on single post view
