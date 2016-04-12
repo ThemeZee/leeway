@@ -11,25 +11,25 @@ function leeway_enqueue_scripts() {
 	$theme_options = leeway_theme_options();
 	
 	// Register and Enqueue Stylesheet
-	wp_enqueue_style('leeway-stylesheet', get_stylesheet_uri());
+	wp_enqueue_style( 'leeway-stylesheet', get_stylesheet_uri() );
 	
 	// Register Genericons
-	wp_enqueue_style('leeway-genericons', get_template_directory_uri() . '/css/genericons/genericons.css');
+	wp_enqueue_style( 'leeway-genericons', get_template_directory_uri() . '/css/genericons/genericons.css' );
 
 	// Register and enqueue navigation.js
-	wp_enqueue_script('leeway-jquery-navigation', get_template_directory_uri() .'/js/navigation.js', array('jquery'));
+	wp_enqueue_script( 'leeway-jquery-navigation', get_template_directory_uri() .'/js/navigation.js', array('jquery') );
 		
 	// Register and Enqueue FlexSlider JS and CSS if necessary
 	if ( true == $theme_options['slider_active_blog'] or true == $theme_options['slider_active_magazine'] or is_page_template('template-slider.php') ) :
 
 		// FlexSlider CSS
-		wp_enqueue_style('leeway-flexslider', get_template_directory_uri() . '/css/flexslider.css');
+		wp_enqueue_style( 'leeway-flexslider', get_template_directory_uri() . '/css/flexslider.css' );
 
 		// FlexSlider JS
-		wp_enqueue_script('leeway-flexslider', get_template_directory_uri() .'/js/jquery.flexslider-min.js', array('jquery'));
+		wp_enqueue_script( 'leeway-flexslider', get_template_directory_uri() .'/js/jquery.flexslider-min.js', array('jquery'), '2.6.0' );
 
 		// Register and enqueue slider.js
-		wp_enqueue_script('leeway-post-slider', get_template_directory_uri() .'/js/slider.js', array('leeway-flexslider'));
+		wp_enqueue_script( 'leeway-post-slider', get_template_directory_uri() .'/js/slider.js', array( 'leeway-flexslider' ) );
 
 	endif;
 
@@ -39,7 +39,7 @@ function leeway_enqueue_scripts() {
 	}
 
 	// Register and Enqueue Fonts
-	wp_enqueue_style('leeway-default-fonts', leeway_google_fonts_url(), array(), null );
+	wp_enqueue_style( 'leeway-default-fonts', leeway_google_fonts_url(), array(), null );
 
 }
 
