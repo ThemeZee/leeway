@@ -5,6 +5,7 @@ Leeway Changelog
 Version 1.1.9
 -----------------------------------
 [updated] flexlider to version 2.6.0
+[added] slider speed setting to Customizer
 
 Version 1.1.8
 -----------------------------------

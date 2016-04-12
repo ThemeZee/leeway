@@ -29,7 +29,7 @@ function leeway_enqueue_scripts() {
 		wp_enqueue_script( 'leeway-flexslider', get_template_directory_uri() .'/js/jquery.flexslider-min.js', array('jquery'), '2.6.0' );
 
 		// Register and enqueue slider.js
-		wp_enqueue_script( 'leeway-post-slider', get_template_directory_uri() .'/js/slider.js', array( 'leeway-flexslider' ) );
+		wp_enqueue_script( 'leeway-post-slider', get_template_directory_uri() .'/js/slider.js', array( 'leeway-flexslider' ), '2.6.0' );
 
 	endif;
 
