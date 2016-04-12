@@ -31,7 +31,8 @@
 
 				<div id="logo" class="clearfix">
 				
-				<?php do_action('leeway_site_title'); ?>
+				<?php leeway_site_logo(); ?>
+				<?php leeway_site_title(); ?>
 
 				<?php // Display Tagline on header if activated
 				if ( isset($theme_options['header_tagline']) and $theme_options['header_tagline'] == true ) : ?>			
