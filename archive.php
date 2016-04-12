@@ -16,7 +16,7 @@
 			else : ?>
 			
 				<div class="page-header">
-					<?php the_archive_title( '<h2 class="archive-title">', '</h2>' ); ?>
+					<?php the_archive_title( '<h1 class="archive-title">', '</h1>' ); ?>
 				</div>
 			
 			<?php

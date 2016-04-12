@@ -16,9 +16,9 @@
 			else : ?>
 			
 				<header class="page-header">
-					<h2 id="search-title" class="archive-title">
+					<h1 id="search-title" class="archive-title">
 						<?php printf( esc_html__( 'Search Results for: %s', 'leeway' ), '<span>' . get_search_query() . '</span>' ); ?>
-					</h2>
+					</h1>
 				</header>
 			
 			<?php
