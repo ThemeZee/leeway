@@ -99,8 +99,8 @@ function leeway_setup() {
 
 	// Set up the WordPress core custom logo feature
 	add_theme_support( 'custom-logo', apply_filters( 'leeway_custom_logo_args', array(
-		'height' => 50,
-		'width' => 350,
+		'height' => 60,
+		'width' => 240,
 		'flex-height' => true,
 		'flex-width' => true,
 	) ) );
@@ -155,7 +155,7 @@ function leeway_register_sidebars() {
 	register_sidebar( array(
 		'name' => esc_html__( 'Sidebar', 'leeway' ),
 		'id' => 'sidebar',
-		'description' => esc_html__( 'Appears on posts and pages except Fullwidth template.', 'leeway' ),
+		'description' => esc_html__( 'Appears on posts and pages except the full width template.', 'leeway' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s clearfix">',
 		'after_widget' => '</aside>',
 		'before_title' => '<h3 class="widgettitle"><span>',

@@ -2,7 +2,7 @@
 Theme Name: Leeway
 Theme URI: https://themezee.com/themes/leeway/
 Description: Leeway is a free, responsive theme designed for small magazine websites or blogs. The theme includes two navigation menus, social icons, a fullwidth featured post slideshow and a flexible Magazine Homepage template. All settings are easy to configure in the Customizer.
-Version: 1.1.8
+Version: 1.1.9
 Author: ThemeZee
 Author URI: https://themezee.com
 Tags: two-columns, light, red, custom-background, custom-header, custom-menu, editor-style, featured-image-header, featured-images, flexible-header, custom-colors, full-width-template, sticky-post, threaded-comments, translation-ready, theme-options, fluid-layout, responsive-layout, one-column, left-sidebar, right-sidebar, three-columns, black, blue, silver, white, green, gray
@@ -289,22 +289,27 @@ input, textarea, select {
 	float: left;
 	max-width: 100%;
 }
-#logo .site-logo {
-	border: 0;
+#logo .custom-logo {
+	margin: 0 1.5em 0 0;
+	padding: 0;
+	border: none;
+	vertical-align: top;
 	max-width: 100%;
 	height: auto;
-	vertical-align: top;
 }
 #logo .site-title {
+	display: inline-block;
 	padding: 0.15em 0;
 	font-size: 2.7em;
 	color: #fff;
 	font-family: 'Oswald', Tahoma, Verdana, Arial;
 }
-#logo a:hover {
-	text-decoration: none;
+#logo .site-title a:link, 
+#logo .site-title a:visited {
+	color: #fff;
 }
-#logo a:hover .site-title {
+#logo .site-title a:hover,
+#logo .site-title a:active {
 	color: #eee;
 	text-decoration: none;
 }
