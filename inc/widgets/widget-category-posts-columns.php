@@ -8,7 +8,8 @@ class Leeway_Category_Posts_Columns_Widget extends WP_Widget {
 		// Setup Widget
 		$widget_ops = array(
 			'classname' => 'leeway_category_posts_columns', 
-			'description' => esc_html__( 'Displays your posts from two selected categories. Please use this widget ONLY in the Magazine Homepage widget area.', 'leeway' )
+			'description' => esc_html__( 'Displays your posts from two selected categories. Please use this widget ONLY in the Magazine Homepage widget area.', 'leeway' ),
+			'customize_selective_refresh' => true,
 		);
 		parent::__construct('leeway_category_posts_columns', sprintf( esc_html__( 'Category Posts: 2 Columns (%s)', 'leeway' ), wp_get_theme()->Name ), $widget_ops);
 		

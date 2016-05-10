@@ -8,7 +8,8 @@ class Leeway_Category_Posts_Boxed_Widget extends WP_Widget {
 		// Setup Widget
 		$widget_ops = array(
 			'classname' => 'leeway_category_posts_boxed', 
-			'description' => esc_html__( 'Displays your posts from a selected category in a boxed layout. Please use this widget ONLY in the Magazine Homepage widget area.', 'leeway' )
+			'description' => esc_html__( 'Displays your posts from a selected category in a boxed layout. Please use this widget ONLY in the Magazine Homepage widget area.', 'leeway' ),
+			'customize_selective_refresh' => true,
 		);
 		parent::__construct('leeway_category_posts_boxed', sprintf( esc_html__( 'Category Posts: Boxed (%s)', 'leeway' ), wp_get_theme()->Name ), $widget_ops);
 		

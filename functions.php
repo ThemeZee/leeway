@@ -129,6 +129,9 @@ function leeway_setup() {
 	
 	// Register Social Icons Menu
 	register_nav_menu( 'social', esc_html__( 'Social Icons', 'leeway' ) );
+	
+	// Add Theme Support for Selective Refresh in Customizer
+	add_theme_support( 'customize-selective-refresh-widgets' );
 
 }
 
