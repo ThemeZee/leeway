@@ -18,41 +18,42 @@
 	<div id="topheader-wrap">
 		<?php locate_template('/inc/top-header.php', true); ?>
 	</div>
-	
+
 	<div id="wrapper" class="container hfeed">
-	
+
 		<div id="header-wrap">
-		
+
 			<header id="header" class="clearfix" role="banner">
 
 				<div id="logo" class="clearfix">
-				
+
 				<?php leeway_site_logo(); ?>
 				<?php leeway_site_title(); ?>
 
 				<?php // Display Tagline on header if activated
-				if ( isset($theme_options['header_tagline']) and $theme_options['header_tagline'] == true ) : ?>			
+				if ( isset($theme_options['header_tagline']) and $theme_options['header_tagline'] == true ) : ?>
 					<h2 class="site-description"><?php echo bloginfo('description'); ?></h2>
 				<?php endif; ?>
-				
+
 				</div>
-				
+
 				<nav id="mainnav" class="clearfix" role="navigation">
-					<?php 
+					<?php
 						// Display Main Navigation
 						wp_nav_menu( array(
-							'theme_location' => 'primary', 
-							'container' => false, 
-							'menu_id' => 'mainnav-menu', 
-							'echo' => true, 
+							'theme_location' => 'primary',
+							'container' => false,
+							'menu_id' => 'mainnav-menu',
+							'menu_class' => 'main-navigation-menu',
+							'echo' => true,
 							'fallback_cb' => 'leeway_default_menu')
 						);
 					?>
 				</nav>
 
 			</header>
-		
+
 		</div>
-		
+
 		<?php // Display Custom Header Image
 			leeway_display_custom_header(); ?>
