@@ -8,7 +8,7 @@
 
 // Add Default Menu Fallback Function
 function leeway_default_menu() {
-	echo '<ul id="mainnav-menu" class="menu">'. wp_list_pages('title_li=&echo=0') .'</ul>';
+	echo '<ul id="mainnav-menu" class="main-navigation-menu menu">'. wp_list_pages('title_li=&echo=0') .'</ul>';
 }
 
 
