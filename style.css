@@ -2,7 +2,7 @@
 Theme Name: Leeway
 Theme URI: https://themezee.com/themes/leeway/
 Description: Leeway is a free, responsive theme designed for small magazine websites or blogs. The theme includes two navigation menus, social icons, a fullwidth featured post slideshow and a flexible Magazine Homepage template. All settings are easy to configure in the Customizer.
-Version: 1.2.3
+Version: 1.2.4
 Author: ThemeZee
 Author URI: https://themezee.com
 Tags: two-columns, light, red, custom-background, custom-header, custom-menu, editor-style, food-and-drink, blog, news, featured-image-header, featured-images, flexible-header, custom-colors, full-width-template, sticky-post, threaded-comments, translation-ready, theme-options, fluid-layout, responsive-layout, one-column, left-sidebar, right-sidebar, three-columns, black, blue, silver, white, green, gray
@@ -1797,13 +1797,17 @@ embed, iframe, object, video {
 		border: none;
 		box-shadow: none;
 		background: none;
-		top: 0;
-		left: 0;
+		top: auto;
+		left: auto;
 	}
-	.top-navigation-menu li:hover ul ul, .top-navigation-menu li:hover ul ul ul, .top-navigation-menu li:hover ul ul ul ul,
-	.top-navigation-menu li:hover ul, .top-navigation-menu li li:hover ul, .top-navigation-menu li li li:hover ul, .top-navigation-menu li li li li:hover ul
-	{
-		display: inline;
+	.top-navigation-menu li,
+	.top-navigation-menu ul,
+	.top-navigation-menu li ul ul {
+		position: static;
+		display: block;
+		left: auto;
+		top: auto;
+		clear: left;
 	}
 
 	#topnav-toggle-tablet {
@@ -1952,16 +1956,19 @@ embed, iframe, object, video {
 		border: none;
 		box-shadow: none;
 		background: none;
-		top: 0;
-		left: 0;
+		top: auto;
+		left: auto;
 	}
+	.main-navigation-menu li,
 	.main-navigation-menu ul,
+	.main-navigation-menu li ul ul,
 	.mega-menu-item .mega-menu-content,
 	.mega-menu-item .mega-menu-content .mega-menu-widget {
 		position: static;
 		display: block;
 		left: auto;
 		top: auto;
+		clear: left;
 	}
 
 	#mainnav-toggle {

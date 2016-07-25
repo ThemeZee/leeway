@@ -26,6 +26,9 @@ For more information about Leeway please go to https://themezee.com/themes/leewa
 
 == Changelog ==
 
+= 1.2.4 =
+* fixed dropdown menus on mobile navigation menus
+
 = 1.2.3 =
 * fixed styling of main navigation menu with default pages
 
