@@ -99,8 +99,8 @@ html[xmlns] .zeeslides {display: block;}
 #post-slider .zeeslide .slide-content .slide-title a:hover, #post-slider .zeeslide .slide-content .slide-title a:active{
 	color: #ccc;
 }
-#post-slider .zeeslide .slide-content .slide-link, 
-#post-slider .zeeslide .slide-content .slide-link:link, 
+#post-slider .zeeslide .slide-content .slide-link,
+#post-slider .zeeslide .slide-content .slide-link:link,
 #post-slider .zeeslide .slide-content .slide-link:visited {
 	color: #ddd;
 	font-weight: bold;
@@ -109,14 +109,14 @@ html[xmlns] .zeeslides {display: block;}
 	margin-top: 0.5em;
 	text-decoration: underline;
 }
-#post-slider .zeeslide .slide-content .slide-link:hover, 
+#post-slider .zeeslide .slide-content .slide-link:hover,
 #post-slider .zeeslide .slide-content .slide-link:active{
 	text-decoration: none;
 }
 
 /* Direction Nav */
 .post-slider-controls .zeeflex-direction-nav {
-	position: absolute; 
+	position: absolute;
 	bottom: 1em;
 	right: 1em;
 	*height: 0;
@@ -129,7 +129,7 @@ html[xmlns] .zeeslides {display: block;}
 	height: 80px;
 	background: rgba(0,0,0,0.6);
 	text-align: left;
-	color #fff;
+	color: #fff;
 	font-size: 0;
 	cursor: pointer;
 	z-index: 10;
@@ -174,33 +174,33 @@ html[xmlns] .zeeslides {display: block;}
 
 /* Control Nav */
 .post-slider-controls .zeeflex-control-nav {
-	position: absolute; 
+	position: absolute;
 	top: 1.2em;
 	right: 1em;
 }
 .post-slider-controls .zeeflex-control-nav li {
-	margin: 0 4px; 
-	display: inline-block; 
-	zoom: 1; 
+	margin: 0 4px;
+	display: inline-block;
+	zoom: 1;
 	*display: inline;
 }
 .post-slider-controls .zeeflex-control-nav li a {
-	width: 18px; 
-	height: 18px; 
-	display: block; 
+	width: 18px;
+	height: 18px;
+	display: block;
 	background: #777;
 	background: rgba(0,0,0,0.3);
-	cursor: pointer; 
-	text-indent: -9999px; 
+	cursor: pointer;
+	text-indent: -9999px;
 }
-.post-slider-controls .zeeflex-control-nav li a:hover { 
+.post-slider-controls .zeeflex-control-nav li a:hover {
 	background: #888;
 	background: rgba(0,0,0,0.5);
 }
-.post-slider-controls .zeeflex-control-nav li a.zeeflex-active { 
+.post-slider-controls .zeeflex-control-nav li a.zeeflex-active {
 	background: #888;
-	background: rgba(0,0,0,0.5); 
-	cursor: default; 
+	background: rgba(0,0,0,0.5);
+	cursor: default;
 }
 
 /* Media Queries */
