@@ -26,6 +26,9 @@ For more information about Leeway please go to https://themezee.com/themes/leewa
 
 == Changelog ==
 
+= 1.2.5 =
+* added Right-to-Left language support
+
 = 1.2.4 =
 * fixed dropdown menus on mobile navigation menus
 
