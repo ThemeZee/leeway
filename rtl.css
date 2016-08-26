@@ -322,6 +322,10 @@ article .wp-post-image {
 		float: right;
 	}
 
+	.top-navigation-menu li {
+		width: 100%;
+	}
+
 	.top-navigation-menu a {
 		clear: right;
 	}
@@ -373,8 +377,16 @@ article .wp-post-image {
 		float: right;
 	}
 
+	#mainnav {
+		width: 100%;
+	}
+
 	.main-navigation-menu {
 		float: right;
+	}
+
+	.main-navigation-menu li {
+		width: 100%;
 	}
 
 	.main-navigation-menu a {
