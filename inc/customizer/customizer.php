@@ -26,17 +26,17 @@ function leeway_customize_register_options( $wp_customize ) {
 		'capability'     => 'edit_theme_options',
 		'theme_supports' => '',
 		'title'          => esc_html__( 'Theme Options', 'leeway' ),
-		'description'    => '',
+		'description'    => leeway_customize_theme_links(),
 	) );
-	
+
 	// Add postMessage support for site title and description.
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
-	
+
 	// Change default background section
 	$wp_customize->get_control( 'background_color'  )->section   = 'background_image';
 	$wp_customize->get_section( 'background_image'  )->title     = esc_html__( 'Background', 'leeway' );
-	
+
 	// Add Display Site Title Setting
 	$wp_customize->add_setting( 'leeway_theme_options[site_title]', array(
         'default'           => true,
@@ -53,7 +53,7 @@ function leeway_customize_register_options( $wp_customize ) {
 		'priority' => 10
 		)
 	);
-	
+
 	// Add Header Tagline option
 	$wp_customize->add_setting( 'leeway_theme_options[header_tagline]', array(
         'default'           => false,
@@ -70,7 +70,7 @@ function leeway_customize_register_options( $wp_customize ) {
 		'priority' => 11
 		)
 	);
-	
+
 	// Add Header Image Link
 	$wp_customize->add_setting( 'leeway_theme_options[custom_header_link]', array(
         'default'           => '',
@@ -87,7 +87,7 @@ function leeway_customize_register_options( $wp_customize ) {
 		'priority' => 10
 		)
 	);
-	
+
 	// Add Custom Header Hide Checkbox
 	$wp_customize->add_setting( 'leeway_theme_options[custom_header_hide]', array(
         'default'           => false,
@@ -104,7 +104,7 @@ function leeway_customize_register_options( $wp_customize ) {
 		'priority' => 15
 		)
 	);
-	
+
 }
 
 
@@ -116,31 +116,54 @@ function leeway_customize_preview_js() {
 }
 
 
-// Embed JS file for Customizer Controls
-add_action( 'customize_controls_enqueue_scripts', 'leeway_customize_controls_js' );
-
-function leeway_customize_controls_js() {
-	
-	wp_enqueue_script( 'leeway-customizer-controls', get_template_directory_uri() . '/js/customizer-controls.js', array(), '20151202', true );
-	
-	// Localize the script
-	wp_localize_script( 'leeway-customizer-controls', 'leeway_theme_links', array(
-		'title'	=> esc_html__( 'Theme Links', 'leeway' ),
-		'themeURL'	=> esc_url( __( 'https://themezee.com/themes/leeway/', 'leeway' ) . '?utm_source=customizer&utm_medium=textlink&utm_campaign=leeway&utm_content=theme-page' ),
-		'themeLabel'	=> esc_html__( 'Theme Page', 'leeway' ),
-		'docuURL'	=> esc_url( __( 'https://themezee.com/docs/leeway-documentation/', 'leeway' ) . '?utm_source=customizer&utm_medium=textlink&utm_campaign=leeway&utm_content=documentation' ),
-		'docuLabel'	=>  esc_html__( 'Theme Documentation', 'leeway' ),
-		'rateURL'	=> esc_url( 'http://wordpress.org/support/view/theme-reviews/leeway?filter=5' ),
-		'rateLabel'	=> esc_html__( 'Rate this theme', 'leeway' ),
-		)
-	);
-
-}
-
-
 // Embed CSS styles for Theme Customizer
 add_action( 'customize_controls_print_styles', 'leeway_customize_preview_css' );
 
 function leeway_customize_preview_css() {
-	wp_enqueue_style( 'leeway-customizer-css', get_template_directory_uri() . '/css/customizer.css', array(), '20151202' );
+	wp_enqueue_style( 'leeway-customizer-css', get_template_directory_uri() . '/css/customizer.css', array(), '20160915' );
+}
+
+/**
+ * Returns Theme Links
+ */
+function leeway_customize_theme_links() {
+
+	ob_start();
+	?>
+
+		<div class="theme-links">
+
+			<span class="customize-control-title"><?php esc_html_e( 'Theme Links', 'leeway' ); ?></span>
+
+			<p>
+				<a href="<?php echo esc_url( __( 'https://themezee.com/themes/leeway/', 'leeway' ) ); ?>?utm_source=customizer&utm_medium=textlink&utm_campaign=leeway&utm_content=theme-page" target="_blank">
+					<?php esc_html_e( 'Theme Page', 'leeway' ); ?>
+				</a>
+			</p>
+
+			<p>
+				<a href="http://preview.themezee.com/leeway/?utm_source=theme-info&utm_medium=textlink&utm_campaign=leeway&utm_content=demo" target="_blank">
+					<?php esc_html_e( 'Theme Demo', 'leeway' ); ?>
+				</a>
+			</p>
+
+			<p>
+				<a href="<?php echo esc_url( __( 'https://themezee.com/docs/leeway-documentation/', 'leeway' ) ); ?>?utm_source=customizer&utm_medium=textlink&utm_campaign=leeway&utm_content=documentation" target="_blank">
+					<?php esc_html_e( 'Theme Documentation', 'leeway' ); ?>
+				</a>
+			</p>
+
+			<p>
+				<a href="<?php echo esc_url( __( 'https://wordpress.org/support/theme/leeway/reviews/?filter=5', 'leeway' ) ); ?>" target="_blank">
+					<?php esc_html_e( 'Rate this theme', 'leeway' ); ?>
+				</a>
+			</p>
+
+		</div>
+
+	<?php
+	$theme_links = ob_get_contents();
+	ob_end_clean();
+
+	return $theme_links;
 }

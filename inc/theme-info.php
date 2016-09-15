@@ -1,17 +1,18 @@
 <?php
-/***
+/**
  * Theme Info
  *
  * Adds a simple Theme Info page to the Appearance section of the WordPress Dashboard.
  *
+ * @package Leeway
  */
 
+/**
+ * Add Theme Info page to admin menu
+ */
+function leeway_theme_info_menu_link() {
 
-// Add Theme Info page to admin menu
-add_action('admin_menu', 'leeway_add_theme_info_page');
-function leeway_add_theme_info_page() {
-
-	// Get Theme Details from style.css
+	// Get theme details.
 	$theme = wp_get_theme();
 
 	add_theme_page(
@@ -19,19 +20,20 @@ function leeway_add_theme_info_page() {
 		esc_html__( 'Theme Info', 'leeway' ),
 		'edit_theme_options',
 		'leeway',
-		'leeway_display_theme_info_page'
+		'leeway_theme_info_page'
 	);
 
 }
+add_action( 'admin_menu', 'leeway_theme_info_menu_link' );
 
+/**
+ * Display Theme Info page
+ */
+function leeway_theme_info_page() {
 
-// Display Theme Info page
-function leeway_display_theme_info_page() {
-
-	// Get Theme Details from style.css
+	// Get theme details.
 	$theme = wp_get_theme();
-
-?>
+	?>
 
 	<div class="wrap theme-info-wrap">
 
@@ -43,9 +45,9 @@ function leeway_display_theme_info_page() {
 		<div class="important-links clearfix">
 			<p><strong><?php esc_html_e( 'Theme Links', 'leeway' ); ?>:</strong>
 				<a href="<?php echo esc_url( __( 'https://themezee.com/themes/leeway/', 'leeway' ) . '?utm_source=theme-info&utm_medium=textlink&utm_campaign=leeway&utm_content=theme-page' ); ?>" target="_blank"><?php esc_html_e( 'Theme Page', 'leeway' ); ?></a>
-				<a href="<?php echo esc_url( 'http://preview.themezee.com/leeway/?utm_source=theme-info&utm_medium=textlink&utm_campaign=leeway&utm_content=demo' ); ?>" target="_blank"><?php esc_html_e( 'Theme Demo', 'leeway' ); ?></a>
+				<a href="http://preview.themezee.com/leeway/?utm_source=theme-info&utm_medium=textlink&utm_campaign=leeway&utm_content=demo" target="_blank"><?php esc_html_e( 'Theme Demo', 'leeway' ); ?></a>
 				<a href="<?php echo esc_url( __( 'https://themezee.com/docs/leeway-documentation/', 'leeway' ) . '?utm_source=theme-info&utm_medium=textlink&utm_campaign=leeway&utm_content=documentation' ); ?>" target="_blank"><?php esc_html_e( 'Theme Documentation', 'leeway' ); ?></a>
-				<a href="<?php echo esc_url( 'http://wordpress.org/support/view/theme-reviews/leeway?filter=5' ); ?>" target="_blank"><?php esc_html_e( 'Rate this theme', 'leeway' ); ?></a>
+				<a href="<?php echo esc_url( __( 'https://wordpress.org/support/theme/leeway/reviews/?filter=5', 'leeway' ) ); ?>" target="_blank"><?php esc_html_e( 'Rate this theme', 'leeway' ); ?></a>
 			</p>
 		</div>
 		<hr>
@@ -78,22 +80,7 @@ function leeway_display_theme_info_page() {
 							<?php printf( esc_html__( '%s makes use of the Customizer for all theme settings. Click on "Customize Theme" to open the Customizer now.', 'leeway' ), $theme->get( 'Name' ) ); ?>
 						</p>
 						<p>
-							<a href="<?php echo admin_url( 'customize.php' ); ?>" class="button button-primary">
-								<?php esc_html_e( 'Customize Theme', 'leeway' ); ?>
-							</a>
-						</p>
-					</div>
-
-					<div class="section">
-						<h4><?php esc_html_e( 'Pro Version', 'leeway' ); ?></h4>
-
-						<p class="about">
-							<?php printf( esc_html__( 'Purchase the Pro Version of %s to get additional features and advanced customization options.', 'leeway' ), 'Leeway'); ?>
-						</p>
-						<p>
-							<a href="<?php echo esc_url( __( 'https://themezee.com/addons/leeway-pro/', 'leeway' ) . '?utm_source=theme-info&utm_medium=button&utm_campaign=leeway&utm_content=pro-version' ); ?>" target="_blank" class="button button-secondary">
-								<?php printf( esc_html__( 'Learn more about %s Pro', 'leeway' ), 'Leeway'); ?>
-							</a>
+							<a href="<?php echo admin_url( 'customize.php' ); ?>" class="button button-primary"><?php esc_html_e( 'Customize Theme', 'leeway' ); ?></a>
 						</p>
 					</div>
 
@@ -111,32 +98,81 @@ function leeway_display_theme_info_page() {
 
 		<hr>
 
+		<div id="more-features">
+
+			<h3><?php esc_html_e( 'Get more features', 'leeway' ); ?></h3>
+
+			<div class="columns-wrapper clearfix">
+
+				<div class="column column-half clearfix">
+
+					<div class="section">
+						<h4><?php esc_html_e( 'Pro Version Add-on', 'leeway' ); ?></h4>
+
+						<p class="about">
+							<?php printf( esc_html__( 'Purchase the %s Pro Add-on and get additional features and advanced customization options.', 'leeway' ), 'Leeway' ); ?>
+						</p>
+						<p>
+							<a href="<?php echo esc_url( __( 'https://themezee.com/addons/leeway-pro/', 'leeway' ) . '?utm_source=theme-info&utm_medium=button&utm_campaign=leeway&utm_content=pro-version' ); ?>" target="_blank" class="button button-secondary">
+								<?php printf( esc_html__( 'Learn more about %s Pro', 'leeway' ), 'Leeway' ); ?>
+							</a>
+						</p>
+					</div>
+
+				</div>
+
+				<div class="column column-half clearfix">
+
+					<div class="section">
+						<h4><?php esc_html_e( 'Recommended Plugins', 'leeway' ); ?></h4>
+
+						<p class="about">
+							<?php esc_html_e( 'Extend the functionality of your WordPress website with our free and easy to use plugins.', 'leeway' ); ?>
+						</p>
+						<p>
+							<a href="<?php echo admin_url( 'plugin-install.php?tab=search&type=author&s=themezee' ); ?>" class="button button-secondary">
+								<?php esc_html_e( 'Install Plugins', 'leeway' ); ?>
+							</a>
+						</p>
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+		<hr>
+
 		<div id="theme-author">
 
 			<p><?php printf( esc_html__( '%1$s is proudly brought to you by %2$s. If you like this theme, %3$s :)', 'leeway' ),
 				$theme->get( 'Name' ),
 				'<a target="_blank" href="' . __( 'https://themezee.com/', 'leeway' ) . '?utm_source=theme-info&utm_medium=footer&utm_campaign=leeway" title="ThemeZee">ThemeZee</a>',
-				'<a target="_blank" href="http://wordpress.org/support/view/theme-reviews/leeway?filter=5" title="Leeway Lite Review">' . esc_html__( 'rate it', 'leeway' ) . '</a>'); ?>
+				'<a target="_blank" href="' . __( 'https://wordpress.org/support/theme/leeway/reviews/?filter=5', 'leeway' ) . '" title="' . esc_attr__( 'Review Leeway', 'leeway' ) . '">' . esc_html__( 'rate it', 'leeway' ) . '</a>'); ?>
 			</p>
 
 		</div>
 
 	</div>
 
-<?php
+	<?php
 }
 
-
-// Add CSS for Theme Info Panel
-add_action('admin_enqueue_scripts', 'leeway_theme_info_page_css');
+/**
+ * Enqueues CSS for Theme Info page
+ *
+ * @param int $hook Hook suffix for the current admin page.
+ */
 function leeway_theme_info_page_css( $hook ) {
 
-	// Load styles and scripts only on theme info page
+	// Load styles and scripts only on theme info page.
 	if ( 'appearance_page_leeway' != $hook ) {
 		return;
 	}
 
-	// Embed theme info css style
-	wp_enqueue_style('leeway-theme-info-css', get_template_directory_uri() .'/css/theme-info.css');
+	// Embed theme info css style.
+	wp_enqueue_style( 'leeway-theme-info-css', get_template_directory_uri() .'/css/theme-info.css' );
 
 }
+add_action( 'admin_enqueue_scripts', 'leeway_theme_info_page_css' );
