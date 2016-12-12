@@ -45,7 +45,7 @@ function leeway_theme_info_page() {
 		<div class="important-links clearfix">
 			<p><strong><?php esc_html_e( 'Theme Links', 'leeway' ); ?>:</strong>
 				<a href="<?php echo esc_url( __( 'https://themezee.com/themes/leeway/', 'leeway' ) . '?utm_source=theme-info&utm_medium=textlink&utm_campaign=leeway&utm_content=theme-page' ); ?>" target="_blank"><?php esc_html_e( 'Theme Page', 'leeway' ); ?></a>
-				<a href="http://preview.themezee.com/leeway/?utm_source=theme-info&utm_medium=textlink&utm_campaign=leeway&utm_content=demo" target="_blank"><?php esc_html_e( 'Theme Demo', 'leeway' ); ?></a>
+				<a href="http://preview.themezee.com/?demo=leeway&utm_source=theme-info&utm_medium=textlink&utm_campaign=leeway&utm_content=demo" target="_blank"><?php esc_html_e( 'Theme Demo', 'leeway' ); ?></a>
 				<a href="<?php echo esc_url( __( 'https://themezee.com/docs/leeway-documentation/', 'leeway' ) . '?utm_source=theme-info&utm_medium=textlink&utm_campaign=leeway&utm_content=documentation' ); ?>" target="_blank"><?php esc_html_e( 'Theme Documentation', 'leeway' ); ?></a>
 				<a href="<?php echo esc_url( __( 'https://wordpress.org/support/theme/leeway/reviews/?filter=5', 'leeway' ) ); ?>" target="_blank"><?php esc_html_e( 'Rate this theme', 'leeway' ); ?></a>
 			</p>
@@ -80,7 +80,7 @@ function leeway_theme_info_page() {
 							<?php printf( esc_html__( '%s makes use of the Customizer for all theme settings. Click on "Customize Theme" to open the Customizer now.', 'leeway' ), $theme->get( 'Name' ) ); ?>
 						</p>
 						<p>
-							<a href="<?php echo admin_url( 'customize.php' ); ?>" class="button button-primary"><?php esc_html_e( 'Customize Theme', 'leeway' ); ?></a>
+							<a href="<?php echo wp_customize_url(); ?>" class="button button-primary"><?php esc_html_e( 'Customize Theme', 'leeway' ); ?></a>
 						</p>
 					</div>
 
@@ -130,7 +130,7 @@ function leeway_theme_info_page() {
 							<?php esc_html_e( 'Extend the functionality of your WordPress website with our free and easy to use plugins.', 'leeway' ); ?>
 						</p>
 						<p>
-							<a href="<?php echo admin_url( 'plugin-install.php?tab=search&type=author&s=themezee' ); ?>" class="button button-secondary">
+							<a href="<?php echo esc_url( admin_url( 'plugin-install.php?tab=search&type=author&s=themezee' ) ); ?>" class="button button-secondary">
 								<?php esc_html_e( 'Install Plugins', 'leeway' ); ?>
 							</a>
 						</p>
@@ -172,7 +172,7 @@ function leeway_theme_info_page_css( $hook ) {
 	}
 
 	// Embed theme info css style.
-	wp_enqueue_style( 'leeway-theme-info-css', get_template_directory_uri() .'/css/theme-info.css' );
+	wp_enqueue_style( 'leeway-theme-info-css', get_template_directory_uri() . '/css/theme-info.css' );
 
 }
 add_action( 'admin_enqueue_scripts', 'leeway_theme_info_page_css' );

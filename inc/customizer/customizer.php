@@ -120,7 +120,7 @@ function leeway_customize_preview_js() {
 add_action( 'customize_controls_print_styles', 'leeway_customize_preview_css' );
 
 function leeway_customize_preview_css() {
-	wp_enqueue_style( 'leeway-customizer-css', get_template_directory_uri() . '/css/customizer.css', array(), '20160915' );
+	wp_enqueue_style( 'leeway-customizer-css', get_template_directory_uri() . '/css/customizer.css', array(), '20161214' );
 }
 
 /**
@@ -142,7 +142,7 @@ function leeway_customize_theme_links() {
 			</p>
 
 			<p>
-				<a href="http://preview.themezee.com/leeway/?utm_source=theme-info&utm_medium=textlink&utm_campaign=leeway&utm_content=demo" target="_blank">
+				<a href="http://preview.themezee.com/?demo=leeway&utm_source=theme-info&utm_medium=textlink&utm_campaign=leeway&utm_content=demo" target="_blank">
 					<?php esc_html_e( 'Theme Demo', 'leeway' ); ?>
 				</a>
 			</p>
