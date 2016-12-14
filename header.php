@@ -12,11 +12,8 @@
 
 <body <?php body_class(); ?>>
 
-<?php // Get Theme Options from Database
-	$theme_options = leeway_theme_options();
-?>
 	<div id="topheader-wrap">
-		<?php locate_template('/inc/top-header.php', true); ?>
+		<?php get_template_part( 'inc/top-header' ); ?>
 	</div>
 
 	<div id="wrapper" class="container hfeed">
@@ -27,13 +24,9 @@
 
 				<div id="logo" class="clearfix">
 
-				<?php leeway_site_logo(); ?>
-				<?php leeway_site_title(); ?>
-
-				<?php // Display Tagline on header if activated
-				if ( isset($theme_options['header_tagline']) and $theme_options['header_tagline'] == true ) : ?>
-					<h2 class="site-description"><?php echo bloginfo('description'); ?></h2>
-				<?php endif; ?>
+					<?php leeway_site_logo(); ?>
+					<?php leeway_site_title(); ?>
+					<?php leeway_site_description(); ?>
 
 				</div>
 
@@ -46,8 +39,8 @@
 							'menu_id' => 'mainnav-menu',
 							'menu_class' => 'main-navigation-menu',
 							'echo' => true,
-							'fallback_cb' => 'leeway_default_menu')
-						);
+							'fallback_cb' => 'leeway_default_menu',
+						) );
 					?>
 				</nav>
 
