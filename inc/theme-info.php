@@ -45,7 +45,7 @@ function leeway_theme_info_page() {
 		<div class="important-links clearfix">
 			<p><strong><?php esc_html_e( 'Theme Links', 'leeway' ); ?>:</strong>
 				<a href="<?php echo esc_url( __( 'https://themezee.com/themes/leeway/', 'leeway' ) . '?utm_source=theme-info&utm_medium=textlink&utm_campaign=leeway&utm_content=theme-page' ); ?>" target="_blank"><?php esc_html_e( 'Theme Page', 'leeway' ); ?></a>
-				<a href="http://preview.themezee.com/?demo=leeway&utm_source=theme-info&utm_medium=textlink&utm_campaign=leeway&utm_content=demo" target="_blank"><?php esc_html_e( 'Theme Demo', 'leeway' ); ?></a>
+				<a href="http://preview.themezee.com/?demo=leeway&utm_source=theme-info&utm_campaign=leeway" target="_blank"><?php esc_html_e( 'Theme Demo', 'leeway' ); ?></a>
 				<a href="<?php echo esc_url( __( 'https://themezee.com/docs/leeway-documentation/', 'leeway' ) . '?utm_source=theme-info&utm_medium=textlink&utm_campaign=leeway&utm_content=documentation' ); ?>" target="_blank"><?php esc_html_e( 'Theme Documentation', 'leeway' ); ?></a>
 				<a href="<?php echo esc_url( __( 'https://wordpress.org/support/theme/leeway/reviews/?filter=5', 'leeway' ) ); ?>" target="_blank"><?php esc_html_e( 'Rate this theme', 'leeway' ); ?></a>
 			</p>

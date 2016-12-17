@@ -168,7 +168,7 @@ function leeway_customize_theme_links() {
 			</p>
 
 			<p>
-				<a href="http://preview.themezee.com/?demo=leeway&utm_source=theme-info&utm_medium=textlink&utm_campaign=leeway&utm_content=demo" target="_blank">
+				<a href="http://preview.themezee.com/?demo=leeway&utm_source=customizer&utm_campaign=leeway" target="_blank">
 					<?php esc_html_e( 'Theme Demo', 'leeway' ); ?>
 				</a>
 			</p>
