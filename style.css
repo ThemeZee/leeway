@@ -2,10 +2,10 @@
 Theme Name: Leeway
 Theme URI: https://themezee.com/themes/leeway/
 Description: Leeway is a free, responsive theme designed for small magazine websites or blogs. The theme includes two navigation menus, social icons, a fullwidth featured post slideshow and a flexible Magazine Homepage template. All settings are easy to configure in the Customizer.
-Version: 1.2.6
+Version: 1.2.7
 Author: ThemeZee
 Author URI: https://themezee.com
-Tags: two-columns, light, red, custom-background, custom-header, custom-menu, editor-style, rtl-language-support, food-and-drink, blog, news, featured-image-header, featured-images, flexible-header, custom-colors, full-width-template, sticky-post, threaded-comments, translation-ready, theme-options, fluid-layout, responsive-layout, one-column, left-sidebar, right-sidebar, three-columns, black, blue, silver, white, green, gray
+Tags: two-columns, custom-background, custom-header, custom-menu, editor-style, rtl-language-support, food-and-drink, blog, news, featured-image-header, featured-images, flexible-header, custom-colors, full-width-template, sticky-post, threaded-comments, translation-ready, theme-options, one-column, left-sidebar, right-sidebar, three-columns
 Text Domain: leeway
 Domain Path: /languages/
 License: GNU General Public License v2.0
@@ -1634,9 +1634,6 @@ embed, iframe, object, video {
 }
 
 /* Footer Navigation Menu */
-#footernav-icon {
-	display: none;
-}
 #footernav {
 	float: left;
 }
@@ -1663,7 +1660,6 @@ embed, iframe, object, video {
 #footernav-menu a:hover {
 	text-decoration: underline;
 }
-
 
 /*============================ MEDIA QUERIES ============================*/
 
@@ -2119,6 +2115,28 @@ embed, iframe, object, video {
 	.widget-category-posts .small-post .entry-title {
 		font-size: 1.05em;
 	}
+
+	/* Footer */
+	#footer {
+		text-align: center;
+	}
+
+	#footer #footer-text {
+		float: none;
+	}
+
+	/* Footer Navigation Menu */
+	#footernav {
+		float: none;
+	}
+	#footernav-menu {
+		float: none;
+	}
+	#footernav-menu li {
+		float: none;
+		display: inline-block;
+		margin: 0 1em 1.5em;
+	}
 }
 
 /* Tablets (portrait) | <800px */
@@ -2131,70 +2149,6 @@ embed, iframe, object, video {
 		float: none;
 		font-weight: normal;
 	}
-
-	/* Mobile Footer Navigation */
-	#footer #footer-text {
-		margin-top: -1.2em;
-	}
-
-	/* Reset */
-	#footernav, #footernav-menu, #footernav-menu li, #footernav-menu a, #footernav-menu ul {
-		margin: 0;
-		padding: 0;
-		position: static;
-		float: none;
-		display: inline;
-		font-size: 1.0em;
-		border: none;
-		box-shadow: none;
-		background: none;
-		top: 0;
-		left: 0;
-	}
-	#footernav {
-		float: none;
-	}
-	#footernav-icon {
-		display: block;
-		text-decoration: none;
-		font-size: 0.9em;
-		color: #fff;
-	}
-	#footernav-icon:hover {
-		cursor: pointer;
-		text-decoration: underline;
-	}
-	#footernav-icon:after {
-		margin: 0.05em 0 0 1em;
-		-webkit-font-smoothing: antialiased;
-		display: inline-block;
-		content: '\f419';
-		font: normal 14px/1 Genericons;
-		text-decoration: inherit;
-		vertical-align: text-bottom;
-	}
-	#footernav-icon:hover:after {
-		text-decoration: none;
-	}
-	#footernav-menu {
-		display: none;
-		width: 100%;
-		padding-bottom: 1.2em;
-	}
-	#footernav-menu li {
-		display: block;
-		padding: 0.4em 0;
-		margin: 0 1.5em 0.5em 0;
-	}
-	#footernav-menu a {
-		display: inline-block;
-		text-decoration: none;
-		font-size: 0.9em;
-	}
-	#footernav-menu a:hover {
-		text-decoration: underline;
-	}
-
 	.entry h1, .comment h1 {
 	font-size: 2.2em;
 	}
@@ -2322,10 +2276,6 @@ embed, iframe, object, video {
 		max-width: 100%;
 		margin: 1em 0 0;
 	}
-	#footer #footer-text {
-		float: none;
-		margin-top: 1.2em;
-	}
 
 	/* Mobile Main Navigation */
 	#topnav-toggle-tablet {
@@ -2394,7 +2344,15 @@ embed, iframe, object, video {
 		max-width: 40%;
 	}
 
+	/* Footer Navigation Menu */
+	#footer #footer-text {
+		margin-top: 0.5em;
+	}
 
+	#footernav-menu li {
+		display: block;
+		margin: 0 0 1.5em;
+	}
 }
 /* Smartphones | <320px */
 @media only screen and (max-width: 20em) {
@@ -2438,12 +2396,6 @@ embed, iframe, object, video {
 	}
 	.top-navigation-menu li.menu-item:hover a {
 		background: rgba(0,0,0,0.2);
-	}
-}
-@media only screen and (min-width: 50.001em) {
-	/* ensure #footernav is visible on desktop version */
-	#footernav-menu {
-		display: block !important;
 	}
 }
 @media only screen and (min-width: 30.001em) {

@@ -180,13 +180,6 @@
 			toggleClass: "topnav-toggle"
 		});
 
-
-		/* Setup Footer Navigation toggle */
-		$('#footernav-icon').on('click', function(){
-			$('#footernav-menu').slideToggle();
-			$(this).toggleClass('active');
-		});
-
 	} );
 
 }(jQuery));
