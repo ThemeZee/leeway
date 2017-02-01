@@ -26,6 +26,9 @@ For more information about Leeway please go to https://themezee.com/themes/leewa
 
 == Changelog ==
 
+= 1.2.8 =
+* added Magazine Homepage widgets to blog index
+
 = 1.2.7 =
 * added editor shortcuts and instant live preview for site title and tagline in Customizer
 * improved styling of footer navigation menu
