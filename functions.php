@@ -3,7 +3,7 @@
 /*==================================== THEME SETUP ====================================*/
 
 // Load default style.css and Javascripts
-add_action('wp_enqueue_scripts', 'leeway_enqueue_scripts');
+add_action( 'wp_enqueue_scripts', 'leeway_enqueue_scripts' );
 
 function leeway_enqueue_scripts() {
 
@@ -27,16 +27,16 @@ function leeway_enqueue_scripts() {
 	wp_enqueue_script( 'leeway-jquery-navigation', get_template_directory_uri() . '/js/navigation.js', array( 'jquery' ), '20160719' );
 
 	// Register and Enqueue FlexSlider JS and CSS if necessary
-	if ( true == $theme_options['slider_active_blog'] or true == $theme_options['slider_active_magazine'] or is_page_template('template-slider.php') ) :
+	if ( true == $theme_options['slider_active_blog'] or true == $theme_options['slider_active_magazine'] or is_page_template( 'template-slider.php' ) ) :
 
 		// FlexSlider CSS
 		wp_enqueue_style( 'leeway-flexslider', get_template_directory_uri() . '/css/flexslider.css', array(), '20160421' );
 
 		// FlexSlider JS
-		wp_enqueue_script( 'flexslider', get_template_directory_uri() .'/js/jquery.flexslider-min.js', array( 'jquery' ), '2.6.0' );
+		wp_enqueue_script( 'flexslider', get_template_directory_uri() . '/js/jquery.flexslider-min.js', array( 'jquery' ), '2.6.0' );
 
 		// Register and enqueue slider.js
-		wp_enqueue_script( 'leeway-post-slider', get_template_directory_uri() .'/js/slider.js', array( 'flexslider' ), '2.6.0' );
+		wp_enqueue_script( 'leeway-post-slider', get_template_directory_uri() . '/js/slider.js', array( 'flexslider' ), '2.6.0' );
 
 	endif;
 
@@ -51,12 +51,19 @@ function leeway_enqueue_scripts() {
  * Enqueue custom fonts.
  */
 function leeway_custom_fonts() {
-
-	// Register and Enqueue Theme Fonts.
 	wp_enqueue_style( 'leeway-custom-fonts', get_template_directory_uri() . '/css/custom-fonts.css', array(), '20180413' );
-
 }
 add_action( 'wp_enqueue_scripts', 'leeway_custom_fonts', 1 );
+add_action( 'enqueue_block_editor_assets', 'leeway_custom_fonts', 1 );
+
+
+/**
+ * Enqueue editor styles for the new Gutenberg Editor.
+ */
+function leeway_block_editor_assets() {
+	wp_enqueue_style( 'leeway-editor-styles', get_template_directory_uri() . '/css/gutenberg-styles.css', array(), '20181102', 'all' );
+}
+add_action( 'enqueue_block_editor_assets', 'leeway_block_editor_assets' );
 
 
 // Setup Function: Registers support for various WordPress features
@@ -66,38 +73,40 @@ function leeway_setup() {
 
 	// Set Content Width
 	global $content_width;
-	if ( ! isset( $content_width ) )
+	if ( ! isset( $content_width ) ) {
 		$content_width = 860;
+	}
 
 	// init Localization
-	load_theme_textdomain('leeway', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'leeway', get_template_directory() . '/languages' );
 
 	// Add Theme Support
-	add_theme_support('automatic-feed-links');
-	add_theme_support('title-tag');
+	add_theme_support( 'automatic-feed-links' );
+	add_theme_support( 'title-tag' );
 	add_editor_style();
 
 	// Add Post Thumbnails
-	add_theme_support('post-thumbnails');
+	add_theme_support( 'post-thumbnails' );
 	set_post_thumbnail_size( 400, 280, true );
 
 	// Add Custom Background
-	add_theme_support('custom-background', array('default-color' => 'e5e5e5'));
+	add_theme_support( 'custom-background', array( 'default-color' => 'e5e5e5' ) );
 
 	// Set up the WordPress core custom logo feature
 	add_theme_support( 'custom-logo', apply_filters( 'leeway_custom_logo_args', array(
-		'height' => 60,
-		'width' => 240,
+		'height'      => 60,
+		'width'       => 240,
 		'flex-height' => true,
-		'flex-width' => true,
+		'flex-width'  => true,
 	) ) );
 
 	// Add Custom Header
-	add_theme_support('custom-header', array(
+	add_theme_support( 'custom-header', array(
 		'header-text' => false,
-		'width'	=> 1320,
-		'height' => 250,
-		'flex-height' => true));
+		'width'       => 1320,
+		'height'      => 250,
+		'flex-height' => true,
+	) );
 
 	// Add Theme Support for wooCommerce
 	add_theme_support( 'woocommerce' );
@@ -113,6 +122,35 @@ function leeway_setup() {
 	// Add Theme Support for Selective Refresh in Customizer
 	add_theme_support( 'customize-selective-refresh-widgets' );
 
+	// Add custom color palette for Gutenberg.
+	add_theme_support( 'editor-color-palette', array(
+		array(
+			'name'  => esc_html_x( 'Primary', 'Gutenberg Color Palette', 'leeway' ),
+			'slug'  => 'primary',
+			'color' => apply_filters( 'leeway_primary_color', '#bb0000' ),
+		),
+		array(
+			'name'  => esc_html_x( 'White', 'Gutenberg Color Palette', 'leeway' ),
+			'slug'  => 'white',
+			'color' => '#ffffff',
+		),
+		array(
+			'name'  => esc_html_x( 'Light Gray', 'Gutenberg Color Palette', 'leeway' ),
+			'slug'  => 'light-gray',
+			'color' => '#f0f0f0',
+		),
+		array(
+			'name'  => esc_html_x( 'Dark Gray', 'Gutenberg Color Palette', 'leeway' ),
+			'slug'  => 'dark-gray',
+			'color' => '#777777',
+		),
+		array(
+			'name'  => esc_html_x( 'Black', 'Gutenberg Color Palette', 'leeway' ),
+			'slug'  => 'black',
+			'color' => '#353535',
+		),
+	) );
+
 }
 
 
@@ -122,17 +160,16 @@ add_action( 'after_setup_theme', 'leeway_add_image_sizes' );
 function leeway_add_image_sizes() {
 
 	// Add Custom Header Image Size
-	add_image_size( 'leeway-header-image', 1320, 250, true);
+	add_image_size( 'leeway-header-image', 1320, 250, true );
 
 	// Add Slider Image Size
-	add_image_size( 'leeway-slider-image', 1320, 380, true);
+	add_image_size( 'leeway-slider-image', 1320, 380, true );
 
 	// Add Category Post Widget image sizes
-	add_image_size( 'leeway-category-posts-widget-small', 140, 90, true);
-	add_image_size( 'leeway-category-posts-widget-medium', 300, 175, true);
-	add_image_size( 'leeway-category-posts-widget-large', 600, 280, true);
-	add_image_size( 'leeway-category-posts-widget-extra-large', 600, 350, true);
-
+	add_image_size( 'leeway-category-posts-widget-small', 140, 90, true );
+	add_image_size( 'leeway-category-posts-widget-medium', 300, 175, true );
+	add_image_size( 'leeway-category-posts-widget-large', 600, 280, true );
+	add_image_size( 'leeway-category-posts-widget-extra-large', 600, 350, true );
 }
 
 
@@ -162,7 +199,6 @@ function leeway_register_sidebars() {
 		'before_title' => '<h3 class="widgettitle"><span>',
 		'after_title' => '</span></h3>',
 	));
-
 }
 
 
