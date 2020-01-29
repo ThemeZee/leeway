@@ -26,6 +26,9 @@ For more information about Leeway please go to https://themezee.com/themes/leewa
 
 == Changelog ==
 
+= 1.4.3 =
+* added Skip-to-Content link for improved accessibility
+
 = 1.4.2 =
 * fixed missing slider tag bug in WordPress Block Editor
 

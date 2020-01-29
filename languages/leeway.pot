@@ -1,8 +1,9 @@
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Leeway\n"
 "Report-Msgid-Bugs-To: https://themezee.com/\n"
-"POT-Creation-Date: 2016-09-15 21:32+0100\n"
+"POT-Creation-Date: 2020-01-29 14:17+0100\n"
 "PO-Revision-Date: 2016-09-15 21:33+0100\n"
 "Last-Translator: \n"
 "Language-Team: ThemeZee <support@themezee.com>\n"
@@ -10,13 +11,13 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.7\n"
+"X-Generator: Poedit 2.2.4\n"
 "X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;"
 "_nx_noop:1,2,3c;esc_attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;"
 "esc_html_x:1,2c\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-Basepath: ../\n"
+"X-Poedit-Basepath: ..\n"
 "X-Textdomain-Support: yes\n"
 "X-Poedit-SearchPath-0: .\n"
 
@@ -34,11 +35,11 @@ msgstr ""
 msgid "Enter password to view comments."
 msgstr ""
 
-#: comments.php:20 inc/template-tags.php:168
+#: comments.php:20 inc/template-tags.php:179
 msgid "One comment"
 msgstr ""
 
-#: comments.php:20 inc/template-tags.php:168
+#: comments.php:20 inc/template-tags.php:179
 #, php-format
 msgid "% comments"
 msgstr ""
@@ -58,288 +59,160 @@ msgid ""
 "posts which are tagged with that keyword."
 msgstr ""
 
-#: functions.php:126
+#: functions.php:115
 msgid "Main Navigation"
 msgstr ""
 
-#: functions.php:127
+#: functions.php:116
 msgid "Top Navigation"
 msgstr ""
 
-#: functions.php:128
+#: functions.php:117
 msgid "Footer Navigation"
 msgstr ""
 
-#: functions.php:131
+#: functions.php:120
 msgid "Social Icons"
 msgstr ""
 
-#: functions.php:166 sidebar.php:14
+#: functions.php:128
+msgctxt "Gutenberg Color Palette"
+msgid "Primary"
+msgstr ""
+
+#: functions.php:133
+msgctxt "Gutenberg Color Palette"
+msgid "White"
+msgstr ""
+
+#: functions.php:138
+msgctxt "Gutenberg Color Palette"
+msgid "Light Gray"
+msgstr ""
+
+#: functions.php:143
+msgctxt "Gutenberg Color Palette"
+msgid "Dark Gray"
+msgstr ""
+
+#: functions.php:148
+msgctxt "Gutenberg Color Palette"
+msgid "Black"
+msgstr ""
+
+#: functions.php:183 sidebar.php:14
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:168
+#: functions.php:185
 msgid "Appears on posts and pages except the full width template."
 msgstr ""
 
-#: functions.php:177
+#: functions.php:194
 msgid "Magazine Homepage"
 msgstr ""
 
-#: functions.php:179
+#: functions.php:196
 msgid ""
 "Appears on Magazine Homepage template only. You can use the Category Posts "
 "widgets here."
 msgstr ""
 
-#: search.php:20
-#, php-format
-msgid "Search Results for: %s"
+#: header.php:15
+msgid "Skip to content"
 msgstr ""
 
-#: search.php:47
-msgid "No matches"
-msgstr ""
-
-#: search.php:51
-msgid ""
-"Please try again, or use the navigation menus to find what you search for."
-msgstr ""
-
-#: searchform.php:4
-msgctxt "label"
-msgid "Search for:"
-msgstr ""
-
-#: searchform.php:5
-msgctxt "placeholder"
-msgid "Search &hellip;"
-msgstr ""
-
-#: sidebar.php:16
-msgid ""
-"Please go to Appearance &#8594; Widgets and add some widgets to your sidebar."
-msgstr ""
-
-#: template-magazine.php:39
-msgid ""
-"Please go to Appearance &#8594; Widgets and add at least one widget to the "
-"\"Magazine Homepage\" widget area. You can use the Category Posts widgets to "
-"set up the theme like the demo website."
-msgstr ""
-
-#: inc/featured-content.php:368
-msgid "Tag name"
-msgstr ""
-
-#: inc/featured-content.php:374
-msgid "Hide tag from displaying in post meta and tag clouds."
-msgstr ""
-
-#: inc/featured-content.php:381
-msgid "Display featured posts in latest blog post listing."
-msgstr ""
-
-#: inc/featured-content.php:388
-msgid "Number of Posts"
-msgstr ""
-
-#: inc/template-tags.php:155
-#, php-format
-msgid "View all posts by %s"
-msgstr ""
-
-#: inc/template-tags.php:168
-msgid "Leave a comment"
-msgstr ""
-
-#: inc/template-tags.php:221
-#, php-format
-msgid "Category: %s"
-msgstr ""
-
-#: inc/template-tags.php:234
-#, php-format
-msgid "Tags: %1$s"
-msgstr ""
-
-#: inc/template-tags.php:323
-#, php-format
-msgid "Powered by %1$s and %2$s."
-msgstr ""
-
-#: inc/template-tags.php:357
-msgid ""
-"Please go to Appearance &#8594; Menus and create a new custom menu with "
-"custom links to all your social networks. Then click on \"Manage Locations\" "
-"tab and assign your created menu to the \"Social Icons\" location."
-msgstr ""
-
-#: inc/template-tags.php:374
-msgid "Pingback:"
-msgstr ""
-
-#: inc/template-tags.php:375 inc/template-tags.php:395
-msgid "(Edit)"
-msgstr ""
-
-#: inc/template-tags.php:390
-msgid "Your comment is awaiting moderation."
-msgstr ""
-
-#: inc/template-tags.php:394
-#, php-format
-msgid "%1$s at %2$s"
-msgstr ""
-
-#: inc/theme-info.php:19 inc/theme-info.php:40
-#, php-format
-msgid "Welcome to %1$s %2$s"
-msgstr ""
-
-#: inc/theme-info.php:20
-msgid "Theme Info"
-msgstr ""
-
-#: inc/theme-info.php:46 inc/customizer/customizer.php:136
-msgid "Theme Links"
-msgstr ""
-
-#: inc/theme-info.php:47 inc/customizer/customizer.php:139
-msgid "https://themezee.com/themes/leeway/"
-msgstr ""
-
-#: inc/theme-info.php:47 inc/customizer/customizer.php:140
-msgid "Theme Page"
-msgstr ""
-
-#: inc/theme-info.php:48 inc/customizer/customizer.php:146
-msgid "Theme Demo"
-msgstr ""
-
-#: inc/theme-info.php:49 inc/theme-info.php:70
-#: inc/customizer/customizer.php:151
-msgid "https://themezee.com/docs/leeway-documentation/"
-msgstr ""
-
-#: inc/theme-info.php:49 inc/theme-info.php:64
-#: inc/customizer/customizer.php:152
-msgid "Theme Documentation"
-msgstr ""
-
-#: inc/theme-info.php:50 inc/theme-info.php:152
-#: inc/customizer/customizer.php:157
-msgid "https://wordpress.org/support/theme/leeway/reviews/?filter=5"
-msgstr ""
-
-#: inc/theme-info.php:50 inc/customizer/customizer.php:158
-msgid "Rate this theme"
-msgstr ""
-
-#: inc/theme-info.php:57
-#, php-format
-msgid "Getting Started with %s"
-msgstr ""
-
-#: inc/theme-info.php:67
-msgid ""
-"You need help to setup and configure this theme? We got you covered with an "
-"extensive theme documentation on our website."
-msgstr ""
-
-#: inc/theme-info.php:71
-#, php-format
-msgid "View %s Documentation"
-msgstr ""
-
-#: inc/theme-info.php:77 inc/customizer/customizer.php:28
+#: inc/customizer/customizer.php:28 inc/theme-info.php:77
 msgid "Theme Options"
 msgstr ""
 
-#: inc/theme-info.php:80
-#, php-format
-msgid ""
-"%s makes use of the Customizer for all theme settings. Click on \"Customize "
-"Theme\" to open the Customizer now."
+#: inc/customizer/customizer.php:34
+msgid "Background"
 msgstr ""
 
-#: inc/theme-info.php:83
-msgid "Customize Theme"
+#: inc/customizer/customizer.php:59
+msgid "Display Site Title"
 msgstr ""
 
-#: inc/theme-info.php:103
-msgid "Get more features"
+#: inc/customizer/customizer.php:76
+msgid "Display Tagline"
 msgstr ""
 
-#: inc/theme-info.php:110 inc/customizer/functions/custom-controls.php:42
+#: inc/customizer/customizer.php:93
+msgid "Header Image Link"
+msgstr ""
+
+#: inc/customizer/customizer.php:110
+msgid "Hide header image on front page"
+msgstr ""
+
+#: inc/customizer/customizer.php:162 inc/theme-info.php:46
+msgid "Theme Links"
+msgstr ""
+
+#: inc/customizer/customizer.php:165 inc/theme-info.php:47
+msgid "https://themezee.com/themes/leeway/"
+msgstr ""
+
+#: inc/customizer/customizer.php:166 inc/theme-info.php:47
+msgid "Theme Page"
+msgstr ""
+
+#: inc/customizer/customizer.php:172 inc/theme-info.php:48
+msgid "Theme Demo"
+msgstr ""
+
+#: inc/customizer/customizer.php:177 inc/theme-info.php:49
+#: inc/theme-info.php:70
+msgid "https://themezee.com/docs/leeway-documentation/"
+msgstr ""
+
+#: inc/customizer/customizer.php:178 inc/theme-info.php:49
+#: inc/theme-info.php:64
+msgid "Theme Documentation"
+msgstr ""
+
+#: inc/customizer/customizer.php:183 inc/theme-info.php:50
+#: inc/theme-info.php:152
+msgid "https://wordpress.org/support/theme/leeway/reviews/?filter=5"
+msgstr ""
+
+#: inc/customizer/customizer.php:184 inc/theme-info.php:50
+msgid "Rate this theme"
+msgstr ""
+
+#: inc/customizer/functions/custom-controls.php:42 inc/theme-info.php:110
 msgid "Pro Version Add-on"
 msgstr ""
 
-#: inc/theme-info.php:113 inc/customizer/functions/custom-controls.php:45
+#: inc/customizer/functions/custom-controls.php:45 inc/theme-info.php:113
 #, php-format
 msgid ""
 "Purchase the %s Pro Add-on and get additional features and advanced "
 "customization options."
 msgstr ""
 
-#: inc/theme-info.php:116 inc/customizer/functions/custom-controls.php:49
+#: inc/customizer/functions/custom-controls.php:49 inc/theme-info.php:116
 msgid "https://themezee.com/addons/leeway-pro/"
 msgstr ""
 
-#: inc/theme-info.php:117 inc/customizer/functions/custom-controls.php:50
+#: inc/customizer/functions/custom-controls.php:50 inc/theme-info.php:117
 #, php-format
 msgid "Learn more about %s Pro"
 msgstr ""
 
-#: inc/theme-info.php:127 inc/customizer/functions/custom-controls.php:58
+#: inc/customizer/functions/custom-controls.php:58 inc/theme-info.php:127
 msgid "Recommended Plugins"
 msgstr ""
 
-#: inc/theme-info.php:130 inc/customizer/functions/custom-controls.php:61
+#: inc/customizer/functions/custom-controls.php:61 inc/theme-info.php:130
 msgid ""
 "Extend the functionality of your WordPress website with our free and easy to "
 "use plugins."
 msgstr ""
 
-#: inc/theme-info.php:134 inc/customizer/functions/custom-controls.php:66
+#: inc/customizer/functions/custom-controls.php:66 inc/theme-info.php:134
 msgid "Install Plugins"
-msgstr ""
-
-#: inc/theme-info.php:149
-#, php-format
-msgid "%1$s is proudly brought to you by %2$s. If you like this theme, %3$s :)"
-msgstr ""
-
-#: inc/theme-info.php:151
-msgid "https://themezee.com/"
-msgstr ""
-
-#: inc/theme-info.php:152
-msgid "Review Leeway"
-msgstr ""
-
-#: inc/theme-info.php:152
-msgid "rate it"
-msgstr ""
-
-#: inc/customizer/customizer.php:38
-msgid "Background"
-msgstr ""
-
-#: inc/customizer/customizer.php:49
-msgid "Display Site Title"
-msgstr ""
-
-#: inc/customizer/customizer.php:66
-msgid "Display Tagline below site title."
-msgstr ""
-
-#: inc/customizer/customizer.php:83
-msgid "Header Image Link"
-msgstr ""
-
-#: inc/customizer/customizer.php:100
-msgid "Hide header image on front page"
 msgstr ""
 
 #: inc/customizer/sections/customizer-general.php:14
@@ -356,14 +229,6 @@ msgstr ""
 
 #: inc/customizer/sections/customizer-general.php:36
 msgid "Right Sidebar"
-msgstr ""
-
-#: inc/customizer/sections/customizer-general.php:51
-msgid "Default Fonts"
-msgstr ""
-
-#: inc/customizer/sections/customizer-general.php:68
-msgid "Deactivate Google Fonts in case your language is not compatible."
 msgstr ""
 
 #: inc/customizer/sections/customizer-header.php:14
@@ -481,6 +346,123 @@ msgstr ""
 
 #: inc/customizer/sections/customizer-upgrade.php:14
 msgid "More Features"
+msgstr ""
+
+#: inc/featured-content.php:256
+msgid "Tag name"
+msgstr ""
+
+#: inc/featured-content.php:262
+msgid "Display featured posts in latest blog post listing."
+msgstr ""
+
+#: inc/featured-content.php:269
+msgid "Number of Posts"
+msgstr ""
+
+#: inc/template-tags.php:165
+#, php-format
+msgid "View all posts by %s"
+msgstr ""
+
+#: inc/template-tags.php:179
+msgid "Leave a comment"
+msgstr ""
+
+#: inc/template-tags.php:232
+#, php-format
+msgid "Category: %s"
+msgstr ""
+
+#: inc/template-tags.php:245
+#, php-format
+msgid "Tags: %1$s"
+msgstr ""
+
+#: inc/template-tags.php:335
+#, php-format
+msgid "Powered by %1$s and %2$s."
+msgstr ""
+
+#: inc/template-tags.php:369
+msgid ""
+"Please go to Appearance &#8594; Menus and create a new custom menu with "
+"custom links to all your social networks. Then click on \"Manage Locations\" "
+"tab and assign your created menu to the \"Social Icons\" location."
+msgstr ""
+
+#: inc/template-tags.php:386
+msgid "Pingback:"
+msgstr ""
+
+#: inc/template-tags.php:387 inc/template-tags.php:407
+msgid "(Edit)"
+msgstr ""
+
+#: inc/template-tags.php:402
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: inc/template-tags.php:406
+#, php-format
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: inc/theme-info.php:19 inc/theme-info.php:40
+#, php-format
+msgid "Welcome to %1$s %2$s"
+msgstr ""
+
+#: inc/theme-info.php:20
+msgid "Theme Info"
+msgstr ""
+
+#: inc/theme-info.php:57
+#, php-format
+msgid "Getting Started with %s"
+msgstr ""
+
+#: inc/theme-info.php:67
+msgid ""
+"You need help to setup and configure this theme? We got you covered with an "
+"extensive theme documentation on our website."
+msgstr ""
+
+#: inc/theme-info.php:71
+#, php-format
+msgid "View %s Documentation"
+msgstr ""
+
+#: inc/theme-info.php:80
+#, php-format
+msgid ""
+"%s makes use of the Customizer for all theme settings. Click on \"Customize "
+"Theme\" to open the Customizer now."
+msgstr ""
+
+#: inc/theme-info.php:83
+msgid "Customize Theme"
+msgstr ""
+
+#: inc/theme-info.php:103
+msgid "Get more features"
+msgstr ""
+
+#: inc/theme-info.php:149
+#, php-format
+msgid "%1$s is proudly brought to you by %2$s. If you like this theme, %3$s :)"
+msgstr ""
+
+#: inc/theme-info.php:151
+msgid "https://themezee.com/"
+msgstr ""
+
+#: inc/theme-info.php:152
+msgid "Review Leeway"
+msgstr ""
+
+#: inc/theme-info.php:152
+msgid "rate it"
 msgstr ""
 
 #: inc/widgets/widget-category-posts-boxed.php:11
@@ -611,4 +593,40 @@ msgstr ""
 
 #: inc/widgets/widget-category-posts-grid.php:340
 msgid "Three Columns Grid"
+msgstr ""
+
+#: search.php:20
+#, php-format
+msgid "Search Results for: %s"
+msgstr ""
+
+#: search.php:47
+msgid "No matches"
+msgstr ""
+
+#: search.php:51
+msgid ""
+"Please try again, or use the navigation menus to find what you search for."
+msgstr ""
+
+#: searchform.php:4
+msgctxt "label"
+msgid "Search for:"
+msgstr ""
+
+#: searchform.php:5
+msgctxt "placeholder"
+msgid "Search &hellip;"
+msgstr ""
+
+#: sidebar.php:16
+msgid ""
+"Please go to Appearance &#8594; Widgets and add some widgets to your sidebar."
+msgstr ""
+
+#: template-magazine.php:39
+msgid ""
+"Please go to Appearance &#8594; Widgets and add at least one widget to the "
+"\"Magazine Homepage\" widget area. You can use the Category Posts widgets to "
+"set up the theme like the demo website."
 msgstr ""
