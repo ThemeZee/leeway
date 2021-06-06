@@ -26,6 +26,9 @@ For more information about Leeway please go to https://themezee.com/themes/leewa
 
 == Changelog ==
 
+= 1.4.6 - 2021-06-06 =
+* fixed styling of Social Icons widget from Widget Bundle plugin
+
 = 1.4.5 =
 * fixed lazy loading bug for slider images
 
